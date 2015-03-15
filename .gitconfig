@@ -1,0 +1,33 @@
+[user]
+	name = Kotaro Hirayama
+	email = just.do.it.my.life@gmail.com
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[core]
+	excludesfile = /Users/KotaroHirayama/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[color]
+	ui = true
+[alias]
+  st = status
+  sh = show
+  ft = fetch
+  ad = add
+  ci = commit -a
+  co = checkout
+  br = branch
+  ba = branch -a
+  ls = log --stat
+  lp = log -p
+  lo = log --oneline # onelineの方が一般的？
