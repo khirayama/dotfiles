@@ -24,7 +24,7 @@
   sh = show
   ft = fetch
   ad = add
-  ci = commit -a
+  ci = commit
   co = checkout
   br = branch
   ba = branch -a
