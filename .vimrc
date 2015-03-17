@@ -24,6 +24,7 @@ NeoBundle 'w0ng/vim-hybrid' " テーマ
 " Syntax Highlighter
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'tpope/vim-haml'
+NeoBundle 'digitaltoad/vim-jade'
 
 call neobundle#end()
 filetype plugin indent on
@@ -60,7 +61,7 @@ syntax on
 "---------------------------------------------------
 "  normal mode
 "---------------------------------------------------
-noremap <CR> o<ESC>
+noremap <CR> o<ESC> "  ノーマルモードでもEnter改行を有効に
 
 "---------------------------------------------------
 " insert mode
@@ -79,18 +80,18 @@ let g:unite_source_rec_max_cache_files = 1000
 "----------------------------------------------------
 "  complecache
 "----------------------------------------------------
-let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
-let g:neocomplcache_enable_at_startup = 1 " Use neocomplcache.
-let g:neocomplcache_enable_smart_case = 1 " Use smartcase.
-let g:neocomplcache_min_syntax_length = 3 " Set minimum syntax keyword length.
+let g:acp_enableAtStartup = 0 " AutoComplPopを無効に
+let g:neocomplcache_enable_at_startup = 1 " neocomplcacheを有効に
+let g:neocomplcache_enable_smart_case = 1 " smartcaseを有効に
+let g:neocomplcache_min_syntax_length = 3 " 検索候補表示の最小文字数
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplcache_dictionary_filetype_lists = { 'default' : '' } " Define dictionary.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:neocomplcache_dictionary_filetype_lists = { 'default' : '' } " 辞書を定義
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" " タブで変換候補を選択可能に
 
 "----------------------------------------------------
 " Syntax Checker
 "----------------------------------------------------
-let g:syntastic_javascript_checker = "jshint" " JavaScriptはjshintでチェックする
+let g:syntastic_javascript_checker = "jshint" " JavaScriptはjshintでチェックする - npmでjshintインストールしておくこと
 let g:syntastic_check_on_open = 0 "ファイルオープン時にはチェックをしない
 let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
 
