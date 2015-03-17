@@ -11,7 +11,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins
 NeoBundle 'Shougo/neomru.vim' " uniteで必要らしい
-NeoBundle 'Shougo/unite.vim' " なんか便利らしい
+NeoBundle 'Shougo/unite.vim' " 高機能なファイラらしい
+" NeoBundle 'ctrlpvim/ctrlp.vim' " シンプルなファイラらしい
 NeoBundle 'Shougo/neocomplcache' " 入力補完
 NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'tools\\update-dll-mingw', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make -f make_mac.mak', 'linux' : 'make', 'unix' : 'gmake', },}
 NeoBundle 'Shougo/neosnippet' " snippet補完
@@ -22,6 +23,7 @@ NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
 NeoBundle 'mattn/emmet-vim' " vim用emmet
 NeoBundle 'w0ng/vim-hybrid' " テーマ
 " Syntax Highlighter
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'digitaltoad/vim-jade'
@@ -58,6 +60,13 @@ set noswapfile " swapファイルを作成しない
 colorscheme hybrid
 syntax on
 
+" settings
+autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o> " 閉じタグ補完
+augroup BufferAu " カレントディレクトリを自動的に移動
+  autocmd!
+  autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
+augroup END
+
 "---------------------------------------------------
 "  normal mode
 "---------------------------------------------------
@@ -75,7 +84,7 @@ noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
 noremap <C-u> :Unite buffer file_rec -start-insert<CR>
 nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR> " バッファ一覧
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR> " ファイル一覧
-let g:unite_source_rec_max_cache_files = 1000
+let g:unite_source_rec_max_cache_files = 3000
 
 "----------------------------------------------------
 "  complecache
