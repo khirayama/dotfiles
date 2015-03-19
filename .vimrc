@@ -62,6 +62,7 @@ syntax on
 
 " settings
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o> " 閉じタグ補完
+autocmd FileType haml inoremap <silent> <buffer> </ </<C-x><C-o> " 閉じタグ補完
 augroup BufferAu " カレントディレクトリを自動的に移動
   autocmd!
   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
