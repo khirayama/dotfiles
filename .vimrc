@@ -1,5 +1,4 @@
 " NeoBundle Settings --------------------------------------------------
-"
 if !1 | finish | endif
  if has('vim_starting')
    if &compatible
@@ -23,6 +22,7 @@ NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス
 NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
 NeoBundle 'mattn/emmet-vim' " vim用emmet
 NeoBundle 'w0ng/vim-hybrid' " テーマ
+
 " Syntax Highlighter
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
 NeoBundle 'jpalardy/vim-slime'
