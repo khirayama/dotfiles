@@ -1,4 +1,5 @@
 " NeoBundle Settings --------------------------------------------------
+"
 if !1 | finish | endif
  if has('vim_starting')
    if &compatible
@@ -76,6 +77,7 @@ noremap <CR> o<ESC> "  ノーマルモードでもEnter改行を有効に
 " insert mode
 "---------------------------------------------------
 inoremap <silent> jj <ESC> " jjでノーマルモードへ
+inoremap <silent> hh <ESC>:w<CR> " とりあえず保存振ってみる
 
 "----------------------------------------------------
 "  unite.vim
