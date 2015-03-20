@@ -1,0 +1,66 @@
+vimコマンド
+移動
+h j k l
+gg : 先頭へ
+G  : 最終行へ
+5G : 5行目へ
+w  : 単語の先頭へ
+e  : 単語の最後へ
+b  : 前の単語へ
+%  : 対になる括弧へ
+cntl + e | y / cntl + u | d : スクロール
+
+編集
+i  : その場で挿入モード
+I  : 行の最初で挿入モード
+a  : 一文字後ろで挿入モード
+A  : 行の最後で挿入モード
+o  : 下に改行して挿入モード 
+O  : 上に行を入れて挿入モード
+
+cw : 単語を消して挿入
+c% : カーソル以降を消して挿入
+
+p  : ペースト
+P  : 前にペースト
+yy : コピー
+dd : カット
+u  : アンドゥ
+cntl + r : リドゥ
+
+r  : 一文字置換
+R  : 複数文字置換
+
+ビジュアル
+=  : インデント揃え
+
+全般
+:tabnew : 新規タブの作成
+:tabe   : ファイルを開く
+gt      : タブ移動
+:tabclose : タブを閉じる
+
+質問
+編集モードのときの小さな移動は？カーソル？ノーマルモードいく？
+複数行のコメントアウトやインデントは？
+関数へのジャンプは？
+
+# ターミナルコマンド
+cd / ls / mkdir / ln / touch
+less : ファイルの閲覧
+grep : 
+ag: 高速検索grep
+
+# iTerm
+https://codeiq.jp/magazine/2014/01/5143/
+画面分割: cmd + D / cmd + shift + D
+画面移動: cmd + { | }
+タブ分割: cmd + t
+タブ移動: cmd + ← | →
+
+チートシート http://vim.rtorr.com/lang/ja/
+NeoBundle http://qiita.com/puriketu99/items/1c32d3f24cc2919203eb
+プラグイン http://qiita.com/jnchito/items/5141b3b01bced9f7f48f
+clipbord http://qiita.com/shoma2da/items/92ea8badcd4655b6106c
+初期window http://bhby39.blogspot.jp/2014/05/iterm2.html
+vim options http://vimblog.hatenablog.com/entry/vimrc_set_recommended_options

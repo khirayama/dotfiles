@@ -1,0 +1,49 @@
+git add FILENAME # ファイルの追加
+git add -p # 差分を確認しながら追加
+
+git status # 現在の状況を確認
+
+git commit -m "メッセージ" # コメントのみのコミット
+git commit # 詳細含めコミット
+git commit --amend
+
+git log
+git log --oneline
+git log -p
+git log --stat # 変更があったファイル一覧
+
+git diff
+git stash
+git stash pop
+
+git checkout BRANCH
+git checkout -b BRANCH 
+
+git branch
+git branch -a
+git branch -d BRANCH # ブランチの削除
+
+git remote add REPONAME PATH
+git remote rm REPONAME
+git rm
+
+git clone PATH
+
+git reset --soft HEAD
+git reset --hard HEAD
+git reset --hard ORIG_HEAD # git reset 等したものを戻す
+git rebase -i HEAD~2
+git push REPONAME BRANCH
+git pull REPONAME BRANCH
+git push -u REPO BRANCH
+git push -f REPO BRANCH
+git fetch
+git merge
+
+# 進み出すと使う
+git tag v1.0
+git tag
+git tag v0.9 ID
+git tag -d v0.9
+git show TAGNAM
+git init --bare
