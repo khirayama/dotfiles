@@ -61,6 +61,7 @@ set noswapfile " swapファイルを作成しない
 set ignorecase "  検索時大文字小文字を区別しない
 set smartcase " 大文字小文字が混ざったときは区別する
 set incsearch " インクリメンタルサーチをonに
+set mouse=a " マウス操作を有効化
 " set cursorcolumn " カーソル位置のカラムの色を変更
 " set whichwrap=b,s,h,l,<,>,[,] " 行頭行末移動を有効化
 colorscheme hybrid
