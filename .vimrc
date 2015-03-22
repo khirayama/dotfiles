@@ -28,6 +28,8 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 
 call neobundle#end()
 filetype plugin indent on
@@ -65,8 +67,8 @@ colorscheme hybrid
 syntax on
 
 " settings
-autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o> " 閉じタグ補完
-autocmd FileType haml inoremap <silent> <buffer> </ </<C-x><C-o> " 閉じタグ補完
+autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
+autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
 augroup BufferAu " カレントディレクトリを自動的に移動
   autocmd!
   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
@@ -106,7 +108,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" " タブで変換候補
 "----------------------------------------------------
 " Syntax Checker
 "----------------------------------------------------
-let g:syntastic_javascript_checker = "jshint" " JavaScriptはjshintでチェックする - npmでjshintインストールしておくこと
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checker = 'jshint' " JavaScriptはjshintでチェックする - npmでjshintインストールしておくこと
 let g:syntastic_check_on_open = 0 "ファイルオープン時にはチェックをしない
 let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
 
