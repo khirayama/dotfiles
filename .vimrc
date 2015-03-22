@@ -22,6 +22,8 @@ NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス
 NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
 NeoBundle 'mattn/emmet-vim' " vim用emmet
 NeoBundle 'w0ng/vim-hybrid' " テーマ
+NeoBundle 'kannokanno/previm' " Markdownプレビュー
+NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 
 " Syntax Highlighter
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
@@ -30,6 +32,7 @@ NeoBundle 'tpope/vim-haml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'plasticboy/vim-markdown'
 
 call neobundle#end()
 filetype plugin indent on
@@ -114,3 +117,7 @@ let g:syntastic_javascript_checker = 'jshint' " JavaScriptはjshintでチェッ�
 let g:syntastic_check_on_open = 0 "ファイルオープン時にはチェックをしない
 let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
 
+"----------------------------------------------------
+" Markdown
+"----------------------------------------------------
+au BufRead,BufNewFile *.md set filetype=markdown
