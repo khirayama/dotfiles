@@ -34,6 +34,7 @@ alias bersp='bundle exec rails s -p'
 # ----------------------
 # Git Aliases
 # ----------------------
+alias gs='git status'
 alias ga='git add'
 alias gaa='git add .'
 alias gaaa='git add -A'
