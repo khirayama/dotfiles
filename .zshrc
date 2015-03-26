@@ -1,4 +1,6 @@
 export LANG=ja_JP.UTF-8
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # alias
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
