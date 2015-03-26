@@ -1,4 +1,6 @@
 export LANG=ja_JP.UTF-8
+
+# rbenvを自動読み込み
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
