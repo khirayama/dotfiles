@@ -82,6 +82,19 @@ augroup END
 "  normal mode
 "---------------------------------------------------
 noremap <CR> o<ESC> "  ノーマルモードでもEnter改行を有効に
+" 検索などで飛んだらそこを真ん中に
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+nmap G Gzz
+" CTRL-hjklでウィンドウ移動
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
 
 "---------------------------------------------------
 " insert mode
@@ -121,3 +134,4 @@ let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実
 " Markdown
 "----------------------------------------------------
 au BufRead,BufNewFile *.md set filetype=markdown
+
