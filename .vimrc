@@ -109,7 +109,7 @@ noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
 noremap <C-u> :Unite buffer file_rec -start-insert<CR>
 nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR> " バッファ一覧
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR> " ファイル一覧
-let g:unite_source_rec_max_cache_files = 3000
+let g:unite_source_rec_max_cache_files = 1000
 
 "----------------------------------------------------
 "  complecache
