@@ -53,7 +53,7 @@ set laststatus=2 " ステータス行を常に表示
 set cmdheight=2 " メッセージを2行確保
 set scrolloff=8 " 上下8行を常に確保
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない"
-" set nowrap " 折り返し禁止
+set nowrap " 折り返し禁止
 set expandtab "タブ入力を複数の空白入力に置き換える
 set tabstop=2 "画面上でタブ文字が占める幅
 set shiftwidth=2 "自動インデントでずれる幅
