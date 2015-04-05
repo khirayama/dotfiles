@@ -32,3 +32,4 @@
   lp = log -p
   lo = log --oneline # onelineの方が一般的？
   re = reset
+  rd = rm $(git ls-files --deleted)

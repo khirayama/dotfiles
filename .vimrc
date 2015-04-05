@@ -73,10 +73,10 @@ syntax on
 " settings
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
-augroup BufferAu " カレントディレクトリを自動的に移動
-  autocmd!
-  autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
-augroup END
+" augroup BufferAu " カレントディレクトリを自動的に移動
+"   autocmd!
+"   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
+" augroup END
 
 "---------------------------------------------------
 "  normal mode

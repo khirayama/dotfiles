@@ -10,6 +10,7 @@ alias chrome="open -a /Applications/Google\ Chrome.app"
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
+alias t='tree'
 
 # options
 autoload -U compinit
@@ -17,6 +18,7 @@ compinit
 
 export EDITOR=vim
 autoload -Uz colors; colors
+setopt auto_cd
 setopt nobeep
 setopt prompt_subst
 
