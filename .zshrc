@@ -64,6 +64,7 @@ alias gst='git stash'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gstd='git stash drop'
+alias grm='git rm $(git ls-files --deleted)'
  
 # ----------------------
 # Git Function
