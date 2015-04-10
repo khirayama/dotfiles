@@ -131,7 +131,39 @@ let g:syntastic_check_on_open = 0 "ファイルオープン時にはチェック
 let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
 
 "----------------------------------------------------
-" Markdown
+" Statusline
 "----------------------------------------------------
-au BufRead,BufNewFile *.md set filetype=markdown
-
+set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%04c,L:%04l/%04L%4p%%
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+if has('syntax')
+  augroup InsertHook
+    autocmd!
+    autocmd InsertEnter * call s:StatusLine('Enter')
+    autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END\%{g:Date()}
+endif
+ 
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+    silent exec g:hi_insert
+  else
+    highlight clear StatusLine
+    silent exec s:slhlcmd
+  endif
+endfunction
+ 
+function! s:GetHighlight(hi)
+  redir => hl
+  exec 'highlight '.a:hi
+  redir END
+  let hl = substitute(hl, '[\r\n]', '', 'g')
+  let hl = substitute(hl, 'xxx', '', '')
+  return hl
+endfunction
+ 
+" ステータスラインに日時を表示する
+function! g:Date()
+    return strftime("%x %H:%M ")
+endfunction
