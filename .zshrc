@@ -11,6 +11,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
 alias t='tree'
+alias maintenance='sudo kextcache -system-prelinked-kernel'
 
 # options
 autoload -U compinit
