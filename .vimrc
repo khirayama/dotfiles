@@ -26,13 +26,16 @@ NeoBundle 'kannokanno/previm' " Markdownプレビュー
 NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 
 " Syntax Highlighter
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
+" NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
+NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
+NeoBundle 'othree/yajs.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 filetype plugin indent on
@@ -127,7 +130,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" " タブで変換候補
 "----------------------------------------------------
 let g:syntastic_javascript_checkers = ['jsxhint'] " jsxにも対応したjshint
 let g:syntastic_javascript_checker = 'jshint' " JavaScriptはjshintでチェックする - npmでjshintインストールしておくこと
-let g:syntastic_check_on_open = 0 "ファイルオープン時にはチェックをしない
+let g:syntastic_check_on_open = 1 "ファイルオープン時にはチェックをしない
 let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
 
 "----------------------------------------------------
