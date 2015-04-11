@@ -4,6 +4,9 @@ export LANG=ja_JP.UTF-8
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# tabで補完するとき、大文字小文字を区別しない
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # alias
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias chrome="open -a /Applications/Google\ Chrome.app"
