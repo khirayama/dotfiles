@@ -132,12 +132,13 @@ let g:syntastic_javascript_checkers = ['jsxhint'] " jsxにも対応したjshint
 let g:syntastic_javascript_checker = 'jshint' " JavaScriptはjshintでチェックする - npmでjshintインストールしておくこと
 let g:syntastic_check_on_open = 1 "ファイルオープン時にはチェックをしない
 let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 "----------------------------------------------------
 " Statusline
 "----------------------------------------------------
 set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%04c,L:%04l/%04L%4p%%
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none' "TODO: hybridの色あてたい
 if has('syntax')
   augroup InsertHook
     autocmd!
