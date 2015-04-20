@@ -24,6 +24,7 @@ NeoBundle 'mattn/emmet-vim' " vim用emmet
 NeoBundle 'w0ng/vim-hybrid' " テーマ
 NeoBundle 'kannokanno/previm' " Markdownプレビュー
 NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
+NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
@@ -135,6 +136,12 @@ let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 "----------------------------------------------------
+" GitGutter
+"----------------------------------------------------
+nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
+nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
+
+"----------------------------------------------------
 " Statusline
 "----------------------------------------------------
 set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%04c,L:%04l/%04L%4p%%
@@ -171,3 +178,5 @@ endfunction
 function! g:Date()
     return strftime("%x %H:%M ")
 endfunction
+
+
