@@ -16,6 +16,10 @@ alias lla='ls -al'
 alias t='tree'
 alias v='vim'
 alias maintenance='sudo kextcache -system-prelinked-kernel'
+function fa() {
+  command find $1 -name $2 | xargs ag $3
+}
+alias fa=fa()
 
 # options
 autoload -U compinit
