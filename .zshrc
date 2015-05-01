@@ -76,3 +76,16 @@ alias grm='git rm $(git ls-files --deleted)'
 # ----------------------
 # Git log find by commit message
 function glf() { git log --all --grep="$1"; }
+
+# vcs_infoロード    
+autoload -Uz vcs_info    
+# PROMPT変数内で変数参照する    
+setopt prompt_subst    
+
+# vcsの表示    
+zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'    
+zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'    
+# プロンプト表示直前にvcs_info呼び出し    
+precmd() { vcs_info }    
+# プロンプト表示    
+PROMPT='[${vcs_info_msg_0_}]:%~/%f '  
