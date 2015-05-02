@@ -116,15 +116,22 @@ nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-in
 let g:unite_source_rec_max_cache_files = 1000
 
 "----------------------------------------------------
-"  complecache
+"  neocomplecache
 "----------------------------------------------------
 let g:acp_enableAtStartup = 0 " AutoComplPopを無効に
 let g:neocomplcache_enable_at_startup = 1 " neocomplcacheを有効に
 let g:neocomplcache_enable_smart_case = 1 " smartcaseを有効に
 let g:neocomplcache_min_syntax_length = 3 " 検索候補表示の最小文字数
+let g:neocomplcache_previous_keyword_completion = 1 " つながりを考慮した候補
+let g:neocomplcache_enable_camel_case_completion = 1 " camelcaseを単語の区切りとする
+let g:neocomplcache_enable_underbar_completion = 1 " underbarを単語の区切りとする
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_dictionary_filetype_lists = { 'default' : '' } " 辞書を定義
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" " タブで変換候補を選択可能に
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\v\h\w*'
 
 "----------------------------------------------------
 " Syntax Checker
