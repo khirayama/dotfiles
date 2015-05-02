@@ -25,6 +25,8 @@ NeoBundle 'w0ng/vim-hybrid' " テーマ
 NeoBundle 'kannokanno/previm' " Markdownプレビュー
 NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
+NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git' " CSSの並び順を整形 
+NeoBundle 'szw/vim-tags' " ctagsを便利に使う
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
