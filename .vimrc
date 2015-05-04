@@ -101,6 +101,9 @@ nmap G Gzz
 " nmap <C-k> <C-w>k
 " nmap <C-l> <C-w>l
 " nmap <C-h> <C-w>h
+nmap <C-d> :vs<CR><C-l><C-u>
+nmap <C-h> <C-w>h " ウィンドウの移動
+nmap <C-l> <C-w>l " ウィンドウの移動
 
 "---------------------------------------------------
 " insert mode
@@ -154,7 +157,7 @@ nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 " Statusline
 "----------------------------------------------------
 set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%04c,L:%04l/%04L%4p%%
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none' "TODO: hybridの色あてたい
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=blue ctermbg=yellow cterm=none' "TODO: hybridの色あてたい
 if has('syntax')
   augroup InsertHook
     autocmd!

@@ -1,8 +1,10 @@
 export LANG=ja_JP.UTF-8
 
 # rbenvを自動読み込み
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d $HOME/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 # tabで補完するとき、大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -16,6 +18,7 @@ alias lla='ls -al'
 alias t='tree'
 alias v='vim'
 alias maintenance='sudo kextcache -system-prelinked-kernel'
+alias server='python -m SimpleHTTPServer'
 
 # options
 autoload -U compinit
@@ -75,11 +78,8 @@ alias grm='git rm $(git ls-files --deleted)'
 # Git Function
 # ----------------------
 # Git log find by commit message
-function glf() { git log --all --grep="$1"; }
-
-autoload -Uz vcs_info    
-setopt prompt_subst    
-zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'    
-zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'    
-precmd() { vcs_info }    
-PROMPT='[${vcs_info_msg_0_}]:%~/%f '  
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:*' formats '%s][* %F{red}%b%f'
+precmd() { vcs_info }
+PROMPT='[${vcs_info_msg_0_}]:%~/%f '
