@@ -80,6 +80,6 @@ alias grm='git rm $(git ls-files --deleted)'
 # Git log find by commit message
 autoload -Uz vcs_info
 setopt prompt_subst
-zstyle ':vcs_info:*' formats '%s][* %F{red}%b%f'
+zstyle ':vcs_info:*' formats '%s][* %F{yellow}%b%f'
 precmd() { vcs_info }
 PROMPT='[${vcs_info_msg_0_}]:%~/%f '

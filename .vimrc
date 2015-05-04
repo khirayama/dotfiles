@@ -156,8 +156,8 @@ nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 "----------------------------------------------------
 " Statusline
 "----------------------------------------------------
-set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%04c,L:%04l/%04L%4p%%
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=blue ctermbg=yellow cterm=none' "TODO: hybridの色あてたい
+set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%03c\ L:%04l/%04L\ %3p%%
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
 if has('syntax')
   augroup InsertHook
     autocmd!
@@ -190,5 +190,4 @@ endfunction
 function! g:Date()
     return strftime("%x %H:%M ")
 endfunction
-
 
