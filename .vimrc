@@ -101,9 +101,6 @@ nmap G Gzz
 " nmap <C-k> <C-w>k
 " nmap <C-l> <C-w>l
 " nmap <C-h> <C-w>h
-nmap <C-d> :vs<CR><C-l><C-u>
-nmap <C-h> <C-w>h " ウィンドウの移動
-nmap <C-l> <C-w>l " ウィンドウの移動
 
 "---------------------------------------------------
 " insert mode
@@ -119,6 +116,11 @@ noremap <C-u> :Unite buffer file_rec -start-insert<CR>
 nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR> " バッファ一覧
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR> " ファイル一覧
 let g:unite_source_rec_max_cache_files = 1000
+
+"----------------------------------------------------
+"  CSScomb
+"----------------------------------------------------
+nnoremap <C-c> :CSScomb<CR> " CSSプロパティの並び替え
 
 "----------------------------------------------------
 "  neocomplecache
