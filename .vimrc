@@ -158,6 +158,7 @@ nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 "----------------------------------------------------
 " Statusline
 "----------------------------------------------------
+" TODO: 色変更
 set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%03c\ L:%04l/%04L\ %3p%%
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
 if has('syntax')
