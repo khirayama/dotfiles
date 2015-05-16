@@ -143,8 +143,9 @@ let g:neocomplcache_keyword_patterns['default'] = '\v\h\w*'
 "----------------------------------------------------
 " Syntax Checker
 "----------------------------------------------------
-let g:syntastic_javascript_checkers = ['jsxhint'] " jsxにも対応したjshint
-let g:syntastic_javascript_checker = 'jshint' " JavaScriptはjshintでチェックする - npmでjshintインストールしておくこと
+let g:syntastic_javascript_checkers = ['eslint'] " jsxにも対応したjshint
+" let g:syntastic_javascript_checkers = ['jsxhint'] " jsxにも対応したjshint
+" let g:syntastic_javascript_checker = 'jshint' " JavaScriptはjshintでチェックする - npmでjshintインストールしておくこと
 let g:syntastic_check_on_open = 1 "ファイルオープン時にはチェックをしない
 let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
