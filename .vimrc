@@ -27,6 +27,9 @@ NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
 NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git' " CSSの並び順を整形 
 NeoBundle 'szw/vim-tags' " ctagsを便利に使う
+NeoBundle 'rking/ag.vim' " agをvimで使えるように
+NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるように
+NeoBundle 'tpope/vim-surround' " csで囲みを変更
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
@@ -105,8 +108,8 @@ nmap G Gzz
 "---------------------------------------------------
 " insert mode
 "---------------------------------------------------
-inoremap <silent> jj <ESC> " jjでノーマルモードへ
-inoremap <silent> hh <ESC>:w<CR> " とりあえず保存振ってみる
+" inoremap <silent> jj <ESC> " jjでノーマルモードへ
+" inoremap <silent> hh <ESC>:w<CR> " とりあえず保存振ってみる
 
 "----------------------------------------------------
 "  unite.vim
