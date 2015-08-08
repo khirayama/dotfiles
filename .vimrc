@@ -30,6 +30,7 @@ NeoBundle 'szw/vim-tags' " ctagsを便利に使う
 NeoBundle 'rking/ag.vim' " agをvimで使えるように
 NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるように
 NeoBundle 'tpope/vim-surround' " csで囲みを変更
+NeoBundle 'haya14busa/incsearch.vim' " 便利なインクリメンタルサーチ
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
@@ -159,6 +160,13 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 "----------------------------------------------------
 nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
 nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
+
+"----------------------------------------------------
+" incsearch
+"----------------------------------------------------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 "----------------------------------------------------
 " Statusline
