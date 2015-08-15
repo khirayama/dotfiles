@@ -125,7 +125,7 @@ let g:unite_source_rec_max_cache_files = 1000
 "  CSScomb
 "----------------------------------------------------
 " もうちょいいいキー探したい
-nnoremap <C-c> :CSScomb<CR> " CSSプロパティの並び替え
+nnoremap <C-c> <C-f>:CSScomb<CR> " CSSプロパティの並び替え
 
 "----------------------------------------------------
 "  neocomplecache

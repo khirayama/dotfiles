@@ -1,4 +1,5 @@
 export LANG=ja_JP.UTF-8
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # rbenvを自動読み込み
 if [ -d $HOME/.rbenv ]; then
