@@ -21,7 +21,6 @@ NeoBundle 'scrooloose/syntastic' " 構文チェック
 NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス  
 NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
 NeoBundle 'mattn/emmet-vim' " vim用emmet
-NeoBundle 'w0ng/vim-hybrid' " テーマ
 NeoBundle 'kannokanno/previm' " Markdownプレビュー
 NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
@@ -43,6 +42,13 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kchmck/vim-coffee-script'
+
+" Tools
+NeoBundle 'wakatime/vim-wakatime'
+
+" Color
+NeoBundle 'w0ng/vim-hybrid' " テーマ
+set t_Co=256
 
 call neobundle#end()
 filetype plugin indent on

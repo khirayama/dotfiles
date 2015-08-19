@@ -1,4 +1,3 @@
-// ちょい厳しすぎるやも
 {
   "parser": "babel-eslint",
   "env": {
