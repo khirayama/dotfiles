@@ -121,7 +121,7 @@ nmap <C-h> <C-w>h
 "  unite.vim
 "----------------------------------------------------
 noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
-noremap <C-u> :Unite buffer file_rec -start-insert<CR>
+noremap <C-u> :Unite buffer file_rec file/new -start-insert<CR>
 nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR> " バッファ一覧
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR> " ファイル一覧
 au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
@@ -129,12 +129,6 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 let g:unite_source_rec_max_cache_files = 1000
-
-"----------------------------------------------------
-"  CSScomb
-"----------------------------------------------------
-" もうちょいいいキー探したい
-nnoremap <C-c> <C-f>:CSScomb<CR> " CSSプロパティの並び替え
 
 "----------------------------------------------------
 "  neocomplecache
