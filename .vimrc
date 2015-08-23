@@ -106,11 +106,10 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 nmap G Gzz
-" CTRL-hjklでウィンドウ移動
-" nmap <C-j> <C-w>j
-" nmap <C-k> <C-w>k
-" nmap <C-l> <C-w>l
-" nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
 
 "---------------------------------------------------
 " insert mode
@@ -125,6 +124,10 @@ noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
 noremap <C-u> :Unite buffer file_rec -start-insert<CR>
 nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR> " バッファ一覧
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR> " ファイル一覧
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 let g:unite_source_rec_max_cache_files = 1000
 
 "----------------------------------------------------
