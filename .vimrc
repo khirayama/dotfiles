@@ -30,6 +30,7 @@ NeoBundle 'rking/ag.vim' " agをvimで使えるように
 NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるように
 NeoBundle 'tpope/vim-surround' " csで囲みを変更
 NeoBundle 'haya14busa/incsearch.vim' " 便利なインクリメンタルサーチ
+NeoBundle 'lilydjwg/colorizer' " colorを表示
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
@@ -81,6 +82,7 @@ set ignorecase "  検索時大文字小文字を区別しない
 set smartcase " 大文字小文字が混ざったときは区別する
 set incsearch " インクリメンタルサーチをonに
 set mouse=a " マウス操作を有効化
+set noeol " 最後に空行を禁止
 " set cursorcolumn " カーソル位置のカラムの色を変更
 " set whichwrap=b,s,h,l,<,>,[,] " 行頭行末移動を有効化
 colorscheme hybrid
@@ -93,6 +95,11 @@ autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
 "   autocmd!
 "   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
 " augroup END
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
 
 "---------------------------------------------------
 "  normal mode
