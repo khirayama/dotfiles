@@ -6,7 +6,7 @@ if !1 | finish | endif
    endif
    set runtimepath+=~/.vim/bundle/neobundle.vim/
  endif
-call neobundle#begin(expand('~/.vim/bundle/neobundle.vim/')) 
+call neobundle#begin(expand('~/.vim/bundle/neobundle.vim/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins
@@ -18,13 +18,13 @@ NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'tools\\update-dll-mingw
 NeoBundle 'Shougo/neosnippet' " snippet補完
 NeoBundle 'Shougo/neosnippet-snippets' " neosnippet用snippets集
 NeoBundle 'scrooloose/syntastic' " 構文チェック
-NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス  
+NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス
 NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
 NeoBundle 'mattn/emmet-vim' " vim用emmet
 NeoBundle 'kannokanno/previm' " Markdownプレビュー
 NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
-NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git' " CSSの並び順を整形 
+NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git' " CSSの並び順を整形
 NeoBundle 'szw/vim-tags' " ctagsを便利に使う
 NeoBundle 'rking/ag.vim' " agをvimで使えるように
 NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるように
@@ -190,7 +190,7 @@ if has('syntax')
     autocmd InsertLeave * call s:StatusLine('Leave')
   augroup END\%{g:Date()}
 endif
- 
+
 let s:slhlcmd = ''
 function! s:StatusLine(mode)
   if a:mode == 'Enter'
@@ -201,7 +201,7 @@ function! s:StatusLine(mode)
     silent exec s:slhlcmd
   endif
 endfunction
- 
+
 function! s:GetHighlight(hi)
   redir => hl
   exec 'highlight '.a:hi
@@ -210,9 +210,8 @@ function! s:GetHighlight(hi)
   let hl = substitute(hl, 'xxx', '', '')
   return hl
 endfunction
- 
+
 " ステータスラインに日時を表示する
 function! g:Date()
     return strftime("%x %H:%M ")
 endfunction
-
