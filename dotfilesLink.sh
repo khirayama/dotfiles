@@ -1,8 +1,8 @@
 #!/bin/sh
-ln -sf ./vimrc ~/.vimrc
-ln -sf ./zshrc ~/.zshrc 
-ln -sf ./gitconfig ~/.gitconfig
-ln -sf ./jshintrc ~/.jshintrc
-ln -sf ./eslintrc ~/.eslintrc
-ln -sf ./tmux.conf ~/.tmux.conf
+ln -sf ~/Work/dotfiles/vimrc ~/.vimrc
+ln -sf ~/Work/dotfiles/zshrc ~/.zshrc
+ln -sf ~/Work/dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/Work/dotfiles/jshintrc ~/.jshintrc
+ln -sf ~/Work/dotfiles/eslintrc ~/.eslintrc
+ln -sf ~/Work/dotfiles/tmux.conf ~/.tmux.conf
 
