@@ -40,10 +40,10 @@ setopt prompt_subst
 autoload colors
 colors
 PROMPT="
- %{${fg[yellow]}%}%~%{${reset_color}%} 
+ %{${fg[yellow]}%}%~%{${reset_color}%}
  [%n]$ "
 
- PROMPT2='[%n]> ' 
+ PROMPT2='[%n]> '
 
 # ----------------------
 # Rails Aliases
@@ -70,6 +70,7 @@ alias gd='git diff'
 alias gda='git diff HEAD'
 alias gi='git init'
 alias gl='git log'
+alias glo='git log --oneline'
 alias glg='git log --graph --oneline --decorate --all'
 alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge --no-ff'
@@ -80,7 +81,7 @@ alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias grm='git rm $(git ls-files --deleted)'
- 
+
 # ----------------------
 # Git Function
 # ----------------------
