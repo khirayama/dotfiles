@@ -36,7 +36,7 @@ NeoBundle 'lilydjwg/colorizer' " colorを表示
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
 NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
 NeoBundle 'othree/yajs.vim'
-NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'slim-template/vim-slim'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'pangloss/vim-javascript'
