@@ -12,7 +12,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Plugins
 NeoBundle 'Shougo/neomru.vim' " uniteで必要らしい
 NeoBundle 'Shougo/unite.vim' " 高機能なファイラらしい
-" NeoBundle 'ctrlpvim/ctrlp.vim' " シンプルなファイラらしい
 NeoBundle 'Shougo/neocomplcache' " 入力補完
 NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'tools\\update-dll-mingw', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make -f make_mac.mak', 'linux' : 'make', 'unix' : 'gmake', },}
 NeoBundle 'Shougo/neosnippet' " snippet補完
@@ -31,6 +30,7 @@ NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるよう�
 NeoBundle 'tpope/vim-surround' " csで囲みを変更
 NeoBundle 'haya14busa/incsearch.vim' " 便利なインクリメンタルサーチ
 NeoBundle 'lilydjwg/colorizer' " colorを表示
+NeoBundle 'fatih/vim-go'
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
