@@ -135,7 +135,7 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
-let g:unite_source_rec_max_cache_files = 1000
+let g:unite_source_rec_max_cache_files = 3000
 
 "----------------------------------------------------
 "  neocomplecache
@@ -180,7 +180,7 @@ map g/ <Plug>(incsearch-stay)
 " Statusline
 "----------------------------------------------------
 " TODO: 色変更
-set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%03c\ L:%04l/%04L\ %3p%%
+set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
 if has('syntax')
   augroup InsertHook
@@ -208,9 +208,4 @@ function! s:GetHighlight(hi)
   let hl = substitute(hl, '[\r\n]', '', 'g')
   let hl = substitute(hl, 'xxx', '', '')
   return hl
-endfunction
-
-" ステータスラインに日時を表示する
-function! g:Date()
-    return strftime("%x %H:%M ")
 endfunction
