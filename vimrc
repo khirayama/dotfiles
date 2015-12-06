@@ -23,7 +23,6 @@ NeoBundle 'mattn/emmet-vim' " vim用emmet
 NeoBundle 'kannokanno/previm' " Markdownプレビュー
 NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
-NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git' " CSSの並び順を整形
 NeoBundle 'szw/vim-tags' " ctagsを便利に使う
 NeoBundle 'rking/ag.vim' " agをvimで使えるように
 NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるように
@@ -43,9 +42,6 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kchmck/vim-coffee-script'
-
-" Tools
-NeoBundle 'wakatime/vim-wakatime'
 
 " Color
 NeoBundle 'w0ng/vim-hybrid' " テーマ
