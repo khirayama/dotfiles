@@ -19,7 +19,6 @@ NeoBundle 'Shougo/neosnippet-snippets' " neosnippet用snippets集
 NeoBundle 'scrooloose/syntastic' " 構文チェック
 NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス
 NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
-NeoBundle 'mattn/emmet-vim' " vim用emmet
 NeoBundle 'kannokanno/previm' " Markdownプレビュー
 NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
 NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
@@ -29,7 +28,6 @@ NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるよう�
 NeoBundle 'tpope/vim-surround' " csで囲みを変更
 NeoBundle 'haya14busa/incsearch.vim' " 便利なインクリメンタルサーチ
 NeoBundle 'lilydjwg/colorizer' " colorを表示
-NeoBundle 'fatih/vim-go'
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
@@ -42,6 +40,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'fatih/vim-go'
 
 " Color
 NeoBundle 'w0ng/vim-hybrid' " テーマ
@@ -114,12 +113,6 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
-"---------------------------------------------------
-" insert mode
-"---------------------------------------------------
-" inoremap <silent> jj <ESC> " jjでノーマルモードへ
-" inoremap <silent> hh <ESC>:w<CR> " とりあえず保存振ってみる
-
 "----------------------------------------------------
 "  unite.vim
 "----------------------------------------------------
@@ -175,33 +168,5 @@ map g/ <Plug>(incsearch-stay)
 "----------------------------------------------------
 " Statusline
 "----------------------------------------------------
-" TODO: 色変更
 set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
-if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END\%{g:Date()}
-endif
-
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-  endif
-endfunction
-
-function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
-endfunction
