@@ -3,14 +3,18 @@ export LANG=ja_JP.UTF-8
 # 起動時tmuxを起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
+# ruby開発環境/rbenv
 if [ -d $HOME/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
+# node開発環境/nodebrew
 if [ -d $HOME/.nodebrew ]; then
   export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
+
+# golang開発環境
 export GOROOT="/usr/local/go"
 export GOPATH=$HOME/.go
 
