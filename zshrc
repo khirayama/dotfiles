@@ -1,5 +1,7 @@
 export LANG=ja_JP.UTF-8
 
+eval "$(direnv hook zsh)"
+
 # 起動時tmuxを起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
