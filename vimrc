@@ -16,7 +16,7 @@ NeoBundle 'Shougo/neocomplcache' " 入力補完
 NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'tools\\update-dll-mingw', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make -f make_mac.mak', 'linux' : 'make', 'unix' : 'gmake', },}
 NeoBundle 'Shougo/neosnippet' " snippet補完
 NeoBundle 'Shougo/neosnippet-snippets' " neosnippet用snippets集
-NeoBundle 'scrooloose/syntastic' " 構文チェック
+" NeoBundle 'scrooloose/syntastic' " 構文チェック
 NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス
 NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
 NeoBundle 'kannokanno/previm' " Markdownプレビュー
