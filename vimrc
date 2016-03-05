@@ -1,56 +1,50 @@
-" NeoBundle Settings --------------------------------------------------
-if !1 | finish | endif
- if has('vim_starting')
-   if &compatible
-     set nocompatible" Be iMproved
-   endif
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
-call neobundle#begin(expand('~/.vim/bundle/neobundle.vim/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 
-" Plugins
-NeoBundle 'Shougo/neomru.vim' " uniteで必要らしい
-NeoBundle 'Shougo/unite.vim' " 高機能なファイラらしい
-NeoBundle 'Shougo/neocomplcache' " 入力補完
-NeoBundle 'Shougo/vimproc.vim', {'build' : {'windows' : 'tools\\update-dll-mingw', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make -f make_mac.mak', 'linux' : 'make', 'unix' : 'gmake', },}
-NeoBundle 'Shougo/neosnippet' " snippet補完
-NeoBundle 'Shougo/neosnippet-snippets' " neosnippet用snippets集
-" NeoBundle 'scrooloose/syntastic' " 構文チェック
-NeoBundle 'scrooloose/nerdtree' " 便利なファイルアクセス
-NeoBundle 'Townk/vim-autoclose' " 括弧等の自動補完
-NeoBundle 'kannokanno/previm' " Markdownプレビュー
-NeoBundle 'tyru/open-browser.vim' " ブラウザオープンするっぽい
-NeoBundle 'airblade/vim-gitgutter' " Gitの差分を表示
-NeoBundle 'szw/vim-tags' " ctagsを便利に使う
-NeoBundle 'rking/ag.vim' " agをvimで使えるように
-NeoBundle 'tomtom/tcomment_vim' " ctrl--でコメントアウトできるように
-NeoBundle 'tpope/vim-surround' " csで囲みを変更
-NeoBundle 'haya14busa/incsearch.vim' " 便利なインクリメンタルサーチ
-NeoBundle 'lilydjwg/colorizer' " colorを表示
+call dein#begin(expand('~/.cache/dein'))
+
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neomru.vim') " uniteで必要らしい
+call dein#add('Shougo/unite.vim') " 高機能なファイラらしい
+call dein#add('Shougo/neocomplcache') " 入力補完
+call dein#add('Shougo/vimproc.vim', {'build' : {'windows' : 'tools\\update-dll-mingw', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make -f make_mac.mak', 'linux' : 'make', 'unix' : 'gmake', },})
+call dein#add('Shougo/neosnippet') " snippet補完
+call dein#add('Shougo/neosnippet-snippets') " neosnippet用snippets集
+" call dein#add('scrooloose/syntastic') " 構文チェック
+call dein#add('scrooloose/nerdtree') " 便利なファイルアクセス
+call dein#add('Townk/vim-autoclose') " 括弧等の自動補完
+call dein#add('kannokanno/previm') " Markdownプレビュー
+call dein#add('tyru/open-browser.vim') " ブラウザオープンするっぽい
+call dein#add('airblade/vim-gitgutter') " Gitの差分を表示
+call dein#add('szw/vim-tags') " ctagsを便利に使う
+call dein#add('rking/ag.vim') " agをvimで使えるように
+call dein#add('tomtom/tcomment_vim') " ctrl--でコメントアウトできるように
+call dein#add('tpope/vim-surround') " csで囲みを変更
+call dein#add('haya14busa/incsearch.vim') " 便利なインクリメンタルサーチ
+call dein#add('lilydjwg/colorizer') " colorを表示
 
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
-NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'fatih/vim-go'
+" NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
+call dein#add('othree/yajs.vim')
+call dein#add('slim-template/vim-slim')
+call dein#add('tpope/vim-haml')
+call dein#add('digitaltoad/vim-jade')
+call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
+call dein#add('plasticboy/vim-markdown')
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('fatih/vim-go')
 
 " Color
-NeoBundle 'w0ng/vim-hybrid' " テーマ
+call dein#add('w0ng/vim-hybrid') " テーマ
+
+call dein#end()
+
 set t_Co=256
-
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck
-" NeoBundle Settings End --------------------------------------------------
-
 " options
 set number " 行番号の表示
 set title " ウィンドウに現在のファイル名を追加
