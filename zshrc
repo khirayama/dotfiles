@@ -17,8 +17,10 @@ if [ -d $HOME/.nodebrew ]; then
 fi
 
 # golang開発環境
+export PATH=$PATH:/usr/local/go/bin
 export GOROOT="/usr/local/go"
 export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
 
 # tabで補完するとき、大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
