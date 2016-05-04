@@ -38,7 +38,7 @@ alias server='python -m SimpleHTTPServer'
 
 # options
 autoload -U compinit
-compinit
+compinit -u
 
 export EDITOR=vim
 autoload -Uz colors; colors
