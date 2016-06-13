@@ -38,14 +38,17 @@ call dein#add('mxw/vim-jsx')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('fatih/vim-go')
+call dein#add('tpope/vim-rails', {'on_ft' : 'ruby'})
 
 " Color
 call dein#add('w0ng/vim-hybrid') " テーマ
 
 call dein#end()
 
-set t_Co=256
+filetype plugin indent on
+
 " options
+set t_Co=256
 set number " 行番号の表示
 set title " ウィンドウに現在のファイル名を追加
 set showmatch " 対応する括弧を強調表示

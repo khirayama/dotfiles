@@ -9,7 +9,7 @@
 	excludesfile = /Users/KotaroHirayama/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -32,3 +32,7 @@
   lp = log -p
   lo = log --oneline # onelineの方が一般的？
   re = reset
+[pager]
+  log = diff-highlight
+  show = diff-highlight
+  diff = diff-highlight
