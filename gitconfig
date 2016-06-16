@@ -33,6 +33,6 @@
   lo = log --oneline # onelineの方が一般的？
   re = reset
 [pager]
-  log = diff-highlight
-  show = diff-highlight
-  diff = diff-highlight
+  log = diff-highlight|less
+  show = diff-highlight|less
+  diff = diff-highlight|less

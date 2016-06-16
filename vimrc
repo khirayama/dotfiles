@@ -113,15 +113,40 @@ nmap <C-h> <C-w>h
 "----------------------------------------------------
 "  unite.vim
 "----------------------------------------------------
-noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
-noremap <C-u> :Unite buffer file_rec file/new -start-insert<CR>
-" nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR>
-" nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR>
 au FileType unite nnoremap <silent> <buffer> <expr> <C-e> unite#do_action('vsplit')
 au FileType unite inoremap <silent> <buffer> <expr> <C-e> unite#do_action('vsplit')
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
 let g:unite_source_rec_max_cache_files = 3000
+
+if executable('ag')
+  let g:unite_source_rec_async_command = ['ag', '--follow', '--nogroup', '--nocolor', '--hidden', '-g', '']
+endif
+call unite#custom#source('file_rec/async', 'ignore_pattern', '(png\|gif\|jpeg\|jpg)$')
+function! s:unite_gitignore_source()
+  let sources = []
+  if filereadable('./.gitignore')
+    for file in readfile('./.gitignore')
+      " コメント行と空行は追加しない
+      if file !~ "^#\\|^\s\*$"
+        call add(sources, file)
+      endif
+    endfor
+  endif
+  if isdirectory('./.git')
+    call add(sources, '.git')
+  endif
+  let pattern = escape(join(sources, '|'), './|')
+  call unite#custom#source('file_rec', 'ignore_pattern', pattern)
+  call unite#custom#source('grep', 'ignore_pattern', pattern)
+endfunction
+call s:unite_gitignore_source()
+
+noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
+noremap <C-u> :Unite buffer file_rec/async file/new -start-insert<CR>
+" nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR>
+" nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR>
 
 "----------------------------------------------------
 "  neocomplecache
