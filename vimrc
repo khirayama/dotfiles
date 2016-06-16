@@ -115,10 +115,10 @@ nmap <C-h> <C-w>h
 "----------------------------------------------------
 noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
 noremap <C-u> :Unite buffer file_rec file/new -start-insert<CR>
-nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR> " バッファ一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR> " ファイル一覧
-au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+" nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR>
+" nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR>
+au FileType unite nnoremap <silent> <buffer> <expr> <C-e> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-e> unite#do_action('vsplit')
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 let g:unite_source_rec_max_cache_files = 3000
