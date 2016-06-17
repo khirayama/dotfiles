@@ -1,23 +1,20 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin(expand('~/.cache/dein'))
 
 call dein#add('Shougo/dein.vim')
+
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neomru.vim') " uniteで必要らしい
 call dein#add('Shougo/unite.vim') " 高機能なファイラらしい
 call dein#add('Shougo/neocomplcache') " 入力補完
-call dein#add('Shougo/vimproc.vim', {'build' : {'windows' : 'tools\\update-dll-mingw', 'cygwin' : 'make -f make_cygwin.mak', 'mac' : 'make -f make_mac.mak', 'linux' : 'make', 'unix' : 'gmake', },})
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/neosnippet') " snippet補完
 call dein#add('Shougo/neosnippet-snippets') " neosnippet用snippets集
-" call dein#add('scrooloose/syntastic') " 構文チェック
 call dein#add('scrooloose/nerdtree') " 便利なファイルアクセス
-call dein#add('Townk/vim-autoclose') " 括弧等の自動補完
-call dein#add('kannokanno/previm') " Markdownプレビュー
-call dein#add('tyru/open-browser.vim') " ブラウザオープンするっぽい
 call dein#add('airblade/vim-gitgutter') " Gitの差分を表示
 call dein#add('szw/vim-tags') " ctagsを便利に使う
 call dein#add('rking/ag.vim') " agをvimで使えるように
@@ -26,16 +23,14 @@ call dein#add('tpope/vim-surround') " csで囲みを変更
 call dein#add('haya14busa/incsearch.vim') " 便利なインクリメンタルサーチ
 call dein#add('lilydjwg/colorizer') " colorを表示
 call dein#add('tpope/vim-abolish') " キャメル - スネークなどを変換するのを持ってるやつ
+
 " Syntax Highlighter
-" NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
-" NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
 call dein#add('othree/yajs.vim')
 call dein#add('slim-template/vim-slim')
 call dein#add('tpope/vim-haml')
 call dein#add('digitaltoad/vim-jade')
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
-call dein#add('plasticboy/vim-markdown')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('fatih/vim-go')
 call dein#add('tpope/vim-rails', {'on_ft' : 'ruby'})
@@ -46,6 +41,10 @@ call dein#add('w0ng/vim-hybrid') " テーマ
 call dein#end()
 
 filetype plugin indent on
+
+if dein#check_install()
+  call dein#install()
+endif
 
 " options
 set t_Co=256
