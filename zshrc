@@ -55,6 +55,12 @@ PROMPT="
  PROMPT2='[%n]> '
 
 # ----------------------
+# Node Aliases
+# ----------------------
+alias ni='sudo npm i'
+alias ns='npm start'
+
+# ----------------------
 # Rails Aliases
 # ----------------------
 alias be='bundle exec'
