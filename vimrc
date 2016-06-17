@@ -25,7 +25,7 @@ call dein#add('tomtom/tcomment_vim') " ctrl--でコメントアウトできる�
 call dein#add('tpope/vim-surround') " csで囲みを変更
 call dein#add('haya14busa/incsearch.vim') " 便利なインクリメンタルサーチ
 call dein#add('lilydjwg/colorizer') " colorを表示
-
+call dein#add('tpope/vim-abolish') " キャメル - スネークなどを変換するのを持ってるやつ
 " Syntax Highlighter
 " NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
 " NeoBundleLazy 'othree/yajs.vim', {'autoload':{'filetypes':['javascript']}} " jsのシンタックス強化
@@ -192,3 +192,8 @@ map g/ <Plug>(incsearch-stay)
 "----------------------------------------------------
 set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
+
+"----------------------------------------------------
+" NERDTree
+"----------------------------------------------------
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
