@@ -1,7 +1,6 @@
 #!/bin/sh
-ln -sf ./vimrc ~/.vimrc
-ln -sf ./zshrc ~/.zshrc
-ln -sf ./gitconfig ~/.gitconfig
-ln -sf ./jshintrc ~/.jshintrc
-ln -sf ./eslintrc ~/.eslintrc
-ln -sf ./tmux.conf ~/.tmux.conf
+ln -sf ~/Work/dotfiles/zshrc ~/.zshrc
+ln -sf $PWD/tmux.conf ~/.tmux.conf
+ln -sf ~/Work/dotfiles/vimrc ~/.vimrc
+ln -sf $PWD/ctags ~/.ctags
+ln -sf $PWD/gitconfig ~/.gitconfig

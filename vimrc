@@ -47,6 +47,7 @@ if dein#check_install()
 endif
 
 " options
+set tags+=.git/tags
 set t_Co=256
 set number " 行番号の表示
 set title " ウィンドウに現在のファイル名を追加
