@@ -125,7 +125,8 @@ if executable('ag')
   let g:unite_source_rec_async_command = ['ag', '--follow', '--nogroup', '--nocolor', '--hidden', '-g', '']
 endif
 
-call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
+" call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
+call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
 function! s:unite_gitignore_source()
   let sources = []
   if filereadable('./.gitignore')
@@ -146,7 +147,8 @@ endfunction
 call s:unite_gitignore_source()
 
 noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
-noremap <C-u> :Unite buffer file_rec/async file/new -start-insert<CR>
+" noremap <C-u> :Unite buffer file_rec/async file/new -start-insert<CR>
+noremap <C-u> :Unite buffer file_rec/git file/new -start-insert<CR>
 " nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR>
 " nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR>
 
