@@ -119,11 +119,13 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 let g:unite_source_rec_max_cache_files = 3000
+let s:unite_ignore_patterns='\.\(pdf\|gif\|jpe\?g\|png\|webp\)$'
 
 if executable('ag')
   let g:unite_source_rec_async_command = ['ag', '--follow', '--nogroup', '--nocolor', '--hidden', '-g', '']
 endif
-call unite#custom#source('file_rec/async', 'ignore_pattern', '(png\|gif\|jpeg\|jpg)$')
+
+call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
 function! s:unite_gitignore_source()
   let sources = []
   if filereadable('./.gitignore')
