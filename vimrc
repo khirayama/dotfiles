@@ -121,36 +121,44 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 let g:unite_source_rec_max_cache_files = 3000
 let s:unite_ignore_patterns='\.\(pdf\|gif\|jpe\?g\|png\|webp\)$'
 
+" file_rec/gitだと新規作成したuntracking fileが引っかからないので
+" もし不便だったら復活させる
+" function! s:unite_gitignore_source()
+"   let sources = []
+"   if filereadable('./.gitignore')
+"     for file in readfile('./.gitignore')
+"       " コメント行と空行は追加しない
+"       if file !~ "^#\\|^\s\*$"
+"         call add(sources, file)
+"       endif
+"     endfor
+"   endif
+"   if isdirectory('./.git')
+"     call add(sources, '.git')
+"   endif
+"   let pattern = escape(join(sources, '|'), './|')
+"   call unite#custom#source('file_rec', 'ignore_pattern', pattern)
+"   call unite#custom#source('grep', 'ignore_pattern', pattern)
+" endfunction
+
+function! DispatchUniteFileRecAsyncOrGit()
+  if isdirectory(getcwd()."/.git")
+    Unite buffer file_rec/git file/new -start-insert
+  else
+    Unite buffer file_rec/async file/new -start-insert
+  endif
+endfunction
+
+call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
+call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
+" call s:unite_gitignore_source()
+
 if executable('ag')
   let g:unite_source_rec_async_command = ['ag', '--follow', '--nogroup', '--nocolor', '--hidden', '-g', '']
 endif
 
-" call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
-call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
-function! s:unite_gitignore_source()
-  let sources = []
-  if filereadable('./.gitignore')
-    for file in readfile('./.gitignore')
-      " コメント行と空行は追加しない
-      if file !~ "^#\\|^\s\*$"
-        call add(sources, file)
-      endif
-    endfor
-  endif
-  if isdirectory('./.git')
-    call add(sources, '.git')
-  endif
-  let pattern = escape(join(sources, '|'), './|')
-  call unite#custom#source('file_rec', 'ignore_pattern', pattern)
-  call unite#custom#source('grep', 'ignore_pattern', pattern)
-endfunction
-call s:unite_gitignore_source()
-
 noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
-" noremap <C-u> :Unite buffer file_rec/async file/new -start-insert<CR>
-noremap <C-u> :Unite buffer file_rec/git file/new -start-insert<CR>
-" nnoremap <silent> <C-b> :<C-u>Unite buffer -start-insert<CR>
-" nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR>
+noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 
 "----------------------------------------------------
 "  neocomplecache
