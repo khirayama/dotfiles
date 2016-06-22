@@ -97,6 +97,8 @@ alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias grm='git rm $(git ls-files --deleted)'
 alias gg='git grep -n -i'
+alias gge='git grep -n -i -e'
+alias grp='git remote prune'
 
 # ----------------------
 # Git Function
