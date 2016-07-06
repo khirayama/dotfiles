@@ -27,7 +27,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # alias
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias chrome="open -a /Applications/Google\ Chrome.app"
+alias chrome="open -a /Applications/Google\ Chrome.app --args --renderer-process-limit=1"
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'

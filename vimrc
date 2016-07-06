@@ -118,7 +118,6 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-e> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
-let g:unite_source_rec_max_cache_files = 3000
 let s:unite_ignore_patterns='\.\(pdf\|gif\|jpe\?g\|png\|webp\)$'
 
 " file_rec/gitだと新規作成したuntracking fileが引っかからないので
