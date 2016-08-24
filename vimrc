@@ -62,10 +62,11 @@ set laststatus=2 " ステータス行を常に表示
 set cmdheight=2 " メッセージを2行確保
 set scrolloff=8 " 上下8行を常に確保
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない"
-set nowrap " 折り返し禁止
+" set nowrap " 折り返し禁止
+set wrap " 折り返し禁止
 set expandtab "タブ入力を複数の空白入力に置き換える
 set tabstop=2 "画面上でタブ文字が占める幅
-set shiftwidth=2 "自動インデントでずれる幅
+" set shiftwidth=2 "自動インデントでずれる幅
 set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅"
 set smartindent " 改行時にインデントを増減する
 set autoindent " 改行時にインデントを継続する
@@ -83,10 +84,6 @@ syntax on
 " settings
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
-" augroup BufferAu " カレントディレクトリを自動的に移動
-"   autocmd!
-"   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
-" augroup END
 augroup HighlightTrailingSpaces
   autocmd!
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
@@ -120,26 +117,6 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 let s:unite_ignore_patterns='\.\(pdf\|gif\|jpe\?g\|png\|webp\)$'
 
-" file_rec/gitだと新規作成したuntracking fileが引っかからないので
-" もし不便だったら復活させる
-" function! s:unite_gitignore_source()
-"   let sources = []
-"   if filereadable('./.gitignore')
-"     for file in readfile('./.gitignore')
-"       " コメント行と空行は追加しない
-"       if file !~ "^#\\|^\s\*$"
-"         call add(sources, file)
-"       endif
-"     endfor
-"   endif
-"   if isdirectory('./.git')
-"     call add(sources, '.git')
-"   endif
-"   let pattern = escape(join(sources, '|'), './|')
-"   call unite#custom#source('file_rec', 'ignore_pattern', pattern)
-"   call unite#custom#source('grep', 'ignore_pattern', pattern)
-" endfunction
-
 function! DispatchUniteFileRecAsyncOrGit()
   if isdirectory(getcwd()."/.git")
     Unite buffer file_rec/git file/new -start-insert
@@ -150,7 +127,6 @@ endfunction
 
 call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
 call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
-" call s:unite_gitignore_source()
 
 if executable('ag')
   let g:unite_source_rec_async_command = ['ag', '--follow', '--nogroup', '--nocolor', '--hidden', '-g', '']
