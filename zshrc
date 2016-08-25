@@ -34,6 +34,8 @@ alias t='tree'
 alias v='vim'
 alias maintenance='sudo kextcache -system-prelinked-kernel'
 alias server='python -m SimpleHTTPServer'
+alias chrome='open "/Applications/Google Chrome.app/" --args --renderer-process-limit=1'
+alias chromecanary='open "/Applications/Google Chrome Canary.app/" --args --renderer-process-limit=1'
 
 # options
 autoload -U compinit
