@@ -67,7 +67,7 @@ set nowrap " 折り返し禁止
 " set breakindent " 折り返し時にインデントを揃える
 set expandtab "タブ入力を複数の空白入力に置き換える
 set tabstop=2 "画面上でタブ文字が占める幅
-" set shiftwidth=2 "自動インデントでずれる幅
+set shiftwidth=2 "自動インデントでずれる幅
 set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅"
 set smartindent " 改行時にインデントを増減する
 set autoindent " 改行時にインデントを継続する
@@ -77,7 +77,7 @@ set smartcase " 大文字小文字が混ざったときは区別する
 set incsearch " インクリメンタルサーチをonに
 set mouse=a " マウス操作を有効化
 set background=dark
-" set cursorcolumn " カーソル位置のカラムの色を変更
+set cursorcolumn " カーソル位置のカラムの色を変更
 " set whichwrap=b,s,h,l,<,>,[,] " 行頭行末移動を有効化
 colorscheme hybrid
 syntax on
