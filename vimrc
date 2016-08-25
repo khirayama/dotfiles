@@ -129,7 +129,6 @@ function! DispatchUniteFileRecAsyncOrGit()
 endfunction
 
 call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
-call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
 
 if executable('ag')
   let g:unite_source_rec_async_command = ['ag', '--follow', '--nogroup', '--nocolor', '--hidden', '-g', '']
