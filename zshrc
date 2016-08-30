@@ -32,7 +32,15 @@ alias ll='ls -l'
 alias lla='ls -al'
 alias t='tree'
 alias v='vim'
-alias maintenance='sudo kextcache -system-prelinked-kernel'
+alias maintenance='
+  sudo kextcache -system-prelinked-kernel &&
+  sudo kextcache -system-caches &&
+  sudo killall Dock &&
+  sudo chmod -R -N ~ &&
+  sudo update_dyld_shared_cache -force &&
+  sudo diskutil repairPermissions / &&
+  sudo purge
+'
 alias server='python -m SimpleHTTPServer'
 alias chrome='open "/Applications/Google Chrome.app/" --args --renderer-process-limit=1'
 alias chromecanary='open "/Applications/Google Chrome Canary.app/" --args --renderer-process-limit=1'
