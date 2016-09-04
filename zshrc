@@ -69,6 +69,7 @@ PROMPT="
 alias ni='sudo npm i'
 alias ns='npm start'
 alias nt='npm test'
+alias nr='npm run'
 
 # ----------------------
 # Rails Aliases
