@@ -1,26 +1,40 @@
 export LANG=ja_JP.UTF-8
 
+# direnv
 eval "$(direnv hook zsh)"
 
 # 起動時tmuxを起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
-# ruby開発環境/rbenv
+# yarnのpathを通す
+if [ -d $HOME/.yarn ]; then
+  export PATH="$HOME/.yarn/bin:$PATH"
+fi
+
+# go開発環境 - goenv
+export GOROOT="/usr/local/go"
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+if [ -d $HOME/.goenv ]; then
+  export PATH="$HOME/.goenv/bin:$PATH"
+  eval "$(goenv init -)"
+fi
+
+# python開発環境 - pyenv
+if [ -d $HOME/.pyenv ]; then
+  export PATH="$HOME/.pyenv/shims:$PATH"
+fi
+
+# ruby開発環境 - rbenv
 if [ -d $HOME/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
-# node開発環境/nodebrew
+# node開発環境 - nodebrew
 if [ -d $HOME/.nodebrew ]; then
   export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
-
-# golang開発環境
-export PATH=$PATH:/usr/local/go/bin
-export GOROOT="/usr/local/go"
-export GOPATH=$HOME/.go
-export GOBIN=$GOPATH/bin
 
 # tabで補完するとき、大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -70,6 +84,11 @@ alias ni='sudo npm i'
 alias ns='npm start'
 alias nt='npm test'
 alias nr='npm run'
+alias yi='yarn install'
+alias ya='yarn add'
+alias ys='yarn start'
+alias yt='yarn test'
+alias yr='yarn run'
 
 # ----------------------
 # Rails Aliases
