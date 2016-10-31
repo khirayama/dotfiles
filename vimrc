@@ -28,7 +28,7 @@ call dein#add('tpope/vim-abolish') " キャメル - スネークなどを変換�
 call dein#add('othree/yajs.vim')
 call dein#add('slim-template/vim-slim')
 call dein#add('tpope/vim-haml')
-call dein#add('digitaltoad/vim-jade')
+call dein#add('digitaltoad/vim-pug')
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
 call dein#add('kchmck/vim-coffee-script')
@@ -76,9 +76,12 @@ set ignorecase "  検索時大文字小文字を区別しない
 set smartcase " 大文字小文字が混ざったときは区別する
 set incsearch " インクリメンタルサーチをonに
 set mouse=a " マウス操作を有効化
+set wildmenu " コマンドモードの補完
+set history=5000 " 保存するコマンド履歴の数
 set background=dark
 set cursorcolumn " カーソル位置のカラムの色を変更
 " set whichwrap=b,s,h,l,<,>,[,] " 行頭行末移動を有効化
+source $VIMRUNTIME/macros/matchit.vim
 colorscheme hybrid
 syntax on
 
