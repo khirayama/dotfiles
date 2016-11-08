@@ -24,6 +24,8 @@ call dein#add('haya14busa/incsearch.vim') " 便利なインクリメンタルサ
 call dein#add('lilydjwg/colorizer') " colorを表示
 call dein#add('tpope/vim-abolish') " キャメル - スネークなどを変換するのを持ってるやつ
 
+call dein#add('wakatime/vim-wakatime')
+
 " Syntax Highlighter
 call dein#add('othree/yajs.vim')
 call dein#add('slim-template/vim-slim')
