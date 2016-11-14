@@ -100,6 +100,12 @@ alias bersp='bundle exec rails s -p'
 # ----------------------
 # Git Aliases
 # ----------------------
+if [ -x "`which hub`" ]; then
+  alias git='hub'
+  alias gbi='git browse -- issues'
+  alias gbp='git browse -- pulls'
+  alias gpr='git pull-request'
+fi
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
