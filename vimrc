@@ -51,7 +51,7 @@ endif
 " options
 set tags+=.git/tags
 set t_Co=256
-set number " 行番号の表示
+set nonumber " 行番号の表示
 set title " ウィンドウに現在のファイル名を追加
 set showmatch " 対応する括弧を強調表示
 set tabstop=2 " タブ文字の埋める幅
