@@ -123,7 +123,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-e> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
-let s:unite_ignore_patterns='\.\(pdf\|gif\|jpe\?g\|png\|webp\)$'
+let s:unite_ignore_patterns='\.\(pdf\|gif\|jpe\?g\|png\|webp\|woff2\)$'
 
 function! DispatchUniteFileRecAsyncOrGit()
   if isdirectory(getcwd()."/.git")
