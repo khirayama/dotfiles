@@ -8,9 +8,12 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-# Installation directory
-PLUGIN_DIR=$1
-INSTALL_DIR="$PLUGIN_DIR/repos/github.com/Shougo/dein.vim"
+# Convert the installation directory to absolute path
+case $1 in
+  /*) PLUGIN_DIR=$1;;
+  *) PLUGIN_DIR=$PWD/$1;;
+esac
+INSTALL_DIR="${PLUGIN_DIR}/repos/github.com/Shougo/dein.vim"
 echo "Install to \"$INSTALL_DIR\"..."
 if [ -e "$INSTALL_DIR" ]; then
   echo "\"$INSTALL_DIR\" already exists!"
@@ -48,10 +51,10 @@ echo "Please add the following settings for dein to the top of your vimrc (Vim) 
     echo "endif"
     echo ""
     echo "\" Required:"
-    echo "set runtimepath^=$INSTALL_DIR"
+    echo "set runtimepath+=$INSTALL_DIR"
     echo ""
     echo "\" Required:"
-    echo "call dein#begin(expand('$PLUGIN_DIR'))"
+    echo "call dein#begin('$PLUGIN_DIR')"
     echo ""
     echo "\" Let dein manage dein"
     echo "\" Required:"
@@ -69,6 +72,7 @@ echo "Please add the following settings for dein to the top of your vimrc (Vim) 
     echo ""
     echo "\" Required:"
     echo "filetype plugin indent on"
+    echo "syntax enable"
     echo ""
     echo "\" If you want to install not installed plugins on startup."
     echo "\"if dein#check_install()"
