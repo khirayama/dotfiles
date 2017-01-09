@@ -40,7 +40,6 @@ fi
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # alias
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
@@ -55,9 +54,6 @@ alias maintenance='
   sudo diskutil repairPermissions / &&
   sudo purge
 '
-alias server='python -m SimpleHTTPServer'
-alias chrome='open "/Applications/Google Chrome.app/" --args --renderer-process-limit=1'
-alias chromecanary='open "/Applications/Google Chrome Canary.app/" --args --renderer-process-limit=1'
 
 # options
 autoload -U compinit
