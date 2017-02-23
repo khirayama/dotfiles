@@ -125,6 +125,7 @@ alias grm='git rm $(git ls-files --deleted)'
 alias gg='git grep -n -i'
 alias gge='git grep -n -i -e'
 alias grp='git remote prune'
+alias gbd='git branch --merged | grep -v "*" | xargs -I % git branch -d %'
 
 # ----------------------
 # Git Function
