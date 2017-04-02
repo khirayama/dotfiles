@@ -7,14 +7,15 @@
 
 - install
   - xcode
-  - f.lux
-  - iterm2
+  - homebrew: http://brew.sh/
+  - f.lux: https://justgetflux.com/
+  - iterm2: https://www.iterm2.com/
+  - vscode: https://code.visualstudio.com/
+  - sophos: https://www.sophos.com/ja-jp/products/free-tools/sophos-antivirus-for-mac-home-edition.aspx
+  - nodebrew: https://github.com/hokaccha/nodebrew
+  - sketch: https://www.sketchapp.com/
+  - intellij: https://www.jetbrains.com/idea/
   - type fu
-  - vscode
-  - intelij
-  - sketch
-  - sophos
-  - nodebrew
 
 - install via brew
   - tmux
