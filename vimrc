@@ -87,6 +87,10 @@ source $VIMRUNTIME/macros/matchit.vim
 colorscheme hybrid
 syntax on
 
+if filereadable("./.vimrc")
+  source .vimrc
+endif
+
 " settings
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
