@@ -87,7 +87,7 @@ source $VIMRUNTIME/macros/matchit.vim
 colorscheme hybrid
 syntax on
 
-if filereadable("./.vimrc")
+if filereadable("./.vimrc") && $HOME != getcwd()
   source .vimrc
 endif
 
