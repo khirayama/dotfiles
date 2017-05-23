@@ -37,14 +37,10 @@ if [ -d $HOME/.nodebrew ]; then
 fi
 
 # Android dev env
-if [ -d /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home ]; then
-  export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
-fi
+export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
 
 # Add diff-highlight path
-if [ -d /user/local/share/git-core/contrib/diff-highlight ]; then
-  export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
-fi
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # tabで補完するとき、大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
