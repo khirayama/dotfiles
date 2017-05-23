@@ -1,38 +1,52 @@
-- setup preference
+# Setup
 
-- setup github
+- setup github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+- clone: https://github.com/khirayama/dotfiles
 
-- commands
-  - vi /etc/shells
+## Basic settings
 
-- install
-  - xcode
-  - homebrew: http://brew.sh/
-  - f.lux: https://justgetflux.com/
-  - iterm2: https://www.iterm2.com/
-  - vscode: https://code.visualstudio.com/
-  - sophos: https://www.sophos.com/ja-jp/products/free-tools/sophos-antivirus-for-mac-home-edition.aspx
-  - nodebrew: https://github.com/hokaccha/nodebrew
-  - sketch: https://www.sketchapp.com/
-  - intellij: https://www.jetbrains.com/idea/
-  - type fu
+- xcode
+- chrome
+- iterm2: https://www.iterm2.com/
+  - link com.googlecode.iterm2.plist
+- homebrew: http://brew.sh/
+- zsh via brew
 
-- install via brew
-  - tmux
-  - direnv
-  - reattach-to-user-namespace
-  - vim --with-lua
-  - git
-  - hub
-  - tree
-  - pyenv
-  - rbenv
+## Commands
+```
+$ sh ./dotfilesLink.sh
 
-- install via npm
-  - yarn
+// for zsh
+$ vi /etc/shells // add /usr/local/bin/zsh
+$ chsh -s /usr/local/bin/zsh
 
-- install via gem
-  - bundler
+// for vim
+$ sh ./installer.sh ~/.cache/dein
+```
 
-- I don't know best install practice
-  - goenv
+## Install
+
+### Standalone
+
+- f.lux: https://justgetflux.com/
+- vscode: https://code.visualstudio.com/
+- nodebrew: https://github.com/hokaccha/nodebrew
+- sketch: https://www.sketchapp.com/
+
+### Homebrew
+
+- zsh
+- tmux
+- direnv
+- reattach-to-user-namespace
+- vim --with-lua
+- git
+- hub
+- tree
+- pyenv
+- rbenv
+
+### Other
+
+- yarn via npm
+- bundler via gem
