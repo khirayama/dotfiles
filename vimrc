@@ -60,7 +60,8 @@ set smartindent " 次の行のインデントを合わせる
 set clipboard+=unnamed " ヤンクの時にクリップボードを使用
 set bs=indent,eol,start " backspaceを有効に
 set whichwrap=b,s,h,l,<,>,[,]  " 行頭行末の左右移動で行をまたぐ
-set cursorline " カーソル行の色を変更
+" set cursorline " カーソル行の色を変更
+" set cursorcolumn " カーソル位置のカラムの色を変更
 set laststatus=2 " ステータス行を常に表示
 set cmdheight=2 " メッセージを2行確保
 set scrolloff=8 " 上下8行を常に確保
@@ -82,7 +83,7 @@ set mouse=a " マウス操作を有効化
 set wildmenu " コマンドモードの補完
 set history=5000 " 保存するコマンド履歴の数
 set background=dark
-set cursorcolumn " カーソル位置のカラムの色を変更
+set synmaxcol=300
 " set whichwrap=b,s,h,l,<,>,[,] " 行頭行末移動を有効化
 source $VIMRUNTIME/macros/matchit.vim
 colorscheme hybrid
