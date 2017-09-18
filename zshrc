@@ -57,9 +57,6 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Android dev env
-export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
-
 # Add diff-highlight path
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
@@ -163,3 +160,9 @@ setopt prompt_subst
 zstyle ':vcs_info:*' formats '%s][* %F{yellow}%b%f'
 precmd() { vcs_info }
 PROMPT='[${vcs_info_msg_0_}]:%~/%f '
+
+# Android dev env
+export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
