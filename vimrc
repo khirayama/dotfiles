@@ -37,6 +37,7 @@ call dein#add('mxw/vim-jsx')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('fatih/vim-go')
 call dein#add('tpope/vim-rails', {'on_ft' : 'ruby'})
+call dein#add('davidhalter/jedi-vim')
 
 " Color
 call dein#add('w0ng/vim-hybrid') " テーマ
@@ -129,7 +130,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-e> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
-let s:unite_ignore_patterns='\.\(pdf\|gif\|jpe\?g\|png\|webp\|woff2\|ico\|svg\)$'
+let s:unite_ignore_patterns='\.\(pdf\|gif\|jpeg\|jpg\|png\|webp\|woff2\|ico\?n\|xlsx\|ai\|DS_Store\|svg\)$'
 
 function! DispatchUniteFileRecAsyncOrGit()
   if isdirectory(getcwd()."/.git")
