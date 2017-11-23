@@ -50,3 +50,19 @@ $ sh ./installer.sh ~/.cache/dein
 
 - yarn via npm
 - bundler via gem
+
+
+### Memo
+
+#### Vim
+- w: word 単語移動
+- b: word back 単語移動バック
+- ^: 先頭
+- $: 行末
+- f: 検索（;: 次へ）
+- %: 対応する括弧
+- /s: 行内置換
+- /%s: ファイル内置換
+- -p: タブで開く
+- -O: 垂直分割で開く
+- ctrl + n: 補完
