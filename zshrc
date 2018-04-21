@@ -1,10 +1,11 @@
 export LANG=ja_JP.UTF-8
 
+if [ $SHLVL = 1 ];then
+  screen -xR
+fi
+
 # direnv
 eval "$(direnv hook zsh)"
-
-# tmux up when start
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # Add yarn path
 if [ -d $HOME/.yarn ]; then
