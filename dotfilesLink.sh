@@ -2,7 +2,5 @@
 ln -sf $PWD/zshrc ~/.zshrc
 ln -sf $PWD/screenrc ~/.screenrc
 ln -sf $PWD/vimrc ~/.vimrc
-ln -sf $PWD/xvimrc ~/.xvimrc
 ln -sf $PWD/ctags ~/.ctags
 ln -sf $PWD/gitconfig ~/.gitconfig
-ln -sf $PWD/eslintrc ~/.eslintrc
