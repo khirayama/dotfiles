@@ -1,6 +1,8 @@
 export LANG=ja_JP.UTF-8
 
-if [ $SHLVL = 1 ];then
+printf '\e[9;1t'
+
+if [ -d $HOME/.screenrc ]; then
   screen -xR
 fi
 
