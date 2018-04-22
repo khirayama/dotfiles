@@ -1,6 +1,6 @@
 export LANG=ja_JP.UTF-8
 
-screen -xR
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # direnv
 eval "$(direnv hook zsh)"
