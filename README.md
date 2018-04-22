@@ -3,6 +3,11 @@
 - setup github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 - clone: https://github.com/khirayama/dotfiles
 
+## Styling
+
+- Font: https://www.google.com/get/noto/#/
+- Color: https://material.io/guidelines/style/color.html#color-color-palette
+
 ## Basic settings
 
 - xcode
@@ -13,6 +18,7 @@
 - zsh via brew
 
 ## Commands
+
 ```
 $ sh ./dotfilesLink.sh
 
@@ -36,9 +42,7 @@ $ sh ./installer.sh ~/.cache/dein
 ### Homebrew
 
 - zsh
-- tmux
 - direnv
-- reattach-to-user-namespace
 - vim --with-lua
 - git
 - hub
@@ -50,7 +54,6 @@ $ sh ./installer.sh ~/.cache/dein
 
 - yarn via npm
 - bundler via gem
-
 
 ### Memo
 
