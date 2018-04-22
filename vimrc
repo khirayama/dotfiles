@@ -24,10 +24,14 @@ call dein#add('lilydjwg/colorizer') " colorを表示
 call dein#add('wakatime/vim-wakatime')
 
 " Syntax Highlighter
+call dein#add('scrooloose/syntastic.git')
 call dein#add('othree/yajs.vim')
 call dein#add('pangloss/vim-javascript')
-call dein#add('leafgarland/typescript-vim')
+call dein#add('mtscout6/syntastic-local-eslint.vim')
+call dein#add('flowtype/vim-flow')
 call dein#add('mxw/vim-jsx')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('alessioalex/syntastic-local-tslint.vim')
 call dein#add('fatih/vim-go')
 
 " Color
@@ -44,7 +48,8 @@ endif
 " options
 set tags+=.git/tags
 set t_Co=256
-set nonumber " 行番号の表示
+set number " 行番号の表示
+" set nonumber " 行番号の表示
 set title " ウィンドウに現在のファイル名を追加
 set showmatch " 対応する括弧を強調表示
 set tabstop=2 " タブ文字の埋める幅
@@ -55,7 +60,7 @@ set whichwrap=b,s,h,l,<,>,[,]  " 行頭行末の左右移動で行をまたぐ
 set cursorline " カーソル行の色を変更
 set cursorcolumn " カーソル位置のカラムの色を変更
 set laststatus=2 " ステータス行を常に表示
-set cmdheight=2 " メッセージを2行確保
+set cmdheight=1 " メッセージを1行確保
 set scrolloff=12 " 上下12行を常に確保
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない"
 set nowrap " 折り返し禁止
@@ -80,11 +85,17 @@ source $VIMRUNTIME/macros/matchit.vim
 colorscheme hybrid
 syntax on
 
+"---------------------------------------------------
+" Config
+"---------------------------------------------------
+" Read local vimrc
 if filereadable("./.vimrc") && $HOME != getcwd()
   source .vimrc
 endif
 
-" settings
+"---------------------------------------------------
+" Markup
+"---------------------------------------------------
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
 augroup HighlightTrailingSpaces
@@ -94,7 +105,7 @@ augroup HighlightTrailingSpaces
 augroup END
 
 "---------------------------------------------------
-"  normal mode
+"  Normal mode
 "---------------------------------------------------
 noremap <CR> o<ESC> "  ノーマルモードでもEnter改行を有効に
 " 検索などで飛んだらそこを真ん中に
@@ -142,7 +153,7 @@ noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 let g:acp_enableAtStartup = 0 " AutoComplPopを無効に
 let g:neocomplcache_enable_at_startup = 1 " neocomplcacheを有効に
 let g:neocomplcache_enable_smart_case = 1 " smartcaseを有効に
-let g:neocomplcache_min_syntax_length = 3 " 検索候補表示の最小文字数
+let g:neocomplcache_min_syntax_length = 2 " 検索候補表示の最小文字数
 let g:neocomplcache_previous_keyword_completion = 1 " つながりを考慮した候補
 let g:neocomplcache_enable_camel_case_completion = 1 " camelcaseを単語の区切りとする
 let g:neocomplcache_enable_underbar_completion = 1 " underbarを単語の区切りとする
@@ -157,9 +168,24 @@ let g:neocomplcache_keyword_patterns['default'] = '\v\h\w*'
 "----------------------------------------------------
 " Syntax Checker
 "----------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_save = 1
+let g:syntastic_check_on_wq = 0
+
+" javascript
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_check_on_open = 1 "ファイルオープン時にはチェックをしない
-let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
+
+" typescript
+let g:syntastic_typescript_checkers = ['tslint']
+au BufNewFile,BufRead *.tsx set ft=typescript
+
+" other
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 "----------------------------------------------------
@@ -180,8 +206,3 @@ map g/ <Plug>(incsearch-stay)
 "----------------------------------------------------
 set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
-
-"----------------------------------------------------
-" NERDTree
-"----------------------------------------------------
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
