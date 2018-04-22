@@ -16,7 +16,7 @@ fi
 
 # go dev env - goenv
 export GOROOT="/usr/local/go"
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 if [ -d $HOME/.goenv ]; then
   export PATH="$HOME/.goenv/bin:$PATH"
