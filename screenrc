@@ -15,3 +15,5 @@ defbce on
 term xterm-256color
 
 bind % eval 'split -v' 'focus' 'screen'
+bind c stuff "screen -X chdir \$PWD; screen^M"
+hardstatus alwayslastline "%w"
