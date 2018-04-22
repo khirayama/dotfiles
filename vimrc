@@ -14,30 +14,21 @@ call dein#add('Shougo/neocomplcache') " 入力補完
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/neosnippet') " snippet補完
 call dein#add('Shougo/neosnippet-snippets') " neosnippet用snippets集
-call dein#add('scrooloose/nerdtree') " 便利なファイルアクセス
 call dein#add('airblade/vim-gitgutter') " Gitの差分を表示
-call dein#add('szw/vim-tags') " ctagsを便利に使う
-call dein#add('rking/ag.vim') " agをvimで使えるように
 call dein#add('tomtom/tcomment_vim') " ctrl--でコメントアウトできるように
 call dein#add('tpope/vim-surround') " csで囲みを変更
+call dein#add('tpope/vim-abolish') " キャメル - スネークなどを変換するのを持ってるやつ
 call dein#add('haya14busa/incsearch.vim') " 便利なインクリメンタルサーチ
 call dein#add('lilydjwg/colorizer') " colorを表示
-call dein#add('tpope/vim-abolish') " キャメル - スネークなどを変換するのを持ってるやつ
 
 call dein#add('wakatime/vim-wakatime')
 
 " Syntax Highlighter
 call dein#add('othree/yajs.vim')
-call dein#add('slim-template/vim-slim')
-call dein#add('tpope/vim-haml')
-call dein#add('digitaltoad/vim-pug')
 call dein#add('pangloss/vim-javascript')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('mxw/vim-jsx')
-call dein#add('kchmck/vim-coffee-script')
 call dein#add('fatih/vim-go')
-call dein#add('tpope/vim-rails', {'on_ft' : 'ruby'})
-call dein#add('davidhalter/jedi-vim')
 
 " Color
 call dein#add('w0ng/vim-hybrid') " テーマ
@@ -61,11 +52,11 @@ set smartindent " 次の行のインデントを合わせる
 set clipboard+=unnamed " ヤンクの時にクリップボードを使用
 set bs=indent,eol,start " backspaceを有効に
 set whichwrap=b,s,h,l,<,>,[,]  " 行頭行末の左右移動で行をまたぐ
-" set cursorline " カーソル行の色を変更
-" set cursorcolumn " カーソル位置のカラムの色を変更
+set cursorline " カーソル行の色を変更
+set cursorcolumn " カーソル位置のカラムの色を変更
 set laststatus=2 " ステータス行を常に表示
 set cmdheight=2 " メッセージを2行確保
-set scrolloff=8 " 上下8行を常に確保
+set scrolloff=12 " 上下12行を常に確保
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない"
 set nowrap " 折り返し禁止
 " set wrap " 折り返し
@@ -85,7 +76,6 @@ set wildmenu " コマンドモードの補完
 set history=5000 " 保存するコマンド履歴の数
 set background=dark
 set synmaxcol=300
-" set whichwrap=b,s,h,l,<,>,[,] " 行頭行末移動を有効化
 source $VIMRUNTIME/macros/matchit.vim
 colorscheme hybrid
 syntax on
@@ -142,10 +132,6 @@ endfunction
 
 call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
 call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
-
-if executable('ag')
-  let g:unite_source_rec_async_command = ['ag', '--follow', '--nogroup', '--nocolor', '--hidden', '-g', '']
-endif
 
 noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
