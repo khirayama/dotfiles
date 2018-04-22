@@ -1,10 +1,6 @@
 export LANG=ja_JP.UTF-8
 
-printf '\e[9;1t'
-
-if [ -d $HOME/.screenrc ]; then
-  screen -xR
-fi
+screen -xR
 
 # direnv
 eval "$(direnv hook zsh)"
