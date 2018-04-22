@@ -31,6 +31,7 @@ call dein#add('mtscout6/syntastic-local-eslint.vim')
 call dein#add('flowtype/vim-flow')
 call dein#add('mxw/vim-jsx')
 call dein#add('leafgarland/typescript-vim')
+call dein#add('Quramy/tsuquyomi')
 call dein#add('alessioalex/syntastic-local-tslint.vim')
 call dein#add('fatih/vim-go')
 
@@ -173,7 +174,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_save = 1
 let g:syntastic_check_on_wq = 0
