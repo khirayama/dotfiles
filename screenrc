@@ -1,1 +1,17 @@
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
+
+escape b
+shell $SHELL
+
 startup_message off
+vbell off
+autodetach on
+altscreen on
+defscrollback 10000
+termcapinfo xterm* ti@:te@ # Enable mouse scroll
+defbce on
+term xterm-256color
+
+bind % eval 'split -v' 'focus' 'screen'
