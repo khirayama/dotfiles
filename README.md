@@ -57,7 +57,10 @@ $ sh ./installer.sh ~/.cache/dein
 
 ### Memo
 
+- Tried to use Terminal.app, but the response is really slow after High Sierra
+
 #### Vim
+
 - w: word 単語移動
 - b: word back 単語移動バック
 - ^: 先頭
