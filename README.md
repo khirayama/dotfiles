@@ -44,6 +44,7 @@ $ sh ./installer.sh ~/.cache/dein
 - zsh
 - direnv
 - vim --with-lua
+- screen --enable-colors256
 - git
 - hub
 - tree
@@ -58,6 +59,8 @@ $ sh ./installer.sh ~/.cache/dein
 ### Memo
 
 - Tried to use Terminal.app, but the response is really slow after High Sierra
+- [iTerm2で外せないショートカットキー一覧](https://qiita.com/kenju/items/3bcd9707266a0b427da3)
+- [screenのコマンドの備忘録](https://qiita.com/mgoldchild/items/e336618487eb7d90f6d4)
 
 #### Vim
 
