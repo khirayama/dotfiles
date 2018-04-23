@@ -80,6 +80,7 @@ set wildmenu " コマンドモードの補完
 set history=5000 " 保存するコマンド履歴の数
 set background=dark
 set synmaxcol=300
+set updatetime=100
 source $VIMRUNTIME/macros/matchit.vim
 colorscheme hybrid
 syntax on
@@ -192,4 +193,5 @@ map g/ <Plug>(incsearch-stay)
 " Statusline
 "----------------------------------------------------
 set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
+set statusline+=\ [%{ALEGetStatusLine()}]
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
