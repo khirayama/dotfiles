@@ -24,15 +24,13 @@ call dein#add('lilydjwg/colorizer') " colorを表示
 call dein#add('wakatime/vim-wakatime')
 
 " Syntax Highlighter
-call dein#add('scrooloose/syntastic.git')
+call dein#add('w0rp/ale')
 call dein#add('othree/yajs.vim')
 call dein#add('pangloss/vim-javascript')
-call dein#add('mtscout6/syntastic-local-eslint.vim')
-call dein#add('flowtype/vim-flow')
+call dein#add('flowtype/vim-flow', {'autoload': {'filetypes': 'javascript'}})
 call dein#add('mxw/vim-jsx')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('Quramy/tsuquyomi')
-call dein#add('alessioalex/syntastic-local-tslint.vim')
 call dein#add('fatih/vim-go')
 
 " Color
@@ -169,25 +167,13 @@ let g:neocomplcache_keyword_patterns['default'] = '\v\h\w*'
 "----------------------------------------------------
 " Syntax Checker
 "----------------------------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_save = 1
-let g:syntastic_check_on_wq = 0
-
-" javascript
-let g:syntastic_javascript_checkers = ['eslint']
-
-" typescript
-let g:syntastic_typescript_checkers = ['tslint']
 au BufNewFile,BufRead *.tsx set ft=typescript
-
-" other
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+
+let g:ale_sign_column_always = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_text_changed = 0
 
 "----------------------------------------------------
 " GitGutter
