@@ -165,3 +165,9 @@ export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Ho
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kotarohirayama/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kotarohirayama/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kotarohirayama/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kotarohirayama/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

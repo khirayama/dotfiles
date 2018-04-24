@@ -34,7 +34,7 @@ call dein#add('Quramy/tsuquyomi')
 call dein#add('fatih/vim-go')
 
 " Color
-call dein#add('w0ng/vim-hybrid') " テーマ
+" call dein#add('w0ng/vim-hybrid') " テーマ
 
 call dein#end()
 
@@ -82,7 +82,7 @@ set background=dark
 set synmaxcol=300
 set updatetime=100
 source $VIMRUNTIME/macros/matchit.vim
-colorscheme hybrid
+colorscheme original
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
