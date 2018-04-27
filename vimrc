@@ -96,16 +96,17 @@ if filereadable("./.vimrc") && $HOME != getcwd()
   source .vimrc
 endif
 
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=#E57373 ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
+
 "---------------------------------------------------
 " Markup
 "---------------------------------------------------
 autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>
 autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
-augroup HighlightTrailingSpaces
-  autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
-augroup END
 
 "---------------------------------------------------
 "  Normal mode

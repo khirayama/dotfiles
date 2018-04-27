@@ -35,9 +35,9 @@ let s:palette = {}
 " let s:palette.darkpurple = { 'dark' : "#5f005f", 'light' : "#5f005f" }
 
 " original color
-let s:gray50 = "#fafafa"
-let s:gray400 = "#bdbdbd"
-let s:gray500 = "#9e9e9e"
+let s:gray50 = "#FAFAFA"
+let s:gray400 = "#BDBDBD"
+let s:gray500 = "#9E9E9E"
 let s:gray600 = "#757575"
 let s:gray700 = "#616161"
 let s:gray800 = "#424242"
