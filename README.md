@@ -20,6 +20,7 @@
 ## Commands
 
 ```
+$ brew install vim --with-lua direnv zsh tmux reattach-to-user-namespace
 $ sh ./dotfilesLink.sh
 
 // for zsh
@@ -50,6 +51,8 @@ $ sh ./installer.sh ~/.cache/dein
 - tree
 - pyenv
 - rbenv
+
+`$ brew install vim --with-lua direnv zsh tmux reattach-to-user-namespace`
 
 ### Other
 
