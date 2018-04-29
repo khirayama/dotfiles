@@ -176,7 +176,7 @@ au BufNewFile,BufRead *.tsx set ft=typescript
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 let g:ale_sign_column_always = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_open_list = 0
