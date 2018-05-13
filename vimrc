@@ -33,6 +33,7 @@ call dein#add('leafgarland/typescript-vim')
 call dein#add('Quramy/tsuquyomi')
 call dein#add('fatih/vim-go')
 call dein#add('rust-lang/rust.vim')
+call dein#add('udalov/kotlin-vim')
 
 " Color
 " call dein#add('w0ng/vim-hybrid') " テーマ
