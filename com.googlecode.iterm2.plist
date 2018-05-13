@@ -2740,7 +2740,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/kotarohirayama/Work/dotfiles</string>
+	<string>/Users/kotarohirayama/Works/dotfiles</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
