@@ -34,6 +34,7 @@ call dein#add('Quramy/tsuquyomi')
 call dein#add('fatih/vim-go')
 call dein#add('rust-lang/rust.vim')
 call dein#add('udalov/kotlin-vim')
+call dein#add('digitaltoad/vim-pug')
 
 " Color
 " call dein#add('w0ng/vim-hybrid') " テーマ
@@ -48,6 +49,7 @@ endif
 
 " options
 set tags+=.git/tags
+set ambiwidth=double
 set t_Co=256
 set number " 行番号の表示
 " set nonumber " 行番号の表示
