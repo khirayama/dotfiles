@@ -142,7 +142,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 let s:unite_ignore_patterns='\.\(pdf\|gif\|jpeg\|jpg\|png\|webp\|woff2\|ico\?n\|xlsx\|ai\|DS_Store\|svg\)$'
 
 function! DispatchUniteFileRecAsyncOrGit()
-  if isdirectory(getcwd()."/.git")
+  if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git")
     Unite buffer file_rec/git file/new -start-insert
   else
     Unite buffer file_rec/async file/new -start-insert
