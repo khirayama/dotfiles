@@ -11,8 +11,8 @@ if [ -d $HOME/.yarn ]; then
 fi
 
 # go dev env - goenv
-export GOROOT="/usr/local/go"
-export GOPATH=$HOME/go
+export GOROOT="/usr/local/opt/go/libexec"
+export GOPATH=$PWD
 export PATH=$PATH:$GOPATH/bin
 if [ -d $HOME/.goenv ]; then
   export GOENV_ROOT=$HOME/.goenv
