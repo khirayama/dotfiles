@@ -49,11 +49,11 @@ set tags+=.git/tags
 set ambiwidth=double
 set t_Co=256
 set number " 行番号の表示
-" set nonumber " 行番号の表示
 set title " ウィンドウに現在のファイル名を追加
 set showmatch " 対応する括弧を強調表示
 set tabstop=2 " タブ文字の埋める幅
 set smartindent " 次の行のインデントを合わせる
+set completeopt=menuone
 set clipboard+=unnamed " ヤンクの時にクリップボードを使用
 set bs=indent,eol,start " backspaceを有効に
 set whichwrap=b,s,h,l,<,>,[,]  " 行頭行末の左右移動で行をまたぐ
@@ -64,8 +64,6 @@ set cmdheight=1 " メッセージを1行確保
 set scrolloff=12 " 上下12行を常に確保
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない"
 set nowrap " 折り返し禁止
-" set wrap " 折り返し
-" set breakindent " 折り返し時にインデントを揃える
 set expandtab "タブ入力を複数の空白入力に置き換える
 set tabstop=2 "画面上でタブ文字が占める幅
 set shiftwidth=2 "自動インデントでずれる幅
@@ -82,6 +80,9 @@ set history=5000 " 保存するコマンド履歴の数
 set background=dark
 set synmaxcol=300
 set updatetime=100
+" set nonumber " 行番号の表示
+" set wrap " 折り返し
+" set breakindent " 折り返し時にインデントを揃える
 source $VIMRUNTIME/macros/matchit.vim
 colorscheme original
 set termguicolors
