@@ -79,3 +79,14 @@ $ sh ./installer.sh ~/.cache/dein
 - -p: タブで開く
 - -O: 垂直分割で開く
 - ctrl + n: 補完
+
+#### Visual Studio Code
+
+$HOME/Library/Application Support/Code/User/settings.json
+
+- [ ] タブのようにwindowを作る
+- [ ] editorで:eのときにtabで補完
+- [ ] color scheme
+- [x] hotkeyの設定 - むりぽ
+- [x] whichwrap vimの移動で改行をまたぐ - むりぽ
+- [x] quickOpen時に全ファイル表示 - たぶんExplorer使うのがいいっぽい？
