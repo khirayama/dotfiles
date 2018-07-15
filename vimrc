@@ -10,7 +10,6 @@ call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neomru.vim') " uniteで必要らしい
 call dein#add('Shougo/unite.vim') " 高機能なファイラらしい
-call dein#add('Shougo/neocomplcache') " 入力補完
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/neosnippet') " snippet補完
 call dein#add('Shougo/neosnippet-snippets') " neosnippet用snippets集
