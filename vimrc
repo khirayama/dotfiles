@@ -113,7 +113,6 @@ autocmd FileType erb inoremap <silent> <buffer> </ </<C-x><C-o>
 "---------------------------------------------------
 "  Normal mode
 "---------------------------------------------------
-noremap <CR> o<ESC> "  ノーマルモードでもEnter改行を有効に
 " 検索などで飛んだらそこを真ん中に
 nmap n nzz
 nmap N Nzz
@@ -154,23 +153,24 @@ noremap <C-p> :Unite file_mru -buffer-name=file_mru -start-insert<CR>
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 
 "----------------------------------------------------
-"  neocomplecache
+"  neocomplete
 "----------------------------------------------------
-let g:acp_enableAtStartup = 0 " AutoComplPopを無効に
-let g:neocomplcache_enable_at_startup = 1 " neocomplcacheを有効に
-let g:neocomplcache_enable_smart_case = 1 " smartcaseを有効に
-let g:neocomplcache_min_syntax_length = 2 " 検索候補表示の最小文字数
-let g:neocomplcache_previous_keyword_completion = 1 " つながりを考慮した候補
-let g:neocomplcache_enable_camel_case_completion = 1 " camelcaseを単語の区切りとする
-let g:neocomplcache_enable_underbar_completion = 1 " underbarを単語の区切りとする
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplcache_dictionary_filetype_lists = { 'default' : '' } " 辞書を定義
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" " タブで変換候補を選択可能に
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
 endif
-let g:neocomplcache_keyword_patterns['default'] = '\v\h\w*'
-
+let g:neocomplete#force_omni_input_patterns.default = '\v\h\w*'
+let g:neocomplete#force_omni_input_patterns.javascript = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.go = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"
 "----------------------------------------------------
 " Syntax Checker
 "----------------------------------------------------
@@ -186,11 +186,8 @@ let g:ale_keep_list_window_open = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 0
-let g:ale_linters = {
-\   'javascript': ['eslint', 'flow', 'prettier', 'prettier-eslint'],
-\   'typescript': ['prettier', 'tslint', 'tsserver', 'typescheck'],
-\   'python': ['autopep8'],
-\}
+let g:ale_linters#javascript = ['eslint', 'flow', 'prettier', 'prettier-eslint']
+let g:ale_linters#typescript = ['prettier', 'tslint', 'tsserver', 'typescheck']
 
 "----------------------------------------------------
 " GitGutter
