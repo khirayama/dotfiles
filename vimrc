@@ -11,8 +11,6 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neomru.vim') " uniteで必要らしい
 call dein#add('Shougo/unite.vim') " 高機能なファイラらしい
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-call dein#add('Shougo/neosnippet') " snippet補完
-call dein#add('Shougo/neosnippet-snippets') " neosnippet用snippets集
 call dein#add('airblade/vim-gitgutter') " Gitの差分を表示
 call dein#add('tomtom/tcomment_vim') " ctrl--でコメントアウトできるように
 call dein#add('tpope/vim-surround') " csで囲みを変更
