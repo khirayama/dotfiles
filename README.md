@@ -66,6 +66,8 @@ $ sh ./installer.sh ~/.cache/dein
 - [screenのコマンドの備忘録](https://qiita.com/mgoldchild/items/e336618487eb7d90f6d4)
 - [ターミナルをかっこよくカスタマイズしたいためだけにtmuxデビューしてみた](https://qiita.com/Frog_woman/items/f6797f2a70c44e42863d#%E7%AF%84%E5%9B%B2%E6%8C%87%E5%AE%9A%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84)
 - [tmux](https://wiki.archlinux.jp/index.php/Tmux#Vim_.E3.83.95.E3.83.AC.E3.83.B3.E3.83.89.E3.83.AA.E3.81.AA.E8.A8.AD.E5.AE.9A)
+- [Colours in terminal](https://gist.github.com/XVilka/8346728#now-supporting-truecolour)
+- [ターミナル環境 (iTerm, vim, tmux) をフルカラーで使う](https://blog.nakanishy.com/truecolor-vim.html)
 
 #### Vim
 
