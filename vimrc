@@ -188,6 +188,10 @@ let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_linters#javascript = ['eslint', 'flow', 'prettier', 'prettier-eslint']
 let g:ale_linters#typescript = ['prettier', 'tslint', 'tsserver', 'typescheck']
+let g:ale_fixers = {
+\ 'javascript': ['eslint', 'prettier'],
+\ 'typescript': ['tslint', 'prettier'],
+\}
 
 "----------------------------------------------------
 " GitGutter
