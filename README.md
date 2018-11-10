@@ -12,15 +12,17 @@
 
 - xcode
 - chrome
-- iterm2: https://www.iterm2.com/
-  - link com.googlecode.iterm2.plist
-- homebrew: http://brew.sh/
-- zsh via brew
 
-## Commands
+## Dump
 
 ```
-$ brew install vim --with-lua direnv zsh tmux reattach-to-user-namespace
+$ brew bundle dump
+```
+
+## Restore
+
+```
+$ brew bundle
 $ sh ./dotfilesLink.sh
 
 // for zsh
@@ -37,27 +39,7 @@ $ sh ./installer.sh ~/.cache/dein
 
 - f.lux: https://justgetflux.com/
 - vscode: https://code.visualstudio.com/
-- nodebrew: https://github.com/hokaccha/nodebrew
 - sketch: https://www.sketchapp.com/
-
-### Homebrew
-
-- zsh
-- direnv
-- vim --with-lua
-- screen --enable-colors256
-- git
-- hub
-- tree
-- pyenv
-- rbenv
-
-`$ brew install vim --with-lua direnv zsh tmux reattach-to-user-namespace`
-
-### Other
-
-- yarn via npm
-- bundler via gem
 
 ### Memo
 
