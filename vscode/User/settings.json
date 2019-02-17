@@ -31,7 +31,6 @@
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "off",
   "editor.quickSuggestionsDelay": 0,
-  "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
   // Source Controll Provider
@@ -39,12 +38,10 @@
   // workbench
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai",
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.tabCloseButton": "left",
   "workbench.fontAliasing": "antialiased",
   "workbench.settings.settingsSearchTocBehavior": "hide",
   "workbench.startupEditor": "none",
+  "workbench.editor.showTabs": true,
   // window
   "window.closeWhenEmpty": false,
   "window.newWindowDimensions": "inherit",
@@ -67,9 +64,22 @@
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
   // searchRigrep
-  "searchRipgrep.enable": true,
+  "search.runInExtensionHost": true,
   // markdown
   "[markdown]": {
     "editor.formatOnSave": false,
   },
+  "workbench.tips.enabled": false,
+  "comments.openPanel": "neverOpen",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  "workbench.list.openMode": "doubleClick",
+  "files.autoGuessEncoding": true,
+  "debug.internalConsoleOptions": "neverOpen",
+  "debug.openDebug": "neverOpen",
+  "search.quickOpen.includeHistory": false,
+  "workbench.enableExperiments": false,
+  "editor.folding": false,
+  "terminal.integrated.rendererType": "dom",
 }
