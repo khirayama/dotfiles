@@ -36,6 +36,7 @@ call dein#add('udalov/kotlin-vim')
 call dein#add('digitaltoad/vim-pug')
 call dein#add('keith/swift.vim')
 call dein#add('kballard/vim-swift')
+call dein#add('styled-components/vim-styled-components')
 
 " Color
 " call dein#add('w0ng/vim-hybrid') " テーマ
