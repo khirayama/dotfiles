@@ -11,7 +11,7 @@
 ## Basic settings
 
 - xcode
-- chrome
+- Chrome
 
 ## Dump
 
