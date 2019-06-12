@@ -1,7 +1,7 @@
 # Setup
 
-- setup github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-- clone: https://github.com/khirayama/dotfiles
+- GitHub: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+- Dev Env Configs: https://github.com/khirayama/dotfiles
 
 ## Styling
 
