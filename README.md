@@ -37,8 +37,7 @@ $ sh ./installer.sh ~/.cache/dein
 
 ### Standalone
 
-- f.lux: https://justgetflux.com/
-- vscode: https://code.visualstudio.com/
+- nvm https://github.com/nvm-sh/nvm
 - sketch: https://www.sketchapp.com/
 
 ### Memo
