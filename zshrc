@@ -69,6 +69,20 @@ alias ll='ls -l'
 alias lla='ls -al'
 alias t='tree'
 alias v='vim'
+alias update='
+  brew update &&
+  echo "done: brew update" &&
+  brew upgrade &&
+  echo "done: brew upgrade" &&
+  brew cleanup -s &&
+  echo "done: brew cleanup" &&
+  brew cask install --force $(brew cask list) &&
+  echo "done: brew cask update" &&
+  (brew cask outdated | xargs brew cask uninstall $1) &&
+  echo "done: brew cask cleanup" &&
+  brew cask doctor &&
+  echo "done: brew cask doctor"
+'
 alias maintenance='
   sudo kextcache -system-prelinked-kernel &&
   sudo kextcache -system-caches &&
