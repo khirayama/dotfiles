@@ -26,7 +26,6 @@ call dein#add('wakatime/vim-wakatime')
 call dein#add('w0rp/ale')
 call dein#add('othree/yajs.vim')
 call dein#add('pangloss/vim-javascript')
-call dein#add('flowtype/vim-flow', {'autoload': {'filetypes': 'javascript'}})
 call dein#add('mxw/vim-jsx')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('Quramy/tsuquyomi')
@@ -191,7 +190,7 @@ let g:ale_keep_list_window_open = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 0
-let g:ale_linters#javascript = ['eslint', 'flow', 'prettier', 'prettier-eslint']
+let g:ale_linters#javascript = ['eslint', 'prettier', 'prettier-eslint']
 let g:ale_linters#typescript = ['prettier', 'tslint', 'tsserver', 'typescheck']
 let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
