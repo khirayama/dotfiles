@@ -63,6 +63,7 @@ call dein#begin('~/.cache/dein')
 call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('Shougo/denite.nvim')
+call dein#add('Shougo/deoplete.nvim')
 " Nice to have
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tomtom/tcomment_vim')
@@ -124,6 +125,11 @@ endfunction
 
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 " ----- Denite End -----
+
+" ----- Deoplete Start -----
+" [Shougo/deoplete.nvim: Dark powered asynchronous completion framework for neovim/Vim8](https://github.com/Shougo/deoplete.nvim)
+let g:deoplete#enable_at_startup = 1
+" ----- Deoplete End -----
 
 " ----- Syntax Start -----
 au BufNewFile,BufRead *.tsx set ft=typescript
