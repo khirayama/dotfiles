@@ -20,3 +20,5 @@ ln -sf $PWD/original.vim ~/.vim/colors/original.vim
 ln -sf $PWD/init.vim ~/.config/nvim/init.vim
 ln -sf $PWD/gitconfig ~/.gitconfig
 ln -sf $PWD/eslintrc ~/.eslintrc
+
+pip3 install --user pynvim
