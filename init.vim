@@ -72,17 +72,17 @@ call dein#add('tpope/vim-abolish')
 call dein#add('lilydjwg/colorizer')
 call dein#add('wakatime/vim-wakatime')
 " Syntax Highlighter / Completion
-call dein#add('leafgarland/typescript-vim')
 call dein#add('Quramy/tsuquyomi')
+call dein#add('leafgarland/typescript-vim')
 call dein#end()
+
+filetype plugin indent on
+syntax enable
 
 if dein#check_install()
   call dein#install()
 endif
 " ----- Dein End -----
-
-filetype plugin indent on
-syntax enable
 
 " ----- Color Start -----
 let g:hybrid_custom_term_colors=1
@@ -129,7 +129,11 @@ noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 
 " ----- Deoplete Start -----
 " [Shougo/deoplete.nvim: Dark powered asynchronous completion framework for neovim/Vim8](https://github.com/Shougo/deoplete.nvim)
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources#syntax#min_keyword_length = 1
 " ----- Deoplete End -----
 
 " ----- Syntax Start -----
