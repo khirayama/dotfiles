@@ -73,9 +73,9 @@ call denite#custom#var('file/git', 'command', ['git', 'ls-files', '-co', '--excl
 
 function! DispatchUniteFileRecAsyncOrGit()
   if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git")
-    Denite file/git -start-filter
+    Denite file/git -start-filter -direction=topleft
   else
-    Denite file/rec -start-filter
+    Denite file/rec -start-filter -direction=topleft
   endif
 endfunction
 
