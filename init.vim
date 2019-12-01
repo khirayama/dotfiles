@@ -5,6 +5,9 @@
 " - Dein
 " - Color
 " - Denite
+" - Deoplete
+" - ALE
+" - Syntax
 
 " ----- Settings Start -----
 " Display
@@ -64,6 +67,7 @@ call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('Shougo/denite.nvim')
 call dein#add('Shougo/deoplete.nvim')
+call dein#add('w0rp/ale')
 " Nice to have
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tomtom/tcomment_vim')
@@ -72,7 +76,6 @@ call dein#add('tpope/vim-abolish')
 call dein#add('lilydjwg/colorizer')
 call dein#add('wakatime/vim-wakatime')
 " Syntax Highlighter / Completion
-call dein#add('Quramy/tsuquyomi')
 call dein#add('leafgarland/typescript-vim')
 call dein#end()
 
@@ -133,8 +136,25 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources#syntax#min_keyword_length = 1
 " ----- Deoplete End -----
+"
+" ----- ALE Start -----
+let g:ale_sign_column_always = 1
+let g:ale_completion_enabled = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
+let g:ale_open_list = 0
+let g:ale_keep_list_window_open = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_linters#javascript = ['eslint', 'prettier', 'prettier-eslint']
+let g:ale_linters#typescript = ['prettier', 'tslint', 'tsserver', 'typescheck']
+let g:ale_fixers = {
+\ 'javascript': ['eslint', 'prettier'],
+\ 'typescript': ['tslint', 'prettier'],
+\}
+" ----- ALE End -----
 
 " ----- Syntax Start -----
 au BufNewFile,BufRead *.tsx set ft=typescript
