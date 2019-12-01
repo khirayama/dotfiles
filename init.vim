@@ -34,6 +34,22 @@ set noswapfile
 set nobackup
 set noerrorbells
 " ----- Settings End -----
+"
+" ----- Mapping Start -----
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+nmap G Gzz
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-n> <C-w>>
+nmap <C-m> <C-w><
+" ----- Mapping End -----
 
 " ----- Dein Start -----
 " [Shougo/dein.vim: Dark powered Vim/Neovim plugin manager](https://github.com/Shougo/dein.vim)
@@ -42,16 +58,14 @@ if &compatible
 endif
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+call dein#begin('~/.cache/dein')
 
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('w0ng/vim-hybrid')
-  call dein#add('Shougo/denite.nvim')
+call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('Shougo/denite.nvim')
+call dein#add('airblade/vim-gitgutter')
 
-  call dein#end()
-  call dein#save_state()
-endif
+call dein#end()
 
 if dein#check_install()
   call dein#install()
@@ -103,19 +117,3 @@ endfunction
 
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 " ----- Denite End -----
-
-" ----- Mapping Start -----
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
-nmap G Gzz
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-nmap <C-h> <C-w>h
-nmap <C-n> <C-w>>
-nmap <C-m> <C-w><
-" ----- Mapping End -----
