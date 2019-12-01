@@ -47,3 +47,6 @@ Run `dump.sh`
 - -p: タブで開く
 - -O: 垂直分割で開く
 - ctrl + n: 補完
+
+- [map - Vim日本語ドキュメント](https://vim-jp.org/vimdoc-ja/map.html)
+- [Vim で使える Ctrl を使うキーバインドまとめ - 反省はしても後悔はしない](http://cohama.hateblo.jp/entry/20121023/1351003586)
