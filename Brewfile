@@ -15,12 +15,12 @@ brew "goenv"
 brew "gradle"
 brew "hub"
 brew "kotlin"
-brew "python@2", link: false
-brew "mongodb", restart_service: true
 brew "mysql@5.7", link: true
+brew "neovim"
 brew "nginx"
 brew "p7zip"
 brew "pyenv"
+brew "python@2", link: false
 brew "rbenv"
 brew "reattach-to-user-namespace"
 brew "rust"
