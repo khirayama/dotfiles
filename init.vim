@@ -97,3 +97,19 @@ endfunction
 
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 " ----- Denite End -----
+
+" ----- Mapping Start -----
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+nmap G Gzz
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-n> <C-w>>
+nmap <C-m> <C-w><
+" ----- Mapping End -----
