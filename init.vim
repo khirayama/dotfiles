@@ -30,7 +30,7 @@ set noerrorbells
 " ----- Settings End -----
 
 " ----- Dein Start -----
-" https://github.com/Shougo/dein.vim
+" [Shougo/dein.vim: Dark powered Vim/Neovim plugin manager](https://github.com/Shougo/dein.vim)
 if &compatible
   set nocompatible
 endif
@@ -63,6 +63,13 @@ colorscheme hybrid
 " ----- Color End -----
 
 " ----- Denite Start -----
+" [Shougo/denite.nvim: Dark powered asynchronous unite all interfaces for Neovim/Vim8](https://github.com/Shougo/denite.nvim)
+" [unite.vim, ctrlp.vim から neovim と denite.nvim へ引越した - 藻ログ](http://wakame.hatenablog.jp/entry/2017/05/04/144550)
+" [dein.vimへの道.md](https://gist.github.com/Fendo181/6f44ebe0a4e08f49f194a837608c4936)
+" [unite.vimより高速なdenite.nvimを使う](https://qiita.com/okamos/items/4e1665ecd416ef77df7c)
+" [uniteからdeniteに移行したメモ](https://qiita.com/hisawa/items/3498951e84eac77ac890)
+" [【Vim】新しい Denite に爆速で対応する](https://qiita.com/delphinus/items/de15250b39ac08e9c0b9)
+" [denite.nvim + ag な file/rec の設定をさらに爆速にする](https://qiita.com/hrsh7th@github/items/e405b4f4228e10a43201)
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
