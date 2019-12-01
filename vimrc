@@ -1,9 +1,10 @@
 " https://employment.en-japan.com/engineerhub/entry/2019/01/28/103000
 
-" Display
+" Color
 colorscheme original
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" Display
 set encoding=utf-8
 set number
 set title
@@ -14,7 +15,6 @@ set nowrap
 set scrolloff=12
 set termguicolors
 " set ambiwidth=double
-
 " Insert
 set smartindent
 set autoindent
@@ -23,11 +23,9 @@ set bs=indent,eol,start
 set expandtab
 set tabstop=2
 set shiftwidth=2
-
 " Search
 set smartcase
 set incsearch
-
 " Other
 set noswapfile
 set noerrorbells
