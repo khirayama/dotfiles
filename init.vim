@@ -1,5 +1,6 @@
 " https://employment.en-japan.com/engineerhub/entry/2019/01/28/103000
 
+" ----- Settings Start -----
 " Display
 set encoding=utf-8
 set number
@@ -26,8 +27,10 @@ set incsearch
 set noswapfile
 set nobackup
 set noerrorbells
+" ----- Settings End -----
 
-" Dein https://github.com/Shougo/dein.vim
+" ----- Dein Start -----
+" https://github.com/Shougo/dein.vim
 if &compatible
   set nocompatible
 endif
@@ -44,16 +47,22 @@ if dein#load_state('~/.cache/dein')
   call dein#save_state()
 endif
 
+if dein#check_install()
+  call dein#install()
+endif
+" ----- Dein End -----
+
 filetype plugin indent on
 syntax enable
 
-" Color
+" ----- Color Start -----
 let g:hybrid_custom_term_colors=1
 let g:hybrid_reduced_contrast=1
 set background=dark
 colorscheme hybrid
+" ----- Color End -----
 
-" Denite
+" ----- Denite Start -----
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
@@ -80,3 +89,4 @@ function! DispatchUniteFileRecAsyncOrGit()
 endfunction
 
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
+" ----- Denite End -----
