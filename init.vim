@@ -59,12 +59,17 @@ endif
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin('~/.cache/dein')
-
+" Need to have
 call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('Shougo/denite.nvim')
+" Nice to have
 call dein#add('airblade/vim-gitgutter')
-
+call dein#add('tomtom/tcomment_vim')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-abolish')
+call dein#add('lilydjwg/colorizer')
+call dein#add('wakatime/vim-wakatime')
 call dein#end()
 
 if dein#check_install()
