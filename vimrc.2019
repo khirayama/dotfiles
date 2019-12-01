@@ -26,7 +26,6 @@ call dein#add('wakatime/vim-wakatime')
 call dein#add('w0rp/ale')
 call dein#add('othree/yajs.vim')
 call dein#add('pangloss/vim-javascript')
-call dein#add('mxw/vim-jsx')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('Quramy/tsuquyomi')
 call dein#add('fatih/vim-go')
@@ -55,8 +54,6 @@ set t_Co=256
 set number " 行番号の表示
 set title " ウィンドウに現在のファイル名を追加
 set showmatch " 対応する括弧を強調表示
-set tabstop=2 " タブ文字の埋める幅
-set smartindent " 次の行のインデントを合わせる
 set completeopt=menuone
 set clipboard+=unnamed " ヤンクの時にクリップボードを使用
 set bs=indent,eol,start " backspaceを有効に
