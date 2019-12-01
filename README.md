@@ -1,44 +1,28 @@
 # Setup
 
-- GitHub: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-- Dev Env Configs: https://github.com/khirayama/dotfiles
+## Setting up
 
-## Styling
-
-- Font: https://www.google.com/get/noto/#/
-- Color: https://material.io/guidelines/style/color.html#color-color-palette
-
-## Basic settings
-
-- xcode
-- Chrome
+- Run `setup.sh`
+  - Install HomeBrew. Then install packages and setup config files.
+- Setup shell
+  - Run `vi /etc/shells` to add `/usr/local/bin/zsh`
+  - Run `chsh -s /usr/local/bin/zsh`
+- Install or update Xcode
+  - https://apps.apple.com/jp/app/xcode/id497799835
+- Install Goole Chrome
+  - https://www.google.co.jp/chrome/
+- Install Note Sans
+  - https://www.google.com/get/noto/#/
+- Set up GitHub
+  - https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+- Install NVM
+  - https://github.com/nvm-sh/nvm
 
 ## Dump
 
-```
-$ brew bundle dump
-```
-
-## Restore
-
-```
-$ brew bundle
-$ sh ./dotfilesLink.sh
-
-// for zsh
-$ vi /etc/shells // add /usr/local/bin/zsh
-$ chsh -s /usr/local/bin/zsh
-
-// for vim
-$ sh ./installer.sh ~/.cache/dein
-```
+Run `dump.sh`
 
 ## Install
-
-### Standalone
-
-- nvm https://github.com/nvm-sh/nvm
-- sketch: https://www.sketchapp.com/
 
 ### Memo
 
