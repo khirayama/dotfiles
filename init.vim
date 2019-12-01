@@ -70,6 +70,8 @@ call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-abolish')
 call dein#add('lilydjwg/colorizer')
 call dein#add('wakatime/vim-wakatime')
+" Syntax Highlighter
+call dein#add('leafgarland/typescript-vim')
 call dein#end()
 
 if dein#check_install()
@@ -122,3 +124,8 @@ endfunction
 
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
 " ----- Denite End -----
+
+" ----- Syntax Start -----
+au BufNewFile,BufRead *.tsx set ft=typescript
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+" ----- Syntax End -----
