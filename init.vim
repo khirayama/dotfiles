@@ -1,4 +1,10 @@
 " https://employment.en-japan.com/engineerhub/entry/2019/01/28/103000
+" Index
+" - Settings
+" - Mapping
+" - Dein
+" - Color
+" - Denite
 
 " ----- Settings Start -----
 " Display
