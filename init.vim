@@ -71,8 +71,9 @@ call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-abolish')
 call dein#add('lilydjwg/colorizer')
 call dein#add('wakatime/vim-wakatime')
-" Syntax Highlighter
+" Syntax Highlighter / Completion
 call dein#add('leafgarland/typescript-vim')
+call dein#add('Quramy/tsuquyomi')
 call dein#end()
 
 if dein#check_install()
