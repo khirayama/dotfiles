@@ -138,25 +138,28 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 " ----- Deoplete End -----
 "
-" ----- ALE Start -----
-let g:ale_sign_column_always = 1
-let g:ale_completion_enabled = 0
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 0
-let g:ale_open_list = 0
-let g:ale_keep_list_window_open = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_enter = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_linters#javascript = ['eslint', 'prettier', 'prettier-eslint']
-let g:ale_linters#typescript = ['prettier', 'tslint', 'tsserver', 'typescheck']
-let g:ale_fixers = {
-\ 'javascript': ['eslint', 'prettier'],
-\ 'typescript': ['tslint', 'prettier'],
-\}
-" ----- ALE End -----
-
 " ----- Syntax Start -----
 au BufNewFile,BufRead *.tsx set ft=typescript
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 " ----- Syntax End -----
+"
+" ----- ALE Start -----
+let g:ale_sign_column_always = 1
+let g:ale_completion_enabled = 0
+let g:ale_set_loclist = 0
+let g:ale_open_list = 0
+let g:ale_keep_list_window_open = 0
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_fix_on_save = 1
+let g:ale_set_quickfix = 0
+let g:ale_linters = {
+\ 'javascript': ['eslint', 'prettier', 'prettier-eslint'],
+\ 'typescript': ['eslint', 'prettier', 'tsserver', 'typescheck'],
+\}
+let g:ale_fixers = {
+\ 'javascript': ['eslint', 'prettier'],
+\ 'typescript': ['eslint', 'prettier'],
+\}
+" ----- ALE End -----
