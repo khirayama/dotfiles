@@ -31,6 +31,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 " Search
+set ignorecase
 set smartcase
 set incsearch
 " Other
