@@ -20,6 +20,7 @@ set cursorcolumn
 set nowrap
 set scrolloff=12
 set termguicolors
+set completeopt=menu,menuone,noselect,noinsert
 set ambiwidth=double
 " Insert
 set smartindent
@@ -145,6 +146,7 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 "
 " ----- ALE Start -----
 let g:ale_sign_column_always = 1
+let g:ale_cursor_detail = 0
 let g:ale_completion_enabled = 0
 let g:ale_set_loclist = 0
 let g:ale_open_list = 0
@@ -154,6 +156,7 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_fix_on_save = 1
 let g:ale_set_quickfix = 0
+let g:ale_echo_cursor = 0
 let g:ale_linters = {
 \ 'javascript': ['eslint', 'prettier', 'prettier-eslint'],
 \ 'typescript': ['eslint', 'prettier', 'tsserver', 'typescheck'],
