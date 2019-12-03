@@ -163,3 +163,21 @@ let g:ale_fixers = {
 \ 'typescript': ['eslint', 'prettier'],
 \}
 " ----- ALE End -----
+
+" ----- Statusline Start -----
+set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%d warnings - %d errors',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+set statusline+=\ [%{LinterStatus()}]
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
+" ----- Statusline End -----
