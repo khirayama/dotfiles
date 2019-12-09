@@ -34,6 +34,7 @@ set shiftwidth=2
 set ignorecase
 set smartcase
 set incsearch
+set nohlsearch
 " Other
 set noswapfile
 set nobackup
