@@ -36,6 +36,10 @@ Run `dump.sh`
 
 #### Vim
 
+- +: 次の行の先頭
+- -: 前の行の先頭
+- C-i: ジャンプしてきた箇所に進む
+- C-o: ジャンプしてきた箇所に戻る
 - w: word 単語移動
 - b: word back 単語移動バック
 - ^: 先頭
@@ -44,9 +48,9 @@ Run `dump.sh`
 - %: 対応する括弧
 - /s: 行内置換
 - /%s: ファイル内置換
+- C-n: 補完
 - -p: タブで開く
 - -O: 垂直分割で開く
-- ctrl + n: 補完
 
 - [map - Vim日本語ドキュメント](https://vim-jp.org/vimdoc-ja/map.html)
 - [Vim で使える Ctrl を使うキーバインドまとめ - 反省はしても後悔はしない](http://cohama.hateblo.jp/entry/20121023/1351003586)
