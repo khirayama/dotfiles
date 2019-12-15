@@ -190,6 +190,7 @@ set statusline+=\ [%{LinterStatus()}]
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
 " ----- Statusline End -----
 
+" [True color support with (iTerm2 + tmux + Vim) - Tom Lankhorst](https://tomlankhorst.nl/iterm-tmux-vim-true-color/)
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
