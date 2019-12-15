@@ -1,4 +1,5 @@
 export LANG=ja_JP.UTF-8
+# export TERM=xterm-256color
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
