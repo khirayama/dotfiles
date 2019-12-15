@@ -19,7 +19,6 @@ set cursorline
 set cursorcolumn
 set nowrap
 set scrolloff=12
-set termguicolors
 set completeopt=menu,menuone,noselect,noinsert
 set ambiwidth=double
 " Insert
@@ -88,9 +87,6 @@ if !has('nvim')
 endif
 
 call dein#end()
-
-filetype plugin indent on
-syntax enable
 
 if dein#check_install()
   call dein#install()
@@ -193,3 +189,10 @@ endfunction
 set statusline+=\ [%{LinterStatus()}]
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
 " ----- Statusline End -----
+
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+filetype plugin indent on
+syntax enable
