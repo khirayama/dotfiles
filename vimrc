@@ -109,12 +109,14 @@ colorscheme hybrid
 " [【Vim】新しい Denite に爆速で対応する](https://qiita.com/delphinus/items/de15250b39ac08e9c0b9)
 " [denite.nvim + ag な file/rec の設定をさらに爆速にする](https://qiita.com/hrsh7th@github/items/e405b4f4228e10a43201)
 autocmd FileType denite call s:denite_my_settings()
+
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
   nnoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
   nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-l> denite#do_map('redraw')
   nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+  nnoremap <silent><buffer><expr> <C-l> denite#do_map('redraw')
+  nnoremap <silent><buffer><expr> <C-e> denite#do_map('do_action', 'vsplit')
 endfunction
 
 autocmd FileType denite-filter call s:denite_filter_my_settings()
