@@ -2,12 +2,13 @@
 " Index
 " - Settings
 " - Mapping
-" - Dein
+" - dein
 " - Color
-" - Denite
-" - Deoplete
-" - ALE
+" - denite
+" - asyncomplete
+" - vim-lsp
 " - Syntax
+" - ale
 
 " ----- Settings Start -----
 " Display
@@ -56,7 +57,7 @@ nmap <C-n> <C-w>>
 nmap <C-m> <C-w><
 " ----- Mapping End -----
 
-" ----- Dein Start -----
+" ----- dein Start -----
 " [Shougo/dein.vim: Dark powered Vim/Neovim plugin manager](https://github.com/Shougo/dein.vim)
 if &compatible
   set nocompatible
@@ -68,8 +69,11 @@ call dein#begin('~/.cache/dein')
 call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('Shougo/denite.nvim')
-call dein#add('Shougo/deoplete.nvim')
 call dein#add('w0rp/ale')
+call dein#add('prabirshrestha/asyncomplete.vim')
+call dein#add('prabirshrestha/async.vim')
+call dein#add('prabirshrestha/vim-lsp')
+call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 " Nice to have
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tomtom/tcomment_vim')
@@ -81,7 +85,7 @@ call dein#add('wakatime/vim-wakatime')
 call dein#add('leafgarland/typescript-vim')
 
 if !has('nvim')
-  " Dein, Denite, Deoplete
+  " dein, denite
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
 endif
@@ -91,7 +95,7 @@ call dein#end()
 if dein#check_install()
   call dein#install()
 endif
-" ----- Dein End -----
+" ----- dein End -----
 
 " ----- Color Start -----
 let g:hybrid_custom_term_colors=1
@@ -100,7 +104,7 @@ set background=dark
 colorscheme hybrid
 " ----- Color End -----
 
-" ----- Denite Start -----
+" ----- denite Start -----
 " [Shougo/denite.nvim: Dark powered asynchronous unite all interfaces for Neovim/Vim8](https://github.com/Shougo/denite.nvim)
 " [unite.vim, ctrlp.vim から neovim と denite.nvim へ引越した - 藻ログ](http://wakame.hatenablog.jp/entry/2017/05/04/144550)
 " [dein.vimへの道.md](https://gist.github.com/Fendo181/6f44ebe0a4e08f49f194a837608c4936)
@@ -137,22 +141,40 @@ function! DispatchUniteFileRecAsyncOrGit()
 endfunction
 
 noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
-" ----- Denite End -----
+" ----- denite End -----
 
-" ----- Deoplete Start -----
-" [Shougo/deoplete.nvim: Dark powered asynchronous completion framework for neovim/Vim8](https://github.com/Shougo/deoplete.nvim)
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-" ----- Deoplete End -----
-"
+" ----- asyncomplete Start -----
+" [prabirshrestha/asyncomplete.vim: async completion in pure vim script for vim8 and neovim](https://github.com/prabirshrestha/asyncomplete.vim)
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+" ----- asyncomplete End -----
+
+" ----- vim-lsp Start -----
+" [prabirshrestha/vim-lsp: async language server protocol plugin for vim and neovim](https://github.com/prabirshrestha/vim-lsp)
+" [Vim - vim-lsp で Typescript 開発環境を構築する | Micheam's TechBlog](https://blog.micheam.com/2019/05/21/vim-lsp-setting-for-typescript/)
+if executable('typescript-language-server')
+  augroup LspTypeScript
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'typescript-language-server',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+          \ 'whitelist': ['typescript'],
+          \ })
+    autocmd FileType typescript setlocal omnifunc=lsp#complete
+  augroup END :echomsg "vim-lsp with `typescript-language-server` enabled"
+else
+  :echomsg "vim-lsp for typescript unavailable"
+endif
+" ----- vim-lsp End -----
+
 " ----- Syntax Start -----
 au BufNewFile,BufRead *.tsx set ft=typescript
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 " ----- Syntax End -----
-"
-" ----- ALE Start -----
+
+" ----- ale Start -----
 let g:ale_sign_column_always = 1
 let g:ale_cursor_detail = 0
 let g:ale_completion_enabled = 0
@@ -167,13 +189,13 @@ let g:ale_set_quickfix = 0
 let g:ale_echo_cursor = 0
 let g:ale_linters = {
 \ 'javascript': ['eslint', 'prettier', 'prettier-eslint'],
-\ 'typescript': ['eslint', 'prettier', 'tsserver', 'typescheck'],
+\ 'typescript': ['eslint', 'prettier'],
 \}
 let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'typescript': ['eslint', 'prettier'],
 \}
-" ----- ALE End -----
+" ----- ale End -----
 
 " ----- Statusline Start -----
 set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
