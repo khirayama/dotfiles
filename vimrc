@@ -6,7 +6,6 @@
 " - Color
 " - denite
 " - asyncomplete
-" - vim-lsp
 " - Syntax
 " - ale
 
@@ -149,25 +148,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 " ----- asyncomplete End -----
-
-" ----- vim-lsp Start -----
-" [prabirshrestha/vim-lsp: async language server protocol plugin for vim and neovim](https://github.com/prabirshrestha/vim-lsp)
-" [Vim - vim-lsp で Typescript 開発環境を構築する | Micheam's TechBlog](https://blog.micheam.com/2019/05/21/vim-lsp-setting-for-typescript/)
-if executable('typescript-language-server')
-  augroup LspTypeScript
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'typescript-language-server',
-          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-          \ 'whitelist': ['typescript'],
-          \ })
-    autocmd FileType typescript setlocal omnifunc=lsp#complete
-  augroup END :echomsg "vim-lsp with `typescript-language-server` enabled"
-else
-  :echomsg "vim-lsp for typescript unavailable"
-endif
-" ----- vim-lsp End -----
 
 " ----- Syntax Start -----
 au BufNewFile,BufRead *.tsx set ft=typescript
