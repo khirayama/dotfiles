@@ -56,45 +56,38 @@ nmap <C-n> <C-w>>
 nmap <C-m> <C-w><
 " ----- Mapping End -----
 
-" ----- dein Start -----
-" [Shougo/dein.vim: Dark powered Vim/Neovim plugin manager](https://github.com/Shougo/dein.vim)
-if &compatible
-  set nocompatible
-endif
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+" ----- Syntax Start -----
+autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
+autocmd BufNewFile,BufRead *.ts set ft=typescript
+autocmd BufNewFile,BufRead *.tsx set ft=typescript.tsx
+" ----- Syntax End -----
 
-call dein#begin('~/.cache/dein')
+" ----- vim-plug Start -----
+" [junegunn/vim-plug: Minimalist Vim Plugin Manager](https://github.com/junegunn/vim-plug)
+call plug#begin('~/.vim/plugged')
 " Need to have
-call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-call dein#add('w0ng/vim-hybrid')
-call dein#add('Shougo/denite.nvim')
-call dein#add('w0rp/ale')
-call dein#add('prabirshrestha/asyncomplete.vim')
-call dein#add('prabirshrestha/async.vim')
-call dein#add('prabirshrestha/vim-lsp')
-call dein#add('prabirshrestha/asyncomplete-lsp.vim')
+Plug 'w0ng/vim-hybrid'
+Plug 'Shougo/denite.nvim'
+Plug 'w0rp/ale'
+Plug 'prabirshrestha/asyncomplete.vim'
 " Nice to have
-call dein#add('airblade/vim-gitgutter')
-call dein#add('tomtom/tcomment_vim')
-call dein#add('tpope/vim-surround')
-call dein#add('tpope/vim-abolish')
-call dein#add('lilydjwg/colorizer')
-call dein#add('wakatime/vim-wakatime')
-" Syntax Highlighter / Completion
-call dein#add('leafgarland/typescript-vim')
+Plug 'airblade/vim-gitgutter'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'lilydjwg/colorizer'
+Plug 'wakatime/vim-wakatime'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 
 if !has('nvim')
-  " dein, denite
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
+  " denite
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
-
-call dein#end()
-
-if dein#check_install()
-  call dein#install()
-endif
-" ----- dein End -----
+call plug#end()
+" ----- vim-plug End -----
 
 " ----- Color Start -----
 let g:hybrid_custom_term_colors=1
@@ -199,6 +192,3 @@ let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none cte
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-filetype plugin indent on
-syntax enable
