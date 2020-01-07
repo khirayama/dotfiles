@@ -2,11 +2,11 @@
 " Index
 " - Settings
 " - Mapping
-" - dein
+" - Syntax
+" - vim-plug
 " - Color
 " - denite
 " - asyncomplete
-" - Syntax
 " - ale
 
 " ----- Settings Start -----
@@ -141,11 +141,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 " ----- asyncomplete End -----
-
-" ----- Syntax Start -----
-au BufNewFile,BufRead *.tsx set ft=typescript
-au BufNewFile,BufRead *.json.jbuilder set ft=ruby
-" ----- Syntax End -----
 
 " ----- ale Start -----
 let g:ale_sign_column_always = 1
