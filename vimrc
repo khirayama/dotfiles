@@ -22,6 +22,7 @@ set scrolloff=12
 set completeopt=menu,menuone,noselect,noinsert
 set ambiwidth=double
 set laststatus=2
+set splitright
 " Insert
 set smartindent
 set autoindent
@@ -110,17 +111,20 @@ colorscheme hybrid
 " ----- Color End -----
 
 " ----- fzf Start -----
+" [Vimメモ : fzf（fuzzy finder）と連携するfzf.vimの使い方 - もた日記](https://wonderwall.hatenablog.com/entry/2017/10/07/220000)
 command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
 
 function! DispatchFilesOrGFiles()
   if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git")
-    GFiles -co --exclude-standard
+    call fzf#vim#gitfiles(getcwd().' -co --exclude-standard')
   else
     Files
   endif
 endfunction
 
 noremap <C-u> :call DispatchFilesOrGFiles()<CR>
+
+let g:fzf_action = { 'ctrl-a': 'vsplit' }
 " ----- fzf End -----
 
 " ----- asyncomplete Start -----
