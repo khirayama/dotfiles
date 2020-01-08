@@ -160,14 +160,13 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_fix_on_save = 1
 let g:ale_set_quickfix = 0
-let g:ale_echo_cursor = 0
 let g:ale_linters = {
-\ 'javascript': ['eslint', 'prettier', 'prettier-eslint'],
-\ 'typescript': ['eslint', 'prettier'],
+\ 'javascript': ['eslint'],
+\ 'typescript': ['eslint'],
 \}
 let g:ale_fixers = {
-\ 'javascript': ['eslint', 'prettier'],
-\ 'typescript': ['eslint', 'prettier'],
+\ 'javascript': ['eslint'],
+\ 'typescript': ['eslint'],
 \}
 " ----- ale End -----
 
