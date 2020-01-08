@@ -19,7 +19,6 @@ brew "gradle"
 brew "hub"
 brew "kotlin"
 brew "mysql@5.7", link: true
-brew "neovim"
 brew "nginx"
 brew "p7zip"
 brew "pyenv"
