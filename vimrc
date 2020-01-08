@@ -8,7 +8,6 @@
 " - Syntax
 " - vim-plug
 " - Color
-" - denite
 " - asyncomplete
 " - ale
 
@@ -70,9 +69,10 @@ autocmd BufNewFile,BufRead *.tsx set ft=typescript.tsx
 call plug#begin('~/.vim/plugged')
 " Need to have
 Plug 'w0ng/vim-hybrid'
-Plug 'Shougo/denite.nvim'
 Plug 'w0rp/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 " Nice to have
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
@@ -80,15 +80,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'lilydjwg/colorizer'
 Plug 'wakatime/vim-wakatime'
-
+" Syntax Highlight
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
-
-if !has('nvim')
-  " denite
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 call plug#end()
 " ----- vim-plug End -----
 
@@ -99,44 +93,9 @@ set background=dark
 colorscheme hybrid
 " ----- Color End -----
 
-" ----- denite Start -----
-" [Shougo/denite.nvim: Dark powered asynchronous unite all interfaces for Neovim/Vim8](https://github.com/Shougo/denite.nvim)
-" [unite.vim, ctrlp.vim から neovim と denite.nvim へ引越した - 藻ログ](http://wakame.hatenablog.jp/entry/2017/05/04/144550)
-" [dein.vimへの道.md](https://gist.github.com/Fendo181/6f44ebe0a4e08f49f194a837608c4936)
-" [unite.vimより高速なdenite.nvimを使う](https://qiita.com/okamos/items/4e1665ecd416ef77df7c)
-" [uniteからdeniteに移行したメモ](https://qiita.com/hisawa/items/3498951e84eac77ac890)
-" [【Vim】新しい Denite に爆速で対応する](https://qiita.com/delphinus/items/de15250b39ac08e9c0b9)
-" [denite.nvim + ag な file/rec の設定をさらに爆速にする](https://qiita.com/hrsh7th@github/items/e405b4f4228e10a43201)
-autocmd FileType denite call s:denite_my_settings()
-
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
-  nnoremap <silent><buffer><expr> <C-l> denite#do_map('redraw')
-  nnoremap <silent><buffer><expr> <C-e> denite#do_map('do_action', 'vsplit')
-endfunction
-
-autocmd FileType denite-filter call s:denite_filter_my_settings()
-function! s:denite_filter_my_settings() abort
-  inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
-  imap <silent><buffer> <C-c> <Plug>(denite_filter_quit)
-endfunction
-
-call denite#custom#alias('source', 'file/git', 'file/rec')
-call denite#custom#var('file/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
-
-function! DispatchUniteFileRecAsyncOrGit()
-  if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git")
-    Denite file/git -start-filter -direction=topleft
-  else
-    Denite file/rec -start-filter -direction=topleft
-  endif
-endfunction
-
-noremap <C-u> :call DispatchUniteFileRecAsyncOrGit()<CR>
-" ----- denite End -----
+" ----- fzf Start -----
+command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
+" ----- fzf End -----
 
 " ----- asyncomplete Start -----
 " [prabirshrestha/asyncomplete.vim: async completion in pure vim script for vim8 and neovim](https://github.com/prabirshrestha/asyncomplete.vim)
