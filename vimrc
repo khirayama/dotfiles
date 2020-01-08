@@ -39,6 +39,7 @@ set nohlsearch
 set noswapfile
 set nobackup
 set noerrorbells
+set whichwrap=b,s,h,l,<,>,[,]
 " ----- Settings End -----
 "
 " ----- Statusline Start -----
