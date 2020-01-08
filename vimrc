@@ -1,7 +1,3 @@
-" [上達したいVim初心者のための設定・プラグインの見つけ方、学び方〈エディタ実践入門〉 - エンジニアHub｜若手Webエンジニアのキャリアを考える！](https://employment.en-japan.com/engineerhub/entry/2019/01/28/103000)
-" [2018年版Life ChangingだったVimプラグインTOP3 — kashew_nuts-blog](https://kashewnuts.github.io/2018/12/02/bp_advent_calender.html)
-" [Vim初心者に送るカテゴリ別Vim Pluginまとめ - Qiita](https://qiita.com/lighttiger2505/items/592caac64fd1e1781596)
-
 " Index
 " - Settings
 " - Mapping
@@ -149,3 +145,9 @@ let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none cte
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Refs:
+" [上達したいVim初心者のための設定・プラグインの見つけ方、学び方〈エディタ実践入門〉 - エンジニアHub｜若手Webエンジニアのキャリアを考える！](https://employment.en-japan.com/engineerhub/entry/2019/01/28/103000)
+" [2018年版Life ChangingだったVimプラグインTOP3 — kashew_nuts-blog](https://kashewnuts.github.io/2018/12/02/bp_advent_calender.html)
+" [Vim初心者に送るカテゴリ別Vim Pluginまとめ - Qiita](https://qiita.com/lighttiger2505/items/592caac64fd1e1781596)
+" [vim＋ctagsでコードのタグジャンプをする方法 - Corgi Lab. ～備忘録のための技術ブログ～](https://corgi-lab.com/linux/vim-ctags/)
