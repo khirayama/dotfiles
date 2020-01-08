@@ -19,5 +19,4 @@ ln -sf $PWD/vimrc ~/.vimrc
 ln -sf $PWD/vimrc ~/.config/nvim/init.vim
 ln -sf $PWD/gitconfig ~/.gitconfig
 ln -sf $PWD/eslintrc ~/.eslintrc
-
-pip3 install --user pynvim
+ln -sf $PWD/ctags ~/.ctags
