@@ -85,7 +85,7 @@ autocmd BufNewFile,BufRead *.tsx set ft=typescript.tsx
 call plug#begin('~/.vim/plugged')
 " Need to have
 Plug 'w0ng/vim-hybrid'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
