@@ -87,7 +87,10 @@ call plug#begin('~/.vim/plugged')
 " Need to have
 Plug 'w0ng/vim-hybrid'
 Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " Nice to have
@@ -133,6 +136,17 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 " ----- asyncomplete End -----
+
+" ----- vim-lsp Start -----
+if executable('typescript-language-server')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'typescript-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+    \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+    \ 'whitelist': ['typescript', 'typescript.tsx'],
+    \ })
+endif
+" ----- vim-lsp End -----
 
 " ----- ale Start -----
 let g:ale_sign_column_always = 1
