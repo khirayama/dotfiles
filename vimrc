@@ -111,6 +111,16 @@ colorscheme hybrid
 
 " ----- fzf Start -----
 command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
+
+function! DispatchFilesOrGFiles()
+  if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git")
+    GFiles
+  else
+    Files
+  endif
+endfunction
+
+noremap <C-u> :call DispatchFilesOrGFiles()<CR>
 " ----- fzf End -----
 
 " ----- asyncomplete Start -----
