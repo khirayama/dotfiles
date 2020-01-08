@@ -5,6 +5,7 @@
 " - Syntax
 " - vim-plug
 " - Color
+" - fzf
 " - asyncomplete
 " - ale
 
