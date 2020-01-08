@@ -1,5 +1,6 @@
 " Index
 " - Settings
+" - Statusline
 " - Mapping
 " - Syntax
 " - vim-plug
@@ -19,6 +20,7 @@ set nowrap
 set scrolloff=12
 set completeopt=menu,menuone,noselect,noinsert
 set ambiwidth=double
+set laststatus=2
 " Insert
 set smartindent
 set autoindent
@@ -37,6 +39,22 @@ set noswapfile
 set nobackup
 set noerrorbells
 " ----- Settings End -----
+"
+" ----- Statusline Start -----
+" [ステータスラインの表示内容を設定する (statusline, laststatus) | まくまくVimノート](https://maku77.github.io/vim/settings/statusline.html)
+" [vimのstatuslineをいじる - Qiita](https://qiita.com/Cj-bc/items/dbe62075474c0e29a777)
+set statusline=%f\ %m%r%h%w[%{&fenc}]\ C:%c\ L:%l/%L\ %3p%%
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? 'OK' : printf('%d warnings - %d errors', all_non_errors, all_errors)
+endfunction
+set statusline+=\ [%{LinterStatus()}]
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
+" ----- Statusline End -----
 "
 " ----- Mapping Start -----
 nmap n nzz
@@ -122,24 +140,6 @@ let g:ale_fixers = {
 \ 'typescript': ['eslint', 'prettier'],
 \}
 " ----- ale End -----
-
-" ----- Statusline Start -----
-set statusline=%t\ %m%r%h%w[%{&fenc}]\ C:%03c\ L:%04l/%04L\ %3p%%
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? 'OK' : printf(
-    \   '%d warnings - %d errors',
-    \   all_non_errors,
-    \   all_errors
-    \)
-endfunction
-set statusline+=\ [%{LinterStatus()}]
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
-" ----- Statusline End -----
 
 " [True color support with (iTerm2 + tmux + Vim) - Tom Lankhorst](https://tomlankhorst.nl/iterm-tmux-vim-true-color/)
 set termguicolors
