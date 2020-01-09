@@ -41,6 +41,7 @@ set noswapfile
 set nobackup
 set noerrorbells
 set whichwrap=b,s,h,l,<,>,[,]
+set splitright
 " ----- Settings End -----
 "
 " ----- Statusline Start -----
