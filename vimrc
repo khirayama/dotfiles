@@ -55,7 +55,7 @@ function! LinterStatus() abort
   let l:errors = l:counts.error + l:counts.style_error
   let l:warnings = l:counts.total - l:errors
 
-  return printf('LINT - e:%d w:%d', errors, warnings)
+  return printf('[LINT - e:%d w:%d]', errors, warnings)
 endfunction
 
 function! LspStatus() abort
@@ -66,11 +66,11 @@ function! LspStatus() abort
   let l:information = l:counts.information
   let l:hints = l:counts.hint
 
-  return printf('LSP - e:%d w:%d i:%d h:%d', errors, warnings, information, hints)
+  return printf('[LSP - e:%d w:%d i:%d h:%d]', errors, warnings, information, hints)
 endfunction
 
-set statusline+=\ [%{LspStatus()}]
-set statusline+=\ [%{LinterStatus()}]
+set statusline+=\ %{LspStatus()}
+set statusline+=\ %{LinterStatus()}
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
 " ----- Statusline End -----
 "
