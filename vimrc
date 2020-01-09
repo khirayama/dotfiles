@@ -48,14 +48,28 @@ set splitright
 " [ステータスラインの表示内容を設定する (statusline, laststatus) | まくまくVimノート](https://maku77.github.io/vim/settings/statusline.html)
 " [vimのstatuslineをいじる - Qiita](https://qiita.com/Cj-bc/items/dbe62075474c0e29a777)
 set statusline=%f\ %m%r%h%w[%{&fenc}]\ C:%c\ L:%l/%L\ %3p%%
+
 function! LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
 
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
+  let l:errors = l:counts.error + l:counts.style_error
+  let l:warnings = l:counts.total - l:errors
 
-  return l:counts.total == 0 ? 'OK' : printf('%d warnings - %d errors', all_non_errors, all_errors)
+  return printf('LINT - e:%d w:%d', errors, warnings)
 endfunction
+
+function! LspStatus() abort
+  let l:counts = lsp#get_buffer_diagnostics_counts()
+
+  let l:errors = l:counts.error
+  let l:warnings = l:counts.warning
+  let l:information = l:counts.information
+  let l:hints = l:counts.hint
+
+  return printf('LSP - e:%d w:%d i:%d h:%d', errors, warnings, information, hints)
+endfunction
+
+set statusline+=\ [%{LspStatus()}]
 set statusline+=\ [%{LinterStatus()}]
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=yellow gui=none ctermfg=black ctermbg=green cterm=none'
 " ----- Statusline End -----
