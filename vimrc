@@ -22,7 +22,7 @@ set scrolloff=12
 set completeopt=menu,menuone,noselect,noinsert
 set ambiwidth=double
 set laststatus=2
-set splitright
+set signcolumn=yes
 " Insert
 set smartindent
 set autoindent
