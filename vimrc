@@ -134,9 +134,9 @@ command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shelle
 
 function! DispatchFilesOrGFiles()
   if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git")
-    call fzf#vim#gitfiles(getcwd().' -co --exclude-standard')
+    call fzf#vim#gitfiles(getcwd().' -co --exclude-standard', 1)
   else
-    Files
+    call fzf#vim#files(getcwd(), 1)
   endif
 endfunction
 
