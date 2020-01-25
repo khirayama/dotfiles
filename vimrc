@@ -179,12 +179,12 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_fix_on_save = 1
 let g:ale_set_quickfix = 0
 let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint'],
+\ 'javascript': ['eslint', 'prettier'],
+\ 'typescript': ['eslint', 'prettier'],
 \}
 let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint'],
+\ 'javascript': ['eslint', 'prettier'],
+\ 'typescript': ['eslint', 'prettier'],
 \}
 " ----- ale End -----
 
