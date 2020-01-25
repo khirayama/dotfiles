@@ -22,9 +22,12 @@ if [ -d $HOME/.goenv ]; then
 fi
 
 # python dev env - pyenv
-# if [ -d $HOME/.pyenv ]; then
-#   export PATH="$HOME/.pyenv/shims:$PATH"
-# fi
+if [ -d $HOME/.pyenv ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  export PATH="$HOME/.pyenv/shims:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 # ruby dev env - rbenv
 if [ -d $HOME/.rbenv ]; then
