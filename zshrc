@@ -93,9 +93,9 @@ alias maintenance='
   sudo killall Dock &&
   sudo chmod -R -N ~ &&
   sudo update_dyld_shared_cache -force &&
-  sudo diskutil repairPermissions / &&
   sudo purge
 '
+# sudo diskutil repairPermissions / &&
 
 # options
 autoload -U compinit
