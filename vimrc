@@ -157,6 +157,7 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 
+" https://github.com/prabirshrestha/vim-lsp/wiki/Servers-TypeScript
 if executable('typescript-language-server')
   au User lsp_setup call lsp#register_server({
     \ 'name': 'typescript-language-server',
