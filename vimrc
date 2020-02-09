@@ -166,6 +166,15 @@ if executable('typescript-language-server')
     \ 'whitelist': ['typescript', 'typescript.tsx'],
     \ })
 endif
+
+" https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Clangd
+if executable('clangd')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'clangd',
+    \ 'cmd': {server_info->['clangd', '-background-index']},
+    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+    \ })
+endif
 " ----- vim-lsp End -----
 
 " ----- ale Start -----
