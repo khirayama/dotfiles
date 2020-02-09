@@ -3,6 +3,9 @@ export LANG=ja_JP.UTF-8
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
+# llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
 # direnv
 eval "$(direnv hook zsh)"
 
