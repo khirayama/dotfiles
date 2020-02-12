@@ -21,6 +21,7 @@ brew "hub"
 brew "i386-elf-grub"
 brew "kotlin"
 brew "llvm"
+brew "mecab-ipadic"
 brew "mtools"
 brew "mysql@5.7", link: true
 brew "nginx"
