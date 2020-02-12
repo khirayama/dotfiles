@@ -6,9 +6,8 @@
 # Install brew packages
 brew bundle
 
-# Install dein(https://github.com/Shougo/dein.vim)
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
+# Setup vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 mkdir -p ~/.config/nvim
 mkdir -p ~/.vim/colors
