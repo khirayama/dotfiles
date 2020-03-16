@@ -98,6 +98,7 @@ alias maintenance='
   sudo update_dyld_shared_cache -force &&
   sudo purge
 '
+alias vpn='open /Applications/Pulse\ Secure.app/Contents/Plugins/JamUI/PulseTray.app'
 # sudo diskutil repairPermissions / &&
 
 # options
