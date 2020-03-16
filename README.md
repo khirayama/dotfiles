@@ -18,6 +18,15 @@
 - Install NVM
   - https://github.com/nvm-sh/nvm
 
+## Mac Preferences
+
+- Keyboard -> Modifier Keys -> Caps Lock to Control
+- Keyboard -> Input Source -> Add Japanese and disable カタカタ
+- Keyboard -> Input Source -> Disable Live Conversion
+- Keyboard -> Keyboard -> Key Repeat to Fast
+- Keyboard -> Keyboard -> Delay Until Repeat to Short
+
+
 ## Dump
 
 Run `dump.sh`
