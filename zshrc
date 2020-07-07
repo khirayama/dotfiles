@@ -16,7 +16,7 @@ fi
 
 # go dev env - goenv
 export GOROOT="/usr/local/opt/go/libexec"
-export GOPATH=$PWD:$HOME
+export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 if [ -d $HOME/.goenv ]; then
   export GOENV_ROOT=$HOME/.goenv
