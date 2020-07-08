@@ -26,7 +26,6 @@
 - Keyboard -> Keyboard -> Key Repeat to Fast
 - Keyboard -> Keyboard -> Delay Until Repeat to Short
 
-
 ## Dump
 
 Run `dump.sh`
@@ -63,3 +62,13 @@ Run `dump.sh`
 
 - [map - Vim日本語ドキュメント](https://vim-jp.org/vimdoc-ja/map.html)
 - [Vim で使える Ctrl を使うキーバインドまとめ - 反省はしても後悔はしない](http://cohama.hateblo.jp/entry/20121023/1351003586)
+
+## Ubuntu
+
+```
+# Set up ssh for github. https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+$ git clone git@github.com:khirayama/dotfiles.git
+# Install nvm. https://github.com/nvm-sh/nvm
+$ sh ./setup.ubuntu.sh
+$ chsh -s /usr/bin/zsh
+```
