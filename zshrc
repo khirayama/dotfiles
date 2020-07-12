@@ -195,3 +195,6 @@ if [ -f '/Users/kotarohirayama/Downloads/google-cloud-sdk/path.zsh.inc' ]; then 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kotarohirayama/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kotarohirayama/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Ubuntu
+alias ngrok-ssh='ngrok tcp -log=stdout 22 ｜ logger'
