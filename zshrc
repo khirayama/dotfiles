@@ -198,4 +198,4 @@ if [ -f '/Users/kotarohirayama/Downloads/google-cloud-sdk/completion.zsh.inc' ];
 
 # Ubuntu
 # https://qiita.com/Morichan/items/62ccf58c8f292549ce36
-alias ngrok-ssh='ngrok tcp -log=stdout 22 ｜ logger'
+alias ngrok-ssh='nohup ngrok tcp 22 &'
