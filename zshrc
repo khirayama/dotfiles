@@ -100,6 +100,7 @@ alias maintenance='
   sudo purge
 '
 alias vpn='open /Applications/Pulse\ Secure.app/Contents/Plugins/JamUI/PulseTray.app'
+alias simulator='open -a Simulator'
 # sudo diskutil repairPermissions / &&
 
 # options
@@ -190,11 +191,8 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kotarohirayama/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kotarohirayama/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kotarohirayama/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kotarohirayama/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Flutter
+export PATH=$PATH:~/Works/flutter/bin
 
 # Ubuntu
 # https://qiita.com/Morichan/items/62ccf58c8f292549ce36
