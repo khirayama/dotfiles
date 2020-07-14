@@ -118,6 +118,7 @@ Plug 'wakatime/vim-wakatime'
 " Syntax Highlight
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 " ----- vim-plug End -----
 
