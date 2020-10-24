@@ -18,3 +18,6 @@ ln -sf $PWD/vimrc ~/.config/nvim/init.vim
 ln -sf $PWD/gitconfig ~/.gitconfig
 ln -sf $PWD/eslintrc ~/.eslintrc
 ln -sf $PWD/ctags ~/.ctags
+
+# ngrok https://dashboard.ngrok.com/
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
