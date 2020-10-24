@@ -6,9 +6,17 @@
 
 ```
 # Set up ssh for github. https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+# ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# cat ~/.ssh/id_rsa.pub
+
 $ git clone git@github.com:khirayama/dotfiles.git
+
 # Install nvm. https://github.com/nvm-sh/nvm
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+
 $ sh ./setup.ubuntu.sh
 $ chsh -s /usr/bin/zsh
+$ sudo shutdown -r now
+
 # Install ngrok. https://ngrok.com/download
 ```
