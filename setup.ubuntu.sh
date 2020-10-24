@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt update
-sudo apt install zsh tmux direnv fzf build-essential sysstat mosh unzip git
+sudo apt install zsh tmux direnv fzf build-essential sysstat mosh unzip git wget
 
 sudo timedatectl set-timezone Asia/Tokyo
 sudo locale-gen ja_JP.UTF-8
