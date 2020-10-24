@@ -114,7 +114,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'lilydjwg/colorizer'
-Plug 'wakatime/vim-wakatime'
 " Syntax Highlight
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
