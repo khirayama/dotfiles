@@ -31,4 +31,5 @@ $ unzip NGROK_FILE
 $ sudo mv ./ngrok /usr/bin
 $ source ~/.zshrc
 $ ngrok authtoken AUTH_TOKEN
+$ rm NGROK_FILE
 ```
