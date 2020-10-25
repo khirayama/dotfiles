@@ -16,13 +16,19 @@
 $ git clone git@github.com:khirayama/dotfiles.git
 
 $ sh ./setup.ubuntu.sh
-$ sudo passwd
-$ sudo vim /usr/bin/zsh
 
-# Install nvm. https://github.com/nvm-sh/nvm
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+# Change password
+$ sudo passwd
+
+# Change default shell to `/usr/bin/zsh`
+$ sudo vim /etc/passwd
 
 $ sudo shutdown -r now
 
-# Install ngrok. https://ngrok.com/download
+# Open ngrok to finish setting up
+# https://dashboard.ngrok.com/
+$ unzip NGROK_FILE
+$ sudo mv ./ngrok /usr/bin
+$ source ~/.zshrc
+$ ngrok authtoken AUTH_TOKEN
 ```
