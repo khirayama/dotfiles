@@ -15,11 +15,13 @@
 
 $ git clone git@github.com:khirayama/dotfiles.git
 
+$ sh ./setup.ubuntu.sh
+$ sudo passwd
+$ sudo vim /usr/bin/zsh
+
 # Install nvm. https://github.com/nvm-sh/nvm
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 
-$ sh ./setup.ubuntu.sh
-$ chsh -s /usr/bin/zsh
 $ sudo shutdown -r now
 
 # Install ngrok. https://ngrok.com/download
