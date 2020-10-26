@@ -1,5 +1,5 @@
-export LANG=ja_JP.UTF-8
-export LC_CTYPE=ja_JP.UTF-8
+# export LANG=ja_JP.UTF-8
+# export LC_CTYPE=ja_JP.UTF-8
 # export TERM=xterm-256color
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux

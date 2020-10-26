@@ -3,9 +3,6 @@
 sudo apt update
 sudo apt install zsh tmux direnv fzf build-essential sysstat mosh unzip wget
 
-sudo timedatectl set-timezone Asia/Tokyo
-sudo locale-gen ja_JP.UTF-8
-
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 mkdir -p ~/.config/nvim
