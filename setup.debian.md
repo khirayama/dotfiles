@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt update
-sudo apt install zsh tmux direnv fzf build-essential sysstat mosh unzip wget
+sudo apt install zsh tmux direnv fzf build-essential sysstat mosh unzip wget tree
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
