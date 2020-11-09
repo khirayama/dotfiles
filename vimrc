@@ -135,8 +135,7 @@ command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shelle
 function! DispatchFilesOrGFiles()
   let ignore_extentions = ':!:*.{png,jpg,jpeg,webp,gif,sketch}'
   if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git") || isdirectory("../../../.git")
-    " call fzf#vim#gitfiles(getcwd().' '.ignore_extentions.' -co --exclude-standard', 1)
-    call fzf#vim#gitfiles(' '.ignore_extentions.' -co --exclude-standard', 1)
+    call fzf#vim#gitfiles(' '.getcwd().' '.ignore_extentions.' -co --exclude-standard', 1)
   else
     call fzf#vim#files(getcwd(), 1)
   endif
