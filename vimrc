@@ -133,6 +133,8 @@ colorscheme hybrid
 command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
 
 function! DispatchFilesOrGFiles()
+  let fzf_preview_options = { 'options': ['--preview-window=up:50%'] }
+
   if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git") || isdirectory("../../../.git")
     call fzf#vim#gitfiles(' '.getcwd().' -co --exclude-standard -- '.
           \ '"./*" ":!**/*.png" '.
@@ -141,9 +143,9 @@ function! DispatchFilesOrGFiles()
           \ '":(exclude)**/*.webp" '.
           \ '":(exclude)**/*.gif" '.
           \ '":(exclude)**/*.sketch" ',
-          \ 1)
+          \ fzf#vim#with_preview(fzf_preview_options), 1)
   else
-    call fzf#vim#files(getcwd(), 1)
+    call fzf#vim#files(getcwd(), fzf#vim#with_preview(fzf_preview_options), 1)
   endif
 endfunction
 
