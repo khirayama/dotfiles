@@ -135,15 +135,18 @@ command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shelle
 function! DispatchFilesOrGFiles()
   let fzf_preview_options = { 'options': ['--preview-window=up:50%'] }
 
-  if isdirectory(getcwd()."/.git") || isdirectory("../.git") || isdirectory("../../.git")
+  if isdirectory("../../.git") || isdirectory("../../../.git") || isdirectory("../../../../.git")
+    " 階層が深くなるとexcludeがうまく動かない？
+    call fzf#vim#gitfiles(' '.getcwd().' -co --exclude-standard', fzf#vim#with_preview(fzf_preview_options), 1)
+  elseif isdirectory(getcwd()."/.git") || isdirectory("../.git") || filereadable('.gitignore')
     call fzf#vim#gitfiles(' '.getcwd().' -co --exclude-standard -- '.
           \ '":!**/*.png" '.
-          \ '":(exclude)**/*.jpg" '.
-          \ '":(exclude)**/*.jpeg" '.
-          \ '":(exclude)**/*.webp" '.
-          \ '":(exclude)**/*.gif" '.
-          \ '":(exclude)**/*.sketch" ',
-          \ fzf#vim#with_preview(fzf_preview_options), 1)
+          \ '":!**/*.jpg" '.
+          \ '":!**/*.jpeg" '.
+          \ '":!**/*.webp" '.
+          \ '":!**/*.gif" '.
+          \ '":!**/*.sketch" '.
+          \ '', fzf#vim#with_preview(fzf_preview_options), 1)
   else
     call fzf#vim#files(getcwd(), fzf#vim#with_preview(fzf_preview_options), 1)
   endif
