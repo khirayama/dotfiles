@@ -135,9 +135,9 @@ command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shelle
 function! DispatchFilesOrGFiles()
   let fzf_preview_options = { 'options': ['--preview-window=up:50%'] }
 
-  if isdirectory(getcwd()."/.git") || isdirectory("./.git") || isdirectory("../.git") || isdirectory("../../.git") || isdirectory("../../../.git")
+  if isdirectory(getcwd()."/.git") || isdirectory("../.git") || isdirectory("../../.git")
     call fzf#vim#gitfiles(' '.getcwd().' -co --exclude-standard -- '.
-          \ '"./*" ":!**/*.png" '.
+          \ '":!**/*.png" '.
           \ '":(exclude)**/*.jpg" '.
           \ '":(exclude)**/*.jpeg" '.
           \ '":(exclude)**/*.webp" '.
