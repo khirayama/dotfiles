@@ -106,6 +106,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Nice to have
@@ -163,39 +164,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 " ----- asyncomplete End -----
-
-" ----- vim-lsp Start -----
-let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-
-" https://github.com/prabirshrestha/vim-lsp/wiki/Servers-TypeScript
-if executable('typescript-language-server')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'typescript-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-    \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-    \ 'whitelist': ['typescript', 'typescript.tsx'],
-    \ })
-endif
-
-if executable('gopls')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'gopls',
-    \ 'cmd': {server_info->['gopls']},
-    \ 'whitelist': ['go'],
-    \ })
-  autocmd BufWritePre *.go LspDocumentFormatSync
-endif
-
-" https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Clangd
-if executable('clangd')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'clangd',
-    \ 'cmd': {server_info->['clangd', '-background-index']},
-    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-    \ })
-endif
-" ----- vim-lsp End -----
 
 " ----- ale Start -----
 let g:ale_sign_column_always = 1
