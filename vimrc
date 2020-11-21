@@ -165,6 +165,11 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 " ----- asyncomplete End -----
 
+" ----- lsp Start -----
+let g:lsp_signs_enabled = 1	
+let g:lsp_diagnostics_echo_cursor = 1
+" ----- lsp End -----
+
 " ----- ale Start -----
 let g:ale_sign_column_always = 1
 let g:ale_cursor_detail = 0
