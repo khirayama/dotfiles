@@ -101,7 +101,7 @@ alias maintenance='
 '
 alias vpn='open /Applications/Pulse\ Secure.app/Contents/Plugins/JamUI/PulseTray.app'
 alias simulator='open -a Simulator'
-alias vnc='vncserver -localhost no -FrameRate 120 -geometry 1920x1200 :1'
+alias vnc='vnc -kill -f :1 & vncserver -localhost no -FrameRate 120 -geometry 1920x1200 :1'
 
 # sudo diskutil repairPermissions / &&
 
