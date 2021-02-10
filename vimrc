@@ -185,12 +185,10 @@ let g:ale_set_quickfix = 0
 let g:ale_linters = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'typescript': ['eslint', 'prettier'],
-\ 'go': ['gopls'],
 \}
 let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'typescript': ['eslint', 'prettier'],
-\ 'go': ['gopls'],
 \}
 " ----- ale End -----
 
