@@ -84,12 +84,10 @@ alias update='
   echo "done: brew upgrade" &&
   brew cleanup -s &&
   echo "done: brew cleanup" &&
-  brew cask install --force $(brew cask list) &&
+  brew install $(brew list --cask) &&
   echo "done: brew cask update" &&
-  (brew cask outdated | xargs brew cask uninstall $1) &&
-  echo "done: brew cask cleanup" &&
-  brew cask doctor &&
-  echo "done: brew cask doctor"
+  (brew outdated --cask | xargs brew uninstall $1) &&
+  echo "done: brew cask cleanup"
 '
 alias maintenance='
   sudo kextcache -system-prelinked-kernel &&
