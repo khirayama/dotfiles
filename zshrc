@@ -89,6 +89,11 @@ alias update='
   (brew outdated --cask | xargs brew uninstall $1) &&
   echo "done: brew cask cleanup"
 '
+alias dump='
+  brew update &&
+  rm Brewfile &&
+  brew bundle dump
+'
 alias maintenance='
   sudo kextcache -system-prelinked-kernel &&
   sudo kextcache -system-caches &&
