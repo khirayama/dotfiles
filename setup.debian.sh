@@ -19,6 +19,9 @@ ln -sf $PWD/ctags ~/.ctags
 # Install nvm. https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 
+sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+sudo ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
+
 # Install ngrok. https://ngrok.com/download
 # ngrok https://dashboard.ngrok.com/
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
