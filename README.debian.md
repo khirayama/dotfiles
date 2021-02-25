@@ -44,3 +44,18 @@ $ rm NGROK_FILE
 
 # Install Docker https://docs.docker.com/engine/install/debian/
 ```
+
+## Troubleshooting
+
+- Chromeの起動時に認証を求められる
+  - 自動ログインを切ればよい
+  - [Chromeブラウザ起動時に「ログインのキーリングのパスワードを入力してください」を回避する方法 - タイを釣りたいエビ](https://ebiss.hatenablog.com/entry/2019/02/10/200000)
+- key remapしたい
+  - xmodmapを使う
+  - xevでkeycodeは調べられる
+  - autostartの方法は調査中
+  - ~/.config/autostartだと動かず。/etc/xdg/autostartも同様
+  - ~/.Xmodmap, ~/.xinitrc, ~/.xsessionrcも動かず
+- Mozcの初期値をかなにしたい
+  - [mozcのデフォルトをひらがな入力モードにする - dakusui's blog](http://dakusui.hatenablog.com/entry/2017/09/24/160400)
+  - 現状、buildしたりが必要でめんどい。のでしてない
