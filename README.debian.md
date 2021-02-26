@@ -56,6 +56,8 @@ $ rm NGROK_FILE
   - autostartの方法は調査中
   - ~/.config/autostartだと動かず。/etc/xdg/autostartも同様
   - ~/.Xmodmap, ~/.xinitrc, ~/.xsessionrcも動かず
+  - https://itectec.com/ubuntu/ubuntu-how-to-set-xmodmap-on-login/
+  - Adding delayで解決
 - Mozcの初期値をかなにしたい
   - [mozcのデフォルトをひらがな入力モードにする - dakusui's blog](http://dakusui.hatenablog.com/entry/2017/09/24/160400)
   - 現状、buildしたりが必要でめんどい。のでしてない
