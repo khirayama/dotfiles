@@ -16,6 +16,35 @@ $ sudo vim /etc/passwd
 $ sudo shutdown -r now
 ```
 
+## Settings & Install
+
+- Google Chrome https://www.google.com/intl/ja_jp/chrome/
+- Hyper Term https://hyper.is/
+- Settings
+  - 外観
+    - ウインドウの色: 暗い
+    - Dockを自動的に隠す: On
+    - アイコンサイズ: 32
+    - 表示位置: 下
+  - 通知
+    - 全てOff
+  - ディスプレイ
+    - 夜間モード: 常時On
+  - マウスとタッチパッド
+    - タッチパッドの速度を調整
+  - キーボードショートカット
+    - Off
+      - 端末の起動
+      - ウィンドウメニューを開く
+      - 画面をロック
+    - 変更
+      - 前の入力ソースへ切り替える: Shift+Ctrl+Space
+      - 次の入力ソースへ切り替える: Ctrl+Space
+    - 追加
+      - Albertの起動: Alt+Space
+   - ユーザー
+    - 自動ログイン: Off
+
 ## Troubleshooting
 
 - Chromeの起動時に認証を求められる
