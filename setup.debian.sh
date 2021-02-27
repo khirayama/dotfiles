@@ -28,6 +28,9 @@ sudo wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xU
 sudo apt update
 sudo apt install albert
 
+# Disable super key to launch the launcher
+gsettings set org.gnome.mutter overlay-key ''
+
 sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 sudo ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
 
