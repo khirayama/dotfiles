@@ -17,6 +17,7 @@ ln -sf $PWD/eslintrc ~/.eslintrc
 ln -sf $PWD/ctags ~/.ctags
 ln -sf $PWD/.Xmodmap ~/.Xmodmap
 ln -sf $PWD/xmodmap.desktop ~/.config/autostart
+ln -sf $PWD/albert ~/.config
 
 # Install nvm. https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
