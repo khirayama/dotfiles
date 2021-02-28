@@ -29,6 +29,11 @@ sudo wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xU
 sudo apt update
 sudo apt install albert
 
+# Install Docker. https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-ja
+sudo update
+sudo apt install docker docker-compose
+sudo adduser khirayama docker
+
 # Disable super key to launch the launcher
 gsettings set org.gnome.mutter overlay-key ''
 
