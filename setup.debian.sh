@@ -42,4 +42,4 @@ sudo ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/b
 
 # Install ngrok. https://ngrok.com/download
 # ngrok https://dashboard.ngrok.com/
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+# wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
