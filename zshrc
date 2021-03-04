@@ -205,3 +205,9 @@ alias ngrok-ssh='nohup ngrok tcp 22 &'
 
 bindkey '^M' accept-line
 bindkey '^[OM' accept-line
+
+case ${OSTYPE} in
+    linux*)
+        alias open='xdg-open'
+        ;;
+esac
