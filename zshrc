@@ -202,3 +202,12 @@ export PATH=$PATH:~/Works/flutter/bin
 # Ubuntu
 # https://qiita.com/Morichan/items/62ccf58c8f292549ce36
 alias ngrok-ssh='nohup ngrok tcp 22 &'
+
+bindkey '^M' accept-line
+bindkey '^[OM' accept-line
+
+case ${OSTYPE} in
+    linux*)
+        alias open='xdg-open'
+        ;;
+esac

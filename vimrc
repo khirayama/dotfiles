@@ -27,6 +27,7 @@ set signcolumn=yes
 set smartindent
 set autoindent
 set clipboard+=unnamed
+set clipboard=unnamedplus
 set bs=indent,eol,start
 set expandtab
 set tabstop=2
@@ -155,6 +156,7 @@ endfunction
 
 noremap <C-u> :call DispatchFilesOrGFiles()<CR>
 
+let g:fzf_preview_window = ['up:50%', 'ctrl-/']
 let g:fzf_action = { 'ctrl-a': 'vsplit' }
 " ----- fzf End -----
 
