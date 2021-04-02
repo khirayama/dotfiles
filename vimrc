@@ -27,7 +27,7 @@ set signcolumn=yes
 set smartindent
 set autoindent
 set clipboard+=unnamed
-set clipboard=unnamedplus
+" set clipboard+=unnamedplus
 set bs=indent,eol,start
 set expandtab
 set tabstop=2
