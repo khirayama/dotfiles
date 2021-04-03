@@ -38,9 +38,11 @@ $ sudo shutdown -r now
       - ウィンドウメニューを開く
       - 画面をロック
     - 変更
+      - 検索: Ctrl+Up
       - 前の入力ソースへ切り替える: Shift+Ctrl+Space
       - 次の入力ソースへ切り替える: Ctrl+Space
     - 追加
+      - Albertの起動: Super+Space
       - Albertの起動: Alt+Space
    - ユーザー
     - 自動ログイン: Off
