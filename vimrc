@@ -116,6 +116,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'lilydjwg/colorizer'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Syntax Highlight
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
