@@ -7,10 +7,15 @@
 - Setup shell
   - Run `vi /etc/shells` to add `/usr/local/bin/zsh`
   - Run `chsh -s /usr/local/bin/zsh`
+- Standalone Install
+  - Google Chrome
+  - Choosy
+  - Alfred
+  - Krisp
+- App Store Install
+  - Mangnet
 - Install or update Xcode
   - https://apps.apple.com/jp/app/xcode/id497799835
-- Install Goole Chrome
-  - https://www.google.co.jp/chrome/
 - Install Note Sans
   - https://www.google.com/get/noto/#/
 - Set up GitHub
@@ -20,11 +25,26 @@
 
 ## Mac Preferences
 
-- Keyboard -> Modifier Keys -> Caps Lock to Control
-- Keyboard -> Input Source -> Add Japanese and disable カタカタ
-- Keyboard -> Input Source -> Disable Live Conversion
-- Keyboard -> Keyboard -> Key Repeat to Fast
-- Keyboard -> Keyboard -> Delay Until Repeat to Short
+- General
+  - Choose Dark Theme
+- Dock
+  - Enable "Automatically hide and show the Dock"
+  - Disable "Show indicators for open applications"
+  - Disable "Show recent applications in Dock"
+- Keyboard
+  - Key Repeat to Fast
+  - Delay Until Repeat to Short
+  - "Modifier Keys" > Caps Lock to Control
+  - "Customize Control Strip"
+  - Input Source > Add Japanese and disable カタカタ
+  - Input Source > Disable Live Conversion
+- Trackpad
+  - Disable "Look up & data detectors"
+  - Enable "Tap to click"
+  - "More Gestures" > Disable "Notification Center"
+- Display
+  - Disbale "Automatically adjust brightness"
+  - "Night Shift" 4:00 to 3:59 and "More Warm"
 
 ## Dump
 
