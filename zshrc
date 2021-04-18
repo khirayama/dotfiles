@@ -10,11 +10,6 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 # direnv
 eval "$(direnv hook zsh)"
 
-# Add yarn path
-if [ -d $HOME/.yarn ]; then
-  export PATH="$HOME/.yarn/bin:$PATH"
-fi
-
 # go dev env - goenv
 export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH=$HOME/.go
@@ -133,11 +128,6 @@ alias ni='npm i'
 alias ns='npm start'
 alias nt='npm test'
 alias nr='npm run'
-alias yi='yarn install'
-alias ya='yarn add'
-alias ys='yarn start'
-alias yt='yarn test'
-alias yr='yarn run'
 
 # ----------------------
 # Rails Aliases
