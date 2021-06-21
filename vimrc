@@ -107,6 +107,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'yami-beta/asyncomplete-omni.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -116,7 +117,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'lilydjwg/colorizer'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Syntax Highlight
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
@@ -171,6 +172,16 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 " ----- lsp Start -----
 let g:lsp_signs_enabled = 1	
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_settings_root_markers = [
+\	'package.json',
+\	'Cargo.toml',
+\	'.git/',
+\]
+
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
+\ 'name': 'omni',
+\ 'allowlist': ['*'],
+\ }))
 " ----- lsp End -----
 
 " ----- ale Start -----
