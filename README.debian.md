@@ -5,6 +5,7 @@
 # ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 # cat ~/.ssh/id_rsa.pub
 # Register id_rsa.pub on github
+# ssh -T git@github.com
 
 $ git clone git@github.com:khirayama/dotfiles.git
 
