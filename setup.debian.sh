@@ -35,7 +35,10 @@ sudo apt install docker docker-compose
 sudo adduser khirayama docker
 
 # Disable super key to launch the launcher
-gsettings set org.gnome.mutter overlay-key ''
+# gsettings set org.gnome.mutter overlay-key ''
+gsettings reset org.gnome.mutter overlay-key
+# Capslock to ctrl
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 
 sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 sudo ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
