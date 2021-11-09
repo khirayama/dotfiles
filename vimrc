@@ -26,8 +26,12 @@ set signcolumn=yes
 " Insert
 set smartindent
 set autoindent
-set clipboard+=unnamed
-" set clipboard+=unnamedplus
+if has("mac")
+  set clipboard+=unnamed
+endif
+if has("unix")
+  set clipboard=unnamedplus
+endif
 set bs=indent,eol,start
 set expandtab
 set tabstop=2
