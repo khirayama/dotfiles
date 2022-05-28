@@ -39,6 +39,7 @@ sudo adduser khirayama docker
 gsettings reset org.gnome.mutter overlay-key
 # Capslock to ctrl
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30
 
 sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 sudo ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
