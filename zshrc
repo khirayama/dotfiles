@@ -11,14 +11,14 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 eval "$(direnv hook zsh)"
 
 # go dev env - goenv
-export GOROOT="/usr/local/opt/go/libexec"
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-if [ -d $HOME/.goenv ]; then
-  export GOENV_ROOT=$HOME/.goenv
-  export PATH=$GOENV_ROOT/bin:$PATH
-  eval "$(goenv init -)"
-fi
+# export GOROOT="/usr/local/opt/go/libexec"
+# export GOPATH=$HOME/.go
+# export PATH=$PATH:$GOPATH/bin
+# if [ -d $HOME/.goenv ]; then
+#   export GOENV_ROOT=$HOME/.goenv
+#   export PATH=$GOENV_ROOT/bin:$PATH
+#   eval "$(goenv init -)"
+# fi
 
 # python dev env - pyenv
 if [ -d $HOME/.pyenv ]; then
