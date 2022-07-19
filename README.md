@@ -7,21 +7,12 @@
 - Setup shell
   - Run `vi /etc/shells` to add `/usr/local/bin/zsh`
   - Run `chsh -s /usr/local/bin/zsh`
-- Standalone Install
-  - Google Chrome
-  - Choosy
-  - Alfred
-  - Krisp
-- App Store Install
-  - Mangnet
 - Install or update Xcode
   - https://apps.apple.com/jp/app/xcode/id497799835
 - Install Note Sans
   - https://www.google.com/get/noto/#/
 - Set up GitHub
   - https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-- Install NVM
-  - https://github.com/nvm-sh/nvm
 
 ## Mac Preferences
 
