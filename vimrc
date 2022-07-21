@@ -26,12 +26,7 @@ set signcolumn=yes
 " Insert
 set smartindent
 set autoindent
-if has("mac")
-  set clipboard+=unnamed
-endif
-if has("unix")
-  set clipboard=unnamedplus
-endif
+set clipboard+=unnamed
 set bs=indent,eol,start
 set expandtab
 set tabstop=2
@@ -45,7 +40,7 @@ set nohlsearch
 set noswapfile
 set nobackup
 set noerrorbells
-set whichwrap=b,s,h,l,<,>,[,]
+" set whichwrap=b,s,h,l,<,>,[,]
 set splitright
 " ----- Settings End -----
 "
