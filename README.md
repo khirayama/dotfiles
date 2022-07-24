@@ -2,15 +2,12 @@
 
 ## Setting up
 
+- Install Xcode from AppStore
+- Install Homebrew
+  - https://brew.sh/index_ja
+  - `brew bundle`
 - Run `setup.sh`
   - Install HomeBrew. Then install packages and setup config files.
-- Setup shell
-  - Run `vi /etc/shells` to add `/usr/local/bin/zsh`
-  - Run `chsh -s /usr/local/bin/zsh`
-- Install or update Xcode
-  - https://apps.apple.com/jp/app/xcode/id497799835
-- Install Note Sans
-  - https://www.google.com/get/noto/#/
 - Set up GitHub
   - https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
@@ -26,7 +23,7 @@
   - Key Repeat to Fast
   - Delay Until Repeat to Short
   - "Modifier Keys" > Caps Lock to Control
-  - "Customize Control Strip"
+  - "Modifier Keys" > Global to Control
   - Input Source > Add Japanese and disable カタカタ
   - Input Source > Disable Live Conversion
 - Trackpad
