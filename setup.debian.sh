@@ -14,7 +14,6 @@ ln -sf $PWD/vimrc ~/.vimrc
 ln -sf $PWD/vimrc ~/.config/nvim/init.vim
 ln -sf $PWD/gitconfig ~/.gitconfig
 ln -sf $PWD/eslintrc ~/.eslintrc
-ln -sf $PWD/ctags ~/.ctags
 ln -sf $PWD/.Xmodmap ~/.Xmodmap
 ln -sf $PWD/xmodmap.desktop ~/.config/autostart
 ln -sf $PWD/albert ~/.config
