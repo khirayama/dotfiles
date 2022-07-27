@@ -1,14 +1,12 @@
 # export LANG=ja_JP.UTF-8
 # export LC_CTYPE=ja_JP.UTF-8
 # export TERM=xterm-256color
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # llvm
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-
-# direnv
-eval "$(direnv hook zsh)"
 
 # go dev env - goenv
 # export GOROOT="/usr/local/opt/go/libexec"
