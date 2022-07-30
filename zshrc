@@ -40,7 +40,8 @@ if [ -d $HOME/.nvm ]; then
 fi
 
 # Add diff-highlight path
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+# export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+export PATH=$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight
 
 # tabで補完するとき、大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
