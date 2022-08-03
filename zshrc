@@ -8,30 +8,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # llvm
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-# go dev env - goenv
-# export GOROOT="/usr/local/opt/go/libexec"
-# export GOPATH=$HOME/.go
-# export PATH=$PATH:$GOPATH/bin
-# if [ -d $HOME/.goenv ]; then
-#   export GOENV_ROOT=$HOME/.goenv
-#   export PATH=$GOENV_ROOT/bin:$PATH
-#   eval "$(goenv init -)"
-# fi
-
-# python dev env - pyenv
-if [ -d $HOME/.pyenv ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  export PATH="$HOME/.pyenv/shims:$PATH"
-  eval "$(pyenv init -)"
-fi
-
-# ruby dev env - rbenv
-if [ -d $HOME/.rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
 # node dev env - nvm
 if [ -d $HOME/.nvm ]; then
   export NVM_DIR="$HOME/.nvm"
