@@ -1,5 +1,3 @@
-" TODO: lspのnext errorへの移動など
-" TODO: statuslineにlspのエラーなどの個数を追加
 " TODO: lspのline highlightを更新
 " TODO: vim-abolishの検討
 call plug#begin('~/.vim/plugged')
@@ -77,7 +75,18 @@ set completeopt=menuone,noinsert,noselect,preview
 let g:lsp_diagnostics_float_cursor = 1
 let g:lsp_diagnostics_float_delay = 200
 let g:lsp_diagnostics_virtual_text_enabled = 0
-" highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+let g:lsp_document_code_action_signs_enabled = 0
+nnoremap <C-]> :LspNextDiagnostic<CR>
+nnoremap <C-[> :LspPreviousDiagnostic<CR>
+highlight link LspErrorHighlight Error
+highlight link LspWarningHighlight Error
+highlight link LspInformationHighlight Error
+highlight link LspHintHighlight Error
+let g:lsp_diagnostics_signs_error = {'text': '❌'}
+let g:lsp_diagnostics_signs_warning = {'text': '⚠️'}
+let g:lsp_diagnostics_signs_information = { 'text': 'ℹ️' }
+let g:lsp_diagnostics_signs_hint = { 'text': '🔈' }
 
 " --- statusline ---
-set statusline=%f\ %m%r%h%w[%{&fenc}]\ %l/%L
+let dc = lsp#get_buffer_diagnostics_counts()
+set statusline=%f\ L:%l/%L\ E:%{lsp#get_buffer_diagnostics_counts().error}\ W:%{lsp#get_buffer_diagnostics_counts().warning}\ I:%{lsp#get_buffer_diagnostics_counts().information}\ H:%{lsp#get_buffer_diagnostics_counts().hint}
