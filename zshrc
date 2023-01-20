@@ -4,32 +4,14 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # tabで補完するとき、大文字小文字を区別しない
-
 autoload -U compinit
 compinit -u
-
-autoload colors
-colors
-PROMPT="
- %{${fg[yellow]}%}%~%{${reset_color}%}
- [%n]$ "
-
- PROMPT2='[%n]> '
 
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:*' formats '%s][* %F{yellow}%b%f'
 precmd() { vcs_info }
 PROMPT='[${vcs_info_msg_0_}]:%~/%f '
-
-bindkey '^M' accept-line
-bindkey '^[OM' accept-line
-
-case ${OSTYPE} in
-    linux*)
-        alias open='xdg-open'
-        ;;
-esac
 
 export EDITOR=vim
 autoload -Uz colors; colors
@@ -65,11 +47,6 @@ alias update='
   (brew outdated --cask | xargs brew uninstall $1) &&
   echo "done: brew cask cleanup"
 '
-alias dump='
-  brew update &&
-  rm Brewfile &&
-  brew bundle dump
-'
 alias maintenance='
   sudo kextcache -system-prelinked-kernel &&
   sudo kextcache -system-caches &&
@@ -78,19 +55,13 @@ alias maintenance='
   sudo update_dyld_shared_cache -force &&
   sudo purge
 '
+alias dump='brew update && rm Brewfile && brew bundle dump'
 
-# Node Aliases
-alias ni='npm i'
+alias ni='npm install'
 alias ns='npm start'
 alias nt='npm test'
 alias nr='npm run'
 
-# Rails Aliases
-alias be='bundle exec'
-alias bers='bundle exec rails s'
-alias bersp='bundle exec rails s -p'
-
-# Git Aliases
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
