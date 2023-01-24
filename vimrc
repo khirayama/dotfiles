@@ -10,6 +10,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
 call plug#end()
 
 set number
@@ -86,6 +87,10 @@ let g:lsp_diagnostics_signs_error = {'text': '❌'}
 let g:lsp_diagnostics_signs_warning = {'text': '⚠️'}
 let g:lsp_diagnostics_signs_information = { 'text': 'ℹ️' }
 let g:lsp_diagnostics_signs_hint = { 'text': '🔈' }
+
+" --- vim-prettier ---
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " --- statusline ---
 let dc = lsp#get_buffer_diagnostics_counts()
