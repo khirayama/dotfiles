@@ -44,7 +44,6 @@ colorscheme codedark
 
 " --- fzf ---
 command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
-
 function! DispatchFilesOrGFiles()
   let fzf_preview_options = { 'options': ['--preview-window=up:50%'] }
 
@@ -61,18 +60,18 @@ function! DispatchFilesOrGFiles()
     call fzf#vim#files(getcwd(), fzf#vim#with_preview(fzf_preview_options), 1)
   endif
 endfunction
-
 noremap <C-u> :call DispatchFilesOrGFiles()<CR>
-
 let g:fzf_preview_window = ['up:50%', 'ctrl-/']
 let g:fzf_action = { 'ctrl-a': 'vsplit' }
 
-" --- lsp & asyncomplete ---
+" --- asyncomplete ---
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:asyncomplete_auto_completeopt = 0
 let g:asyncomplete_popup_delay = 200
 set completeopt=menuone,noinsert,noselect,preview
+
+" --- vim-lsp ---
 let g:lsp_diagnostics_float_cursor = 1
 let g:lsp_diagnostics_float_delay = 200
 let g:lsp_diagnostics_virtual_text_enabled = 0
