@@ -41,6 +41,7 @@ nmap <C-n> <C-w>>
 nmap <C-m> <C-w><
 
 colorscheme codedark
+filetype plugin indent on
 
 " --- fzf ---
 command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
@@ -90,6 +91,7 @@ let g:lsp_diagnostics_signs_hint = { 'text': '🔈' }
 " --- vim-prettier ---
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
+autocmd BufWritePre *.liquid Prettier
 
 " --- statusline ---
 let dc = lsp#get_buffer_diagnostics_counts()
