@@ -31,6 +31,7 @@ set incsearch
 set nohlsearch
 set laststatus=2
 set signcolumn=yes
+set scrolloff=12
 
 imap <C-c> <ESC>
 nmap <C-j> <C-w>j
