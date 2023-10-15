@@ -97,13 +97,3 @@ let g:prettier#autoformat_require_pragma = 0
 " --- statusline ---
 let dc = lsp#get_buffer_diagnostics_counts()
 set statusline=%f\ L:%l/%L\ E:%{lsp#get_buffer_diagnostics_counts().error}\ W:%{lsp#get_buffer_diagnostics_counts().warning}\ I:%{lsp#get_buffer_diagnostics_counts().information}\ H:%{lsp#get_buffer_diagnostics_counts().hint}
-
-" --- shopify ---
-if executable('shopify')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'theme-check-language-server',
-        \ 'cmd': {server_info->lsp_settings#get('theme-check-language-server', 'cmd', [lsp_settings#exec_path('shopify')]+lsp_settings#get('theme-check-language-server', 'args', ['theme', 'language-server']))},
-        \ 'allowlist': lsp_settings#get('theme-check-language-server', 'allowlist', ['liquid'])
-        \ })
-endif
-autocmd BufWritePre *.liquid Prettier
