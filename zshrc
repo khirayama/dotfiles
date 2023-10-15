@@ -86,3 +86,10 @@ alias gg='git grep -n -i'
 alias gge='git grep -n -i -e'
 alias grp='git remote prune'
 alias gbd='git branch --merged | grep -v "*" | xargs -I % git branch -d %'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
