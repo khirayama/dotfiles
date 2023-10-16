@@ -11,7 +11,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
-Plug 'github/copilot.vim'
 call plug#end()
 
 set number
