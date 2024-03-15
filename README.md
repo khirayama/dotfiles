@@ -33,6 +33,9 @@
 - Display
   - Disbale "Automatically adjust brightness"
   - "Night Shift" 4:00 to 3:59 and "More Warm"
+- Disable screen saver if you want
+  - Create autometor application with `caffeinate -d -i -u -s &` as shell running
+  - Add the app to Login Item
 
 ## Dump
 
