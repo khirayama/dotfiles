@@ -88,10 +88,12 @@ let g:lsp_diagnostics_signs_error = {'text': '❌'}
 let g:lsp_diagnostics_signs_warning = {'text': '⚠️'}
 let g:lsp_diagnostics_signs_information = { 'text': 'ℹ️' }
 let g:lsp_diagnostics_signs_hint = { 'text': '🔈' }
+set updatetime=600000
 
 " --- vim-prettier ---
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
+let g:prettier#filetype_ignore = ['markdown']
 
 " --- statusline ---
 let dc = lsp#get_buffer_diagnostics_counts()
