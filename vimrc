@@ -11,7 +11,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
-Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+Plug 'github/copilot.vim'
 call plug#end()
 
 set number
@@ -33,6 +33,7 @@ set nohlsearch
 set laststatus=2
 set signcolumn=yes
 set scrolloff=12
+set splitright
 
 imap <C-c> <ESC>
 nmap <C-j> <C-w>j
@@ -99,3 +100,6 @@ let g:prettier#filetype_ignore = ['markdown']
 " --- statusline ---
 let dc = lsp#get_buffer_diagnostics_counts()
 set statusline=%f\ L:%l/%L\ E:%{lsp#get_buffer_diagnostics_counts().error}\ W:%{lsp#get_buffer_diagnostics_counts().warning}\ I:%{lsp#get_buffer_diagnostics_counts().information}\ H:%{lsp#get_buffer_diagnostics_counts().hint}
+
+" --- copilot ---
+autocmd InsertLeave * silent! Copilot enable

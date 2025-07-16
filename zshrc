@@ -1,6 +1,7 @@
-# export LANG=ja_JP.UTF-8
-# export LC_CTYPE=ja_JP.UTF-8
 # export TERM=xterm-256color
+export LANG=ja_JP.UTF-8
+export LC_CTYPE=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # tabで補完するとき、大文字小文字を区別しない
@@ -13,7 +14,7 @@ zstyle ':vcs_info:*' formats '%s][* %F{yellow}%b%f'
 precmd() { vcs_info }
 PROMPT='[${vcs_info_msg_0_}]:%~/%f '
 
-export EDITOR=vim
+export EDITOR=nvim
 autoload -Uz colors; colors
 setopt auto_cd
 setopt nobeep
@@ -58,7 +59,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
 alias t='tree'
-alias v='vim'
+alias v='nvim'
 alias update='
   brew update &&
   echo "done: brew update" &&
@@ -71,13 +72,14 @@ alias update='
   (brew outdated --cask | xargs brew uninstall $1) &&
   echo "done: brew cask cleanup"
 '
+
 alias maintenance='
-  sudo kextcache -system-prelinked-kernel &&
-  sudo kextcache -system-caches &&
-  sudo killall Dock &&
-  sudo chmod -R -N ~ &&
-  sudo update_dyld_shared_cache -force &&
-  sudo purge
+  sudo diskutil verifyDisk disk0 &&
+  sudo diskutil repairDisk disk0 &&
+  sudo purge &&
+  sudo fstrim -v / &&
+  sudo softwareupdate -l &&
+  sudo softwareupdate -ia
 '
 alias dump='brew update && rm Brewfile && brew bundle dump'
 
@@ -117,3 +119,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+. "$HOME/.local/bin/env"
+alias claude="$HOME/.claude/local/claude"
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
