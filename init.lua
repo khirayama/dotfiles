@@ -142,7 +142,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 })
 
 -- ClaudeCode
-vim.env.PATH = vim.env.PATH .. ':$HOME/.claude/local'
+vim.env.PATH = vim.env.PATH .. ':' .. vim.env.HOME .. '/.claude/local'
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",
   callback = function()
