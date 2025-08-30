@@ -145,7 +145,7 @@ vim.g["prettier#autoformat_require_pragma"] = 0
 vim.g["prettier#filetype_ignore"] = { "markdown" }
 
 -- statusline（簡易版）
--- vim.opt.statusline = "%f L:%l/%L E:%{v:lua.lsp_get_error()} W:%{v:lua.lsp_get_warning()} I:%{v:lua.lsp_get_info()} H:%{v:lua.lsp_get_hint()}"
+vim.opt.statusline = "%f %=%l/%L [%p%%]"
 
 -- Copilot
 vim.api.nvim_create_autocmd("InsertLeave", {
