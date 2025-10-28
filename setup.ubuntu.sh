@@ -1,4 +1,7 @@
 #!/bin/sh
+sudo apt update
+sudo apt install -y zsh
+chsh -s $(which zsh)
 
 mkdir -p ~/.config/nvim
 mkdir -p ~/.vim/colors
@@ -9,7 +12,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # Setup LazyVim for nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
-ln -sf $PWD/zshrc ~/.zshrc
+ln -sf $PWD/zshrc.ubuntu ~/.zshrc
 ln -sf $PWD/tmux.conf ~/.tmux.conf
 ln -sf $PWD/vimrc ~/.vimrc
 ln -sf $PWD/init.lua ~/.config/nvim/init.lua
