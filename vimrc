@@ -10,9 +10,11 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
-Plug 'github/copilot.vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'json', 'html'] }
+Plug 'github/copilot.vim', { 'on': [] }
 call plug#end()
+
+autocmd InsertEnter * ++once call plug#load('copilot.vim')
 
 set number
 set nowrap
@@ -35,7 +37,7 @@ set signcolumn=yes
 set scrolloff=12
 set splitright
 
-imap <C-c> <ESC>
+inoremap <C-c> <ESC>
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
@@ -90,7 +92,7 @@ let g:lsp_diagnostics_signs_error = {'text': '❌'}
 let g:lsp_diagnostics_signs_warning = {'text': '⚠️'}
 let g:lsp_diagnostics_signs_information = { 'text': 'ℹ️' }
 let g:lsp_diagnostics_signs_hint = { 'text': '🔈' }
-set updatetime=600000
+set updatetime=300
 
 " --- vim-prettier ---
 let g:prettier#autoformat = 1
@@ -98,7 +100,6 @@ let g:prettier#autoformat_require_pragma = 0
 let g:prettier#filetype_ignore = ['markdown']
 
 " --- statusline ---
-let dc = lsp#get_buffer_diagnostics_counts()
 set statusline=%f\ L:%l/%L\ E:%{lsp#get_buffer_diagnostics_counts().error}\ W:%{lsp#get_buffer_diagnostics_counts().warning}\ I:%{lsp#get_buffer_diagnostics_counts().information}\ H:%{lsp#get_buffer_diagnostics_counts().hint}
 
 " --- copilot ---
