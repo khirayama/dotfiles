@@ -71,3 +71,12 @@ alias gg='git grep -n -i'
 alias gge='git grep -n -i -e'
 alias grp='git remote prune'
 alias gbd='git branch --merged | grep -v "*" | xargs -I % git branch -d %'
+
+# Java for Android/Gradle
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
+
+# iOS Dev
+export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
