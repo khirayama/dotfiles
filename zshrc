@@ -71,6 +71,7 @@ alias gg='git grep -n -i'
 alias gge='git grep -n -i -e'
 alias grp='git remote prune'
 alias gbd='git branch --merged | grep -v "*" | xargs -I % git branch -d %'
+alias cop='copilot --allow-all'
 
 # Java for Android/Gradle
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
