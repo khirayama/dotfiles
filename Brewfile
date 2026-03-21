@@ -1,5 +1,6 @@
 brew "fnm"
 brew "git"
+brew "just"
 brew "tmux"
 brew "tree"
 brew "uv"
