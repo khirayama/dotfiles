@@ -2,6 +2,7 @@
 
 mkdir -p ~/.vim/colors
 mkdir -p ~/.github/copilot
+mkdir -p ~/.config/ghostty
 
 # Setup vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -12,3 +13,4 @@ ln -sf $PWD/zshrc ~/.zshrc
 ln -sf $PWD/tmux.conf ~/.tmux.conf
 ln -sf $PWD/vimrc ~/.vimrc
 ln -sf $PWD/gitconfig ~/.gitconfig
+ln -sf $PWD/ghostty/config ~/.config/ghostty/config
