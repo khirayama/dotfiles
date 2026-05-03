@@ -11,10 +11,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'json', 'html'] }
-Plug 'github/copilot.vim', { 'on': [] }
 call plug#end()
-
-autocmd InsertEnter * ++once call plug#load('copilot.vim')
 
 set number
 set nowrap
@@ -101,6 +98,3 @@ let g:prettier#filetype_ignore = ['markdown']
 
 " --- statusline ---
 set statusline=%f\ L:%l/%L\ E:%{lsp#get_buffer_diagnostics_counts().error}\ W:%{lsp#get_buffer_diagnostics_counts().warning}\ I:%{lsp#get_buffer_diagnostics_counts().information}\ H:%{lsp#get_buffer_diagnostics_counts().hint}
-
-" --- copilot ---
-autocmd InsertLeave * silent! Copilot enable
