@@ -29,7 +29,7 @@ setopt nobeep
 
 export PATH="$HOME/.local/bin:/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
 
-[[ -z "$TMUX" && -n "$PS1" ]] && tmux
+[[ -z "$TMUX" && -n "$PS1" && -z "$CMUX_WORKSPACE_ID" ]] && tmux
 
 # Node version manager (fnm)
 eval "$(fnm env --use-on-cd --shell zsh)"
