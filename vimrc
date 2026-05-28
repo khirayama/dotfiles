@@ -48,19 +48,15 @@ filetype plugin indent on
 " --- fzf ---
 command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0)
 function! DispatchFilesOrGFiles()
-  let fzf_preview_options = { 'options': ['--preview-window=up:50%'] }
+  let cwd = getcwd()
+  let p = {'options': ['--preview-window=up:50%'], 'window': {'width': 1, 'height': 1}}
+  let g = isdirectory(cwd.'/.git') || isdirectory('../.git') || filereadable('.gitignore')
+  let excludes = join(map(['png', 'jpg', 'jpeg', 'webp', 'gif', 'sketch'], '"\":!**/*." . v:val . "\""'), ' ')
 
-  if isdirectory(getcwd()."/.git") || isdirectory("../.git") || filereadable('.gitignore')
-    call fzf#vim#gitfiles(' '.getcwd().' -co --exclude-standard -- '.
-          \ '":!**/*.png" '.
-          \ '":!**/*.jpg" '.
-          \ '":!**/*.jpeg" '.
-          \ '":!**/*.webp" '.
-          \ '":!**/*.gif" '.
-          \ '":!**/*.sketch" '.
-          \ '', fzf#vim#with_preview(fzf_preview_options), 1)
+  if g
+    call fzf#vim#gitfiles(' '.cwd.' -co --exclude-standard -- '.excludes, fzf#vim#with_preview(p), 0)
   else
-    call fzf#vim#files(getcwd(), fzf#vim#with_preview(fzf_preview_options), 1)
+    call fzf#vim#files(cwd, fzf#vim#with_preview(p), 0)
   endif
 endfunction
 noremap <C-u> :call DispatchFilesOrGFiles()<CR>
