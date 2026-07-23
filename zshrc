@@ -79,3 +79,4 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_
 
 # iOS Dev
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+export PATH="$PATH:/Users/khirayama/.lmstudio/bin"
