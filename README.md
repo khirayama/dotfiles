@@ -5,9 +5,10 @@
 - Install Xcode from AppStore
 - Install Homebrew
   - https://brew.sh/index_ja
-  - `brew bundle`
 - Run `setup.sh`
-  - Install HomeBrew. Then install packages and setup config files.
+  - Link the shell, Vim, and Git configuration files.
+- Install packages
+  - Run `brew bundle --file=./Brewfile`
 - Set up GitHub
   - https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
@@ -39,4 +40,4 @@
 
 ## Dump
 
-Run `dump.sh`
+Run `brew bundle dump --force --file=./Brewfile`
