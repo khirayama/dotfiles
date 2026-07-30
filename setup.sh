@@ -1,10 +1,16 @@
 #!/bin/sh
 
+set -eu
+
+DOTFILES_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
 mkdir -p ~/.vim/colors
 
 # Setup vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-ln -sf $PWD/zshrc ~/.zshrc
-ln -sf $PWD/vimrc ~/.vimrc
-ln -sf $PWD/gitconfig ~/.gitconfig
+ln -sf "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
+ln -sf "$DOTFILES_DIR/gitconfig" "$HOME/.gitconfig"
+
+echo "Dotfiles linked from $DOTFILES_DIR"
