@@ -1,13 +1,9 @@
-export LANG=ja_JP.UTF-8
-export LC_ALL=ja_JP.UTF-8
+export LANG="${LANG:-ja_JP.UTF-8}"
 
-# Homebrew (Apple Silicon, hardcoded)
-export HOMEBREW_PREFIX="/opt/homebrew"
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
-export HOMEBREW_REPOSITORY="/opt/homebrew"
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
-export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+# Homebrew
+if command -v brew >/dev/null 2>&1; then
+  eval "$(brew shellenv)"
+fi
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 autoload -Uz compinit
@@ -30,7 +26,9 @@ setopt nobeep
 export PATH="$HOME/.local/bin:/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
 
 # Node version manager (fnm)
-eval "$(fnm env --use-on-cd --shell zsh)"
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 
 alias la='ls -a'
 alias ll='ls -l'
@@ -72,11 +70,19 @@ alias gbd='git branch --merged | grep -v "*" | xargs -I % git branch -d %'
 alias cop='copilot --allow-all'
 
 # Java for Android/Gradle
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
-export PATH="$JAVA_HOME/bin:$PATH"
+if [[ -d "/Applications/Android Studio.app/Contents/jbr/Contents/Home" ]]; then
+  export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+  export PATH="$JAVA_HOME/bin:$PATH"
+fi
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
+if [[ -d "$ANDROID_HOME" ]]; then
+  export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
+fi
 
 # iOS Dev
-export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
-export PATH="$PATH:/Users/khirayama/.lmstudio/bin"
+if [[ -d "/Applications/Xcode.app/Contents/Developer" ]]; then
+  export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+fi
+if [[ -d "$HOME/.lmstudio/bin" ]]; then
+  export PATH="$PATH:$HOME/.lmstudio/bin"
+fi
