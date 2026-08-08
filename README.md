@@ -6,7 +6,7 @@
 - Install Homebrew
   - https://brew.sh/index_ja
 - Run `setup.sh`
-  - Link the shell, Vim, and Git configuration files.
+  - Link the shell, Vim, Git, and Herdr configuration files.
 - Install packages
   - Run `brew bundle --file=./Brewfile`
 - Set up GitHub
